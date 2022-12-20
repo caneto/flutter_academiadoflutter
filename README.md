@@ -1,41 +1,12 @@
 ## Academia do Flutter 
 
-<!--Este projeto é um estudo a fundo do Flutter, abrange conceitos de POO, Async, Streams, Banco de Dados, entre outros - Academia do Flutter-->
+<b>Este projeto é um estudo a fundo do Flutter, abrange primeiros passos, debug, fundamentos, flutter - principio, navagação, flutter - wigets, gerencia de estado, inheritedwidget, splash screeen nativa - Academia do Flutter</b>
 
-<b>Este projeto é um estudo a fundo do Dart, abrange conceitos de Fundamentos, Fundamentos Funções e Coleções, POO, Async, Streams - Academia do Flutter</b>
+<b>Primeiros passosa</b> (Criando emulador Android), (Criando seu primeiro projeto pela linha de commando e abrindo o Android Studio e VScode), (Criando seu primeiro Projeto no VSCode), (Iniciando o emulador do IOS), (Preparando e rodando seu aplicativo no Aparelho Fisico Android), (Entendendo o projeto Flutter e suas dependencias), (Endnendo os canais (channels Stable, Beta, Master) do Flutter), (Enendendo como atualizar o Flutter e seu projeto)
 
-<b>Nova versão do curso</b> em pastas (a, b, c, d) - Event Loop, Future (Processamento Assincrono, Anatoria do Future, Future (Sucesso e Erro), Encaddeamento de Futures, Erros em Cadeia Assincrona se recureando dele),
+<b>Debug</b> (Entendendo debug no Flutter e suas ferramentas), (Break point condicional)
 
-<b>Event Loop</b> (Conceito, Pratica, Entendendo as Interações)
-
-<b>Futures</b> (Processamento Assincrono, Anatomia do Future, Future (Sucesso e Erro), Encadeamento de Futures, Erros em Cadeia Assincrona se recuperando dele)
-
-<b>Variações de Future</b> (Future.sync, Future.microtask, Future.value ou Future.error, Future.wait, Future.wait avançado, Future.any)
-
-<b>Desvendando o async await</b> (Anatomia de uma função async, Modificador await, Tratamento de erros, Loops com processo async, Registrando um tempo para execução de um Future)
-
-<b>Lab Aluno ADF (Cli)</b> (Iniciando, Modelando dados e repositories, IImplementando comandos, Convertendo repositories para o DIO)
-
-
-### Criar o dartion
-
-dart pub global activate dartion
-
-dartion upgrade
-
-### Iniciar 
-
-dartion init
-
-### Rodar o Server
-
-dartion server
-
-#### Packege
-
-https://pub.dev/packages/dartion
-
-
+<b>Fundamentos</b> (O que é Flutter), (Widget o que é)
 
 <h2>📝 Licença</h2>
 
