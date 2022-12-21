@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+class HomeStateLessPage extends StatelessWidget {
+  HomeStateLessPage({Key? key}) : super(key: key);
 
   String texto = "Estou no StatelessWidget";
 
