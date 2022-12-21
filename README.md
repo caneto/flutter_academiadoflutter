@@ -6,7 +6,7 @@
 
 <b>Debug</b> (Entendendo debug no Flutter e suas ferramentas), (Break point condicional)
 
-<b>Fundamentos</b> (O que é Flutter), (Widget o que é)
+<b>Fundamentos</b> (O que é Flutter), (Widget o que é), (StateLessWidget e StateFullWidget), (Arvore de Componentes)
 
 <h2>📝 Licença</h2>
 
