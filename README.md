@@ -6,7 +6,9 @@
 
 <b>Debug</b> (Entendendo debug no Flutter e suas ferramentas), (Break point condicional)
 
-<b>Fundamentos</b> (O que é Flutter), (Widget o que é), (StateLessWidget e StateFullWidget), (Arvore de Componentes)
+<b>Fundamentos</b> (O que é Flutter), (Widget o que é), (StateLessWidget e StateFullWidget), (Arvore de Componentes), (Clico de Vida), (Executando funções depois da tela pronta (addPostFrameCallback))
+
+<b>Flutter</b> (Principais Widgets)
 
 <h2>📝 Licença</h2>
 
