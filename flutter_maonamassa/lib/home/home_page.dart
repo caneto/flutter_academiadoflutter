@@ -8,19 +8,34 @@ class HomePage extends StatelessWidget {
    Widget build(BuildContext context) {
        return Scaffold(
           appBar: AppBar(
-            title: const Text("Nossa primeira AppBar"),  
+            title: const Text("HomePage"),  
             backgroundColor: Colors.green,
-            actions: [
-              IconButton(icon: const Icon(Icons.add_a_photo_outlined), onPressed: () {  },)
-            ],
           ),
-          drawer: const Drawer(
-            child: Center(child: Text('Nossa drawer aberto'),),
-          ),
-          endDrawer: const Drawer(
-            child: Center(child: Text('Drawer end'),),
-          ),
-          body: const Center(child: Text('Nossa Primeira Pagina'))
+          body: Center(
+            child: Container(
+              width: 200,
+              height: 200,
+              margin: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 20,
+                    offset: Offset(2,2),
+                  ),
+                  BoxShadow(
+                    color: Colors.amberAccent,
+                    blurRadius: 20,
+                    offset: Offset(-2,-2),
+                  )
+                ]
+              ),
+              child: Text('Nossa Primeira Pagina')
+            )
+          )
        );
   }
 }
