@@ -10,7 +10,7 @@
 
 <b>Flutter - Principio</b> (Principais Widgets, Container, Imagens, Customizando as Fontes)
 
-<b>Navegação</b> (Conceitos, Mão Na massa, Passagem de Parametros)
+<b>Navegação</b> (Conceitos, Mão Na massa, Passagem de Parametros, Gerenciando e Observando navegação, Aguardar retorno de parâmetros na navegação)
 
 <h2>📝 Licença</h2>
 
