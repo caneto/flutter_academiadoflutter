@@ -5,6 +5,7 @@ import 'navegacao/page1.dart';
 import 'navegacao/page2.dart';
 import 'navegacao/page3.dart';
 import 'navegacao/page4.dart';
+import 'navegacao_params/detalhe.dart';
 import 'navegacao_params/lista.dart';
 //import 'package:flutter_maonamassa/home/home_page.dart';
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         '/page3': (_) => const Page3(),
         '/page4': (_) => const Page4(),
         '/navegacao_param': (_) => const Lista(),
+        '/detalhe': (_) => const Detalhe(),
       },
     );
   }

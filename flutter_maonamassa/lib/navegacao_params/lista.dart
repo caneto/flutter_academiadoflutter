@@ -15,17 +15,18 @@ class Lista extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    settings: const RouteSettings(
-                      name: 'detalhe',
-                      arguments: {
-                        'id':10,
-                      }
-                    ),
-                    builder: (context) => const Detalhe(),
-                  ),
-                );
+                //Navigator.of(context).push(
+                //  MaterialPageRoute(
+                //    settings: const RouteSettings(
+                //      name: 'detalhe',
+                //      arguments: {
+                //        'id':10,
+                //      }
+                //    ),
+                //    builder: (context) => const Detalhe(),
+                //  ),
+                //);
+                Navigator.of(context).pushNamed('/detalhe', arguments: {'id':10});
               },
               child: const Text(
                 'detalhe',
