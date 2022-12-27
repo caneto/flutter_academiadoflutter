@@ -8,7 +8,7 @@
 
 <b>Fundamentos</b> (O que é Flutter), (Widget o que é), (StateLessWidget e StateFullWidget), (Arvore de Componentes), (Clico de Vida), (Executando funções depois da tela pronta (addPostFrameCallback))
 
-<b>Flutter</b> (Principais Widgets, Container, Imagens, Customizando as Fontes)
+<b>Flutter - Principio</b> (Principais Widgets, Container, Imagens, Customizando as Fontes)
 
 <b>Navegação</b> (Conceitos, Mão Na massa, Passagem de Parametros)
 
