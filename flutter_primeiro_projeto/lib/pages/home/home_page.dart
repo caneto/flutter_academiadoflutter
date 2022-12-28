@@ -15,7 +15,6 @@ class HomePage extends StatelessWidget {
             tooltip: 'Selecione um Item do menu',
             onSelected: (PopupMenuPages valueSelected) {
               switch(valueSelected) {
-                
                 case PopupMenuPages.container:
                   Navigator.of(context).pushNamed('/container');
                   break;
