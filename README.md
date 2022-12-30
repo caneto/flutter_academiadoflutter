@@ -12,7 +12,7 @@
 
 <b>Navegação</b> (Conceitos, Mão Na massa, Passagem de Parametros, Gerenciando e Observando navegação, Aguardar retorno de parâmetros na navegação)
 
-<b>Flutter - Widgets</b> (PopupMenuButton, Row e Columns, MediaQuery)
+<b>Flutter - Widgets</b> (PopupMenuButton, Row e Columns, MediaQuery, Device Preview Package)
 
 <h2>📝 Licença</h2>
 
