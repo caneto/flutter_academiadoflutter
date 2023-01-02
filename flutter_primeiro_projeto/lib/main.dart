@@ -7,6 +7,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter_primeiro_projeto/pages/layout_builder/layout_builder_page.dart';
 import 'package:flutter_primeiro_projeto/pages/scrolls/listview_page.dart';
 import 'package:flutter_primeiro_projeto/pages/scrolls/singlechildscrollview_page.dart';
+import 'package:flutter_primeiro_projeto/pages/snackbar/snackbar_page.dart';
 
 import 'pages/media_query/media_query_page.dart';
 import 'pages/rows_columns/rows_columns_page.dart';
@@ -33,7 +34,10 @@ class MyApp extends StatelessWidget {
       //locale: DevicePreview	.locale(context),
       //builder: DevicePreview.appBuilder,
       title: 'Flutter Primero Projeto',
-      //theme: ThemeData.light(),
+      theme: ThemeData(
+        primaryColor: Colors.amber,
+        primarySwatch: Colors.brown
+      ),
       //darkTheme: ThemeData.dark(),
       routes: {
         '/': (_) => const HomePage(),
@@ -44,7 +48,8 @@ class MyApp extends StatelessWidget {
         '/botoes_rotacao_texto': (_) => const BotoesRotacaoTextoPage(),
         '/scrolls/single_child': (_) => const SinglechildscrollviewPage(),
         '/scrolls/list_view': (_) => const ListviewPage(),
-        '/dialogs': (_) => const DialogsPage()
+        '/dialogs': (_) => const DialogsPage(),
+        '/snackbars': (_) => const SnackbarPage()
       },
     );
   }
