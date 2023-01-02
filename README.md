@@ -12,7 +12,7 @@
 
 <b>Navegação</b> (Conceitos, Mão Na massa, Passagem de Parametros, Gerenciando e Observando navegação, Aguardar retorno de parâmetros na navegação)
 
-<b>Flutter - Widgets</b> (PopupMenuButton, Row e Columns, MediaQuery, Device Preview Package, LayoutBuilder, Botões Rotações e Texto, SingleChildScrollView e ListView, Dialogs, Identificando a plataforma e mostrando o componente correto)
+<b>Flutter - Widgets</b> (PopupMenuButton, Row e Columns, MediaQuery, Device Preview Package, LayoutBuilder, Botões Rotações e Texto, SingleChildScrollView e ListView, Dialogs, Identificando a plataforma e mostrando o componente correto, BuildContext)
 
 <h2>📝 Licença</h2>
 
