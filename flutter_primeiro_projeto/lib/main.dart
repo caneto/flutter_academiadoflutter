@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_primeiro_projeto/pages/botoes_rotacao_texto/botoes_rotacao_texto_page.dart';
+import 'package:flutter_primeiro_projeto/pages/bottom_navigator_bar/bottom_navigator_bar_page.dart';
 import 'package:flutter_primeiro_projeto/pages/cidades/cidades_page.dart';
 import 'package:flutter_primeiro_projeto/pages/container/container_page.dart';
 import 'package:flutter_primeiro_projeto/pages/dialogs/dialogs_page.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
       //builder: DevicePreview.appBuilder,
       title: 'Flutter Primero Projeto',
       theme: ThemeData(
-        primaryColor: Colors.blue,
+        primaryColor: Colors.amber,
         primarySwatch: Colors.green,
       ),
       //darkTheme: ThemeData.dark(),
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget {
         '/cidades': (_) => const CidadesPage(),
         '/stack': (_) => const StackPage(),
         '/stack/stack2': (_) => const StackPage2(),
+        '/bottomNavigatorBar': (_) => const BottomNavigatorBarPage(),
       },
     );
   }
