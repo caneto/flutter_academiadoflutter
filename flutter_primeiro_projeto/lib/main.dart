@@ -14,6 +14,7 @@ import 'package:flutter_primeiro_projeto/pages/stack/stack_page.dart';
 
 import 'pages/media_query/media_query_page.dart';
 import 'pages/rows_columns/rows_columns_page.dart';
+import 'pages/stack/stack_page2.dart';
 
 //void main() => runApp(
 //  DevicePreview(
@@ -55,7 +56,8 @@ class MyApp extends StatelessWidget {
         '/snackbars': (_) => const SnackbarPage(),
         '/forms':(_) => const FormsPage(),
         '/cidades': (_) => const CidadesPage(),
-        '/stack': (_) => const StackPage()
+        '/stack': (_) => const StackPage(),
+        '/stack/stack2': (_) => const StackPage2(),
       },
     );
   }
