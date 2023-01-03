@@ -8,7 +8,39 @@ class StackPage extends StatelessWidget {
    Widget build(BuildContext context) {
        return Scaffold(
            appBar: AppBar(title: const Text('Stack'),),
-           body: Container(),
+           body: Stack(
+            children: [
+              Container(
+                color: Colors.green,
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  color: Colors.blue,
+                  width: 300,
+                  height: 300,
+                ),
+              ),
+              //Align(
+              //  alignment: Alignment.bottomRight,
+              //  child: Container(
+              //    color: Colors.pink,
+              //    width: 150,
+              //    height: 150,
+              //  ),
+              //),
+              Positioned(
+                //top:40,
+                right: 100,
+                bottom: 10,
+                child: Container(
+                  color: Colors.pink,
+                  width: 150,
+                  height: 150,
+                ),
+              )
+           ]
+         ),
        );
   }
 }
