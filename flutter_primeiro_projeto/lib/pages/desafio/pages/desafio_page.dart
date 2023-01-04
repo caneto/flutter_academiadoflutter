@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../models/posts_model.dart';
-import 'post_page.dart';
 
 class DesafioPage extends StatefulWidget {
 
@@ -29,8 +28,12 @@ class _DesafioPageState extends State<DesafioPage> {
                 ),
            actions: [
             IconButton(
-              icon: const Icon(Icons.add, color: Colors.black),
-              iconSize: 28.0,
+              icon: Image.asset(
+                       'assets/images/more.png',
+                       color: Colors.black,
+                       width: 22,
+                       height: 22,
+              ),
               onPressed: () => print('ok'),
             ),
             IconButton(
@@ -54,6 +57,9 @@ class _DesafioPageState extends State<DesafioPage> {
     return ListView(
       physics: const AlwaysScrollableScrollPhysics(),
       children: <Widget>[
+        const SizedBox(
+           height: 5,
+        ),
         Container(
           width: double.infinity,
           height: 100.0,
@@ -64,37 +70,37 @@ class _DesafioPageState extends State<DesafioPage> {
               if (index == 0) {
                 return const SizedBox(width: 10.0);
               }
-              return Container(
-                margin: const EdgeInsets.all(10.0),
-                width: 65.0,
-                height: 65.0,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black45,
-                      offset: Offset(0, 2),
-                      blurRadius: 6.0,
-                    ),
-                  ],
-                ),
-                child: CircleAvatar(
-                  child: ClipOval(
-                    child: Image(
-                      height: 63.0,
-                      width: 63.0,
-                      image: AssetImage(stories[index - 1]),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              );
+              return ImageAvatar(urlImage: stories[index -1].userAvatar, texto: stories[index - 1].user);
+              //Container(
+                //margin: const EdgeInsets.all(10.0),
+                //width: 65.0,
+                //height: 65.0,
+                //decoration: const BoxDecoration(
+                //  shape: BoxShape.circle,
+                //  boxShadow: [
+                //    BoxShadow(
+                //      color: Colors.black45,
+                //      offset: Offset(0, 2),
+                //      blurRadius: 6.0,
+                //    ),
+                //  ],
+                //),
+               // child: CircleAvatar(
+                //  child: ClipOval(
+                //    child: Image(
+                //      height: 63.0,
+                //      width: 63.0,
+                //      image: AssetImage(stories[index - 1]),
+                //      fit: BoxFit.cover,
+                //    ),
+                //),
+                //),
+              //);
             },
           ),
         ),
         _post(0),
         _post(1),
-        //_post(3),
       ],
     );
   }
@@ -107,8 +113,8 @@ class _DesafioPageState extends State<DesafioPage> {
       ),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
+        items: [
+          const BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
               size: 30.0,
@@ -116,7 +122,7 @@ class _DesafioPageState extends State<DesafioPage> {
             ),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(
               Icons.search,
               size: 30.0,
@@ -125,14 +131,14 @@ class _DesafioPageState extends State<DesafioPage> {
             label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.video_camera_front_outlined,
-              size: 30.0,
-              color: Colors.black,
-            ),
+            icon: Image.asset(
+                  'assets/images/reels.png',
+                    width: 26, 
+                    height: 26,
+                  ),
             label: 'reels',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(
               Icons.shopping_bag_outlined,
               size: 30.0,
@@ -140,13 +146,18 @@ class _DesafioPageState extends State<DesafioPage> {
             ),
             label: 'Shop',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_outlined,
-              size: 30.0,
-              color: Colors.black,
+          const BottomNavigationBarItem(
+            icon: CircleAvatar(
+              child: ClipOval(
+                child: Image(
+                  height: 63.0,
+                  width: 63.0,
+                  image: AssetImage('assets/images/post_image1.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-            label: 'Profile',
+            label: '',
           ),
         ],
       ),
@@ -202,7 +213,8 @@ class _DesafioPageState extends State<DesafioPage> {
                     ),
                     subtitle: Text(posts[index].timeAgo),
                     trailing: IconButton(
-                      icon: const Icon(Icons.more_horiz),
+                      icon: const Icon(Icons.more_vert),
+                      padding: const EdgeInsets.only(left: 25),
                       color: Colors.black,
                       onPressed: () => print('ok'),
                     ),
@@ -210,14 +222,14 @@ class _DesafioPageState extends State<DesafioPage> {
                   InkWell(
                     onDoubleTap: () => print('Like'),
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => ViewPostScreen(
-                            post: posts[index],
-                          ),
-                        ),
-                      );
+                      //Navigator.push(
+                      //  context,
+                      //  MaterialPageRoute(
+                      //    builder: (_) => ViewPostScreen(
+                      //      post: posts[index],
+                      //    ),
+                      //  ),
+                      //);
                     },
                     child: Container(
                       margin: const EdgeInsets.all(0.0),
@@ -250,11 +262,16 @@ class _DesafioPageState extends State<DesafioPage> {
                               children: <Widget>[
                                 IconButton(
                                   icon: const Icon(Icons.favorite_border),
-                                  iconSize: 30.0,
+                                  iconSize: 28.0,
                                   onPressed: () => print('Like post'),
                                 ),
                                 IconButton(
-                                  icon: const Icon(Icons.mail_outlined),
+                                  icon: Image.asset(
+                                    'assets/images/chat.png',
+                                      color: Colors.black,
+                                      width: 25,
+                                      height: 25,
+                                    ),
                                   iconSize: 30.0,
                                   onPressed: () => print('mail'),
                                 ),
@@ -263,17 +280,22 @@ class _DesafioPageState extends State<DesafioPage> {
                             Row(
                               children: <Widget>[
                                 IconButton(
-                                  icon: const Icon(Icons.message_outlined),
+                                  icon: Image.asset(
+                                    'assets/images/send.png',
+                                       color: Colors.black,
+                                      width: 25,
+                                      height: 25,
+                                    ),
                                   iconSize: 30.0,
                                   onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (_) => ViewPostScreen(
-                                          post: posts[index],
-                                        ),
-                                      ),
-                                    );
+                                    //Navigator.push(
+                                    //  context,
+                                    //  MaterialPageRoute(
+                                    //    builder: (_) => ViewPostScreen(
+                                    //      post: posts[index],
+                                    //    ),
+                                    //  ),
+                                    //);
                                   },
                                 ),
                               ],
@@ -296,4 +318,66 @@ class _DesafioPageState extends State<DesafioPage> {
       ),
     );
   }
+}
+
+
+class ImageAvatar extends StatelessWidget {
+
+  final String urlImage;
+  final String texto;
+
+  const ImageAvatar({super.key, required this.urlImage, required this.texto});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          width: 80,
+          height: 80,
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [
+                Colors.red,
+                Colors.blue
+              ],
+              begin: Alignment.topCenter
+            ),
+            borderRadius: BorderRadius.circular(100),
+            color: Colors.blue,
+          ),          
+        ),
+        Container(
+          width: 80,
+          height: 80,
+          padding: const EdgeInsets.all(3) ,
+          child: ClipOval(
+                  child: Image(
+                    height: 60.0,
+                    width: 60.0,
+                    image: AssetImage(urlImage),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+        ),
+        Container(
+          width: 85,
+          height: 105,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              padding: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: Colors.black54,
+                borderRadius: BorderRadius.circular(5)
+              ),
+              
+              child: Text(texto, style: const TextStyle(fontSize: 10, color: Colors.white),),
+            ),
+          ),
+        )
+      ],  
+    );
+  }
+
 }

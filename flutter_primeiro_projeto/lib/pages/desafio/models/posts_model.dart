@@ -12,6 +12,16 @@ class Posts {
   });
 }
 
+class Stories {
+  String user;
+  String userAvatar;
+  
+  Stories({
+    required this.user,
+    required this.userAvatar,
+  });
+}
+
 final List<Posts> posts = [
   Posts(
     user: 'Maggie Wood',
@@ -33,13 +43,37 @@ final List<Posts> posts = [
   ),
 ];
 
-final List<String> stories = [
-  'assets/images/user1.jpeg',
-  'assets/images/user2.jpeg',
-  'assets/images/user3.jpeg',
-  'assets/images/user4.jpeg',
-  'assets/images/user0.jpeg',
-  'assets/images/user1.jpeg',
-  'assets/images/user2.jpeg',
-  'assets/images/user3.jpeg',
+final List<Stories> stories = [
+  Stories(
+    user: 'Women 1', 
+    userAvatar: 'assets/images/user1.jpeg',
+  ),
+  Stories(
+    user: 'Woman 2', 
+    userAvatar: 'assets/images/user2.jpeg',
+  ),
+  Stories(
+    user: 'Man 3', 
+    userAvatar: 'assets/images/user3.jpeg',
+  ),
+  Stories(
+    user: 'Man 4', 
+    userAvatar: 'assets/images/user4.jpeg',
+  ),
+  Stories(
+    user: 'Man 0', 
+    userAvatar: 'assets/images/user0.jpeg',
+  ),
+  Stories(
+    user: 'Women 1', 
+    userAvatar: 'assets/images/user1.jpeg',
+  ),
+  Stories(
+    user: 'Woman 2', 
+    userAvatar: 'assets/images/user2.jpeg',
+  ),
+  Stories(
+    user: 'Man 3', 
+    userAvatar: 'assets/images/user3.jpeg',
+  ),
 ];

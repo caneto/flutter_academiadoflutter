@@ -63,6 +63,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/cidades.json
+    - assets/images/reels.png
+    - assets/images/more.png
+    - assets/images/chat.png
+    - assets/images/send.png
     - assets/images/user0.jpeg
     - assets/images/user1.jpeg
     - assets/images/user2.jpeg

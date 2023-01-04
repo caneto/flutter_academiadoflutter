@@ -79,6 +79,4 @@ class ImageAvatar extends StatelessWidget {
     );
   }
 
-  
-
 }
