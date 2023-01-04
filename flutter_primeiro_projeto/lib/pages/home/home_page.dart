@@ -164,20 +164,20 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).popAndPushNamed('/desafio');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
-                shadowColor: Colors.black,
-                minimumSize: const Size(120, 50),
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(60)),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).popAndPushNamed('/desafio');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  shadowColor: Colors.black,
+                  minimumSize: const Size(120, 50),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(60)),
+                  ),
                 ),
+                child: const Text('Desafio'),
               ),
-              child: const Text('Desafio'),
-            ),
           ]),
         ));
   }
