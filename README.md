@@ -14,7 +14,7 @@
 
 <b>Flutter - Widgets</b> (PopupMenuButton, Row e Columns, MediaQuery, Device Preview Package, LayoutBuilder, Botões Rotações e Texto, SingleChildScrollView e ListView, Dialogs, Identificando a plataforma e mostrando o componente correto, BuildContext,Theme (Customizando o seu Tema), Snackbar (Mensagens para o usuário),Trabalhando com formulários, Lendo arquivo json do Assets, Stack Entendendo o Widget, Mostrando o poder do Widget Stack, BottomNavigatorBar & IndexedStack, CircleAvatar, Trabalhando com cores, Material Banner, Desafio)
 
-<b>Gerência de Estado</b> (O que vamos ver nesse módulo)
+<b>Gerência de Estado</b> (O que vamos ver nesse módulo, Criando projeto e montando layout)
 
 <h2>📝 Licença</h2>
 
