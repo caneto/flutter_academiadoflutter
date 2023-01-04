@@ -2,7 +2,7 @@
 
 <b>Este projeto é um estudo a fundo do Flutter, abrange primeiros passos, debug, fundamentos, flutter - principio, navagação, flutter - wigets, gerencia de estado, inheritedwidget, splash screeen nativa - Academia do Flutter</b>
 
-<b>Primeiros passosa</b> (Criando emulador Android), (Criando seu primeiro projeto pela linha de commando e abrindo o Android Studio e VScode), (Criando seu primeiro Projeto no VSCode), (Iniciando o emulador do IOS), (Preparando e rodando seu aplicativo no Aparelho Fisico Android), (Entendendo o projeto Flutter e suas dependencias), (Endnendo os canais (channels Stable, Beta, Master) do Flutter), (Enendendo como atualizar o Flutter e seu projeto)
+<b>Primeiros passosa</b> (Criando emulador Android), (Criando seu primeiro projeto pela linha de commando e abrindo o Android Studio e VScode), (Criando seu primeiro Projeto no VSCode), (Iniciando o emulador do IOS), (Preparando e rodando seu aplicativo no Aparelho Fisico Android), (Entendendo o projeto Flutter e suas dependencias), (Entendendo os canais (channels Stable, Beta, Master) do Flutter), (Enendendo como atualizar o Flutter e seu projeto)
 
 <b>Debug</b> (Entendendo debug no Flutter e suas ferramentas), (Break point condicional)
 
@@ -13,6 +13,8 @@
 <b>Navegação</b> (Conceitos, Mão Na massa, Passagem de Parametros, Gerenciando e Observando navegação, Aguardar retorno de parâmetros na navegação)
 
 <b>Flutter - Widgets</b> (PopupMenuButton, Row e Columns, MediaQuery, Device Preview Package, LayoutBuilder, Botões Rotações e Texto, SingleChildScrollView e ListView, Dialogs, Identificando a plataforma e mostrando o componente correto, BuildContext,Theme (Customizando o seu Tema), Snackbar (Mensagens para o usuário),Trabalhando com formulários, Lendo arquivo json do Assets, Stack Entendendo o Widget, Mostrando o poder do Widget Stack, BottomNavigatorBar & IndexedStack, CircleAvatar, Trabalhando com cores, Material Banner, Desafio)
+
+<b>Gerência de Estado</b> (O que vamos ver nesse módulo, Criando projeto e montando layout, Construindo tela com setState)
 
 <h2>📝 Licença</h2>
 
