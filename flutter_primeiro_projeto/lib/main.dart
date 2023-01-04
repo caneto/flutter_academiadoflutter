@@ -4,6 +4,7 @@ import 'package:flutter_primeiro_projeto/pages/bottom_navigator_bar/bottom_navig
 import 'package:flutter_primeiro_projeto/pages/cidades/cidades_page.dart';
 import 'package:flutter_primeiro_projeto/pages/colors/colors_page.dart';
 import 'package:flutter_primeiro_projeto/pages/container/container_page.dart';
+import 'package:flutter_primeiro_projeto/pages/desafio/pages/desafio_page.dart';
 import 'package:flutter_primeiro_projeto/pages/dialogs/dialogs_page.dart';
 import 'package:flutter_primeiro_projeto/pages/forms/forms_page.dart';
 import 'package:flutter_primeiro_projeto/pages/home/home_page.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
         '/circleAvatar': (_) => const CircleAvatarPage(),
         '/colors': (_) => const ColorsPage(),
         '/materialBanner': (_) => const MaterialBannerPage(),
+        '/desafio': (_) => const DesafioPage(),
       },
     );
   }

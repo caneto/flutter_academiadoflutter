@@ -63,6 +63,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/cidades.json
+    - assets/images/user0.jpeg
+    - assets/images/user1.jpeg
+    - assets/images/user2.jpeg
+    - assets/images/user3.jpeg
+    - assets/images/user4.jpeg
+    - assets/images/post_image0.jpeg
+    - assets/images/post_image1.jpeg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -77,6 +84,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: Billabong
+      fonts:
+        - asset: assets/fonts/Billabong.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
