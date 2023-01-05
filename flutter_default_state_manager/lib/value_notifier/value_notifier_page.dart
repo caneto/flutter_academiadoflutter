@@ -5,32 +5,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_default_state_manager/widgets/imc_gauge.dart';
 import 'package:intl/intl.dart';
 
-class ImcSetstatePage extends StatefulWidget {
-  const ImcSetstatePage({Key? key}) : super(key: key);
+class ValueNotifierPage extends StatefulWidget {
+  const ValueNotifierPage({Key? key}) : super(key: key);
 
   @override
-  State<ImcSetstatePage> createState() => _ImcSetstatePageState();
+  State<ValueNotifierPage> createState() => _ValueNotifierPageState();
 }
 
-class _ImcSetstatePageState extends State<ImcSetstatePage> {
-
-final pesoEC = TextEditingController();
+class _ValueNotifierPageState extends State<ValueNotifierPage> {
+  final pesoEC = TextEditingController();
   final alturaEC = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  var imc = 0.0;
-  
+  var imc = ValueNotifier(0.0);
 
   Future<void> _calcularIMC({required double peso, required double altura}) async {
 
-    setState(() {
-      imc = 0;
-    });
+      imc.value = 0;
+      await Future.delayed(const Duration(seconds: 1));
 
-    await Future.delayed(const Duration(seconds: 1));
-
-    setState(() {
-      imc = peso / pow(altura, 2);
-    });
+      imc.value = peso / pow(altura, 2);
+    
   }
 
   @override
@@ -44,7 +38,7 @@ final pesoEC = TextEditingController();
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Imc SetState'),
+        title: const Text('Imc ValueNotifier'),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -52,7 +46,12 @@ final pesoEC = TextEditingController();
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(children: [
-              ImcGauge(imc: imc),
+              ValueListenableBuilder<double>(
+                valueListenable: imc,
+                builder: (__, imcValue, _) {
+                  return ImcGauge(imc: imcValue);    
+                },
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -68,7 +67,7 @@ final pesoEC = TextEditingController();
                       decimalDigits: 2)
                 ],
                 validator: (String? value) {
-                  if(value == null || value.isEmpty) {
+                  if (value == null || value.isEmpty) {
                     return 'Peso obrigatório';
                   }
                 },
@@ -85,7 +84,7 @@ final pesoEC = TextEditingController();
                       decimalDigits: 2)
                 ],
                 validator: (String? value) {
-                  if(value == null || value.isEmpty) {
+                  if (value == null || value.isEmpty) {
                     return 'Altura obrigatório';
                   }
                 },
@@ -96,9 +95,9 @@ final pesoEC = TextEditingController();
               ElevatedButton(
                 onPressed: () {
                   var formValid = formKey.currentState?.validate() ?? false;
-                  if(formValid) {
+                  if (formValid) {
                     var formatter = NumberFormat.simpleCurrency(
-                      locale: 'pt_BR', decimalDigits: 2);
+                        locale: 'pt_BR', decimalDigits: 2);
 
                     double peso = formatter.parse(pesoEC.text) as double;
                     double altura = formatter.parse(alturaEC.text) as double;
