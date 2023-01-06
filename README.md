@@ -16,7 +16,7 @@
 
 <b>Gerência de Estado</b> (O que vamos ver nesse módulo, Criando projeto e montando layout, Construindo tela com setState, Construindo tela com ValueNotifier, Construindo tela com ChangeNotifier, Construindo tela com Bloc Pattern(Stream))
 
-<b>InheritedWidget</b> (Implementando InheritedWidget)
+<b>InheritedWidget</b> (Implementando InheritedWidget,Entendendo arvore de widgets com Dart DevTools)
 
 <h2>📝 Licença</h2>
 
