@@ -6,3 +6,9 @@ class ImcState {
   });
 
 }
+
+class ImcStateLoading extends ImcState {
+  ImcStateLoading() : super(imc: 0);
+
+  
+}
