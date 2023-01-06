@@ -1,6 +1,10 @@
 ## Academia do Flutter 
 
-<b>Este projeto é um estudo a fundo do Flutter, abrange primeiros passos, debug, fundamentos, flutter - principio, navagação, flutter - wigets, gerencia de estado, inheritedwidget, splash screeen nativa - Academia do Flutter</b>
+<b>Este projeto é um estudo a fundo do Flutter.
+
+<b>Jornada Flutter</b>
+
+<b>Fundamentos e Widgets</b> -- Abrange primeiros passos, debug, fundamentos, flutter - principio, navagação, flutter - wigets, gerencia de estado, inheritedwidget, splash screeen nativa - Academia do Flutter
 
 <b>Primeiros passosa</b> (Criando emulador Android), (Criando seu primeiro projeto pela linha de commando e abrindo o Android Studio e VScode), (Criando seu primeiro Projeto no VSCode), (Iniciando o emulador do IOS), (Preparando e rodando seu aplicativo no Aparelho Fisico Android), (Entendendo o projeto Flutter e suas dependencias), (Entendendo os canais (channels Stable, Beta, Master) do Flutter), (Enendendo como atualizar o Flutter e seu projeto)
 
