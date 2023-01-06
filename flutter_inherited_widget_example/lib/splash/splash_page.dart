@@ -23,7 +23,9 @@ class _SplashPageState extends State<SplashPage> {
    Widget build(BuildContext context) {
        return Scaffold(
            appBar: AppBar(title: const Text(''),),
-           body: Container(),
+           body: Container(
+            color: Colors.blue,
+           ),
        );
   }
 }
