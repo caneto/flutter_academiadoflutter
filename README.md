@@ -18,6 +18,8 @@
 
 <b>InheritedWidget</b> (Implementando InheritedWidget,Entendendo arvore de widgets com Dart DevTools)
 
+<b>Splash Screen Native</b> (Splash nativa no android, Splash nativa no iOS)
+
 <h2>📝 Licença</h2>
 
 <p>
