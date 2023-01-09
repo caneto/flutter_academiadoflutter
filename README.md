@@ -63,7 +63,7 @@
 <table> 
   <tr>
     <td> 
-      <b><b>Hands-On (Todo List) Provider e SQLite em arquitetura de modulos</b> (Assets do Projeto, Apresentação do projeto)
+      <b><b>Hands-On (Todo List) Provider e SQLite em arquitetura de modulos</b> (Assets do Projeto, Apresentação do projeto, Criando projeto e configurando arquitetura de pastas)
     </td>
     <td>
     </td>
