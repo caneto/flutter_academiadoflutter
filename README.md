@@ -48,7 +48,13 @@
 
 <b>Storages</b> -- Abrange Introdução e criação do projeto, Criando e acessando nossa base de dados, AppInspector, Entendendo como atualizar e voltar versão de banco de dados, Desabilitando auto backup de arquivos do android, Manipulando dados do Sqlite
 
-<b>Storages</b> (Introdução e criação do projeto, Criando e acessando nossa base de dados, AppInspector)
+<b>Storages</b> (Introdução e criação do projeto, Criando e acessando nossa base de dados, AppInspector, Entendendo como atualizar e voltar versão de banco de dados, Desabilitando auto backup de arquivos do android, Manipulando dados do Sqlite)
+
+<br/>
+
+<b>Provider</b> -- Abrange Compartilhando Objetos, Gerenciamento de estado com Provider (ChangerNotifier)
+
+<b>Provider</b> (Compartilhando Objetos)
 
 
 <h2>📝 Licença</h2>
