@@ -56,6 +56,15 @@
 
 <b>Provider</b> (Compartilhando Objetos, Gerenciando estado com Provider (ChangeNotifier))
 
+<br/>
+
+<b>Hands-On Provider e SQLite em arquitetura de modulos</b> -- Abrange Apresentação (Assets do Projeto, Apresentação do projeto, Criando projeto e configurando arquitetura de pastas), Configuração do Projeto (Configuração Factory de Conexão com sqlite, Configuração as Migrations, Configurando SqlAdminConnection, Arquitetura de Modulos), Modulo Auth (Contruindo layout de Login e configurando tema, Costomizando o TextFormField, Construindo layout de tela de cadastro), Firebase Auth (Criando projeto Firebase, Configuirando firebase-auth), Modulo Auth (Construindo Repository e Service de usuário, Conectando RegisterController aos nossos seriviços, Criando utilítários de controle do loader;sucess;error, Integrando tela de login, implementando esqueceu sua senha, Google Login, Navegando sem Contexto e configurando home e splash, Indentificado se o usuário está logado, Alterar nome do usuário), Modulo Home, Modulo Cadastro, Modoulo Home, Final
+
+<b>Hands-On Provider e SQLite em arquitetura de modulos</b> (Assets do Projeto, Apresentação do projeto)
+
+
+
+
 
 <h2>📝 Licença</h2>
 
