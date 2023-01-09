@@ -54,7 +54,7 @@
 
 <b>Provider</b> -- Abrange Compartilhando Objetos, Gerenciamento de estado com Provider (ChangerNotifier)
 
-<b>Provider</b> (Compartilhando Objetos)
+<b>Provider</b> (Compartilhando Objetos, Gerenciando estado com Provider (ChangeNotifier))
 
 
 <h2>📝 Licença</h2>
