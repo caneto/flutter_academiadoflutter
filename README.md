@@ -66,10 +66,9 @@
       <b><b>Hands-On Provider e SQLite em arquitetura de modulos</b> (Assets do Projeto, Apresentação do projeto)
     </td>
     <td>
-      
     </td>
     <td>
-      td>
+    </td>
   </tr>
 </table>   
   
