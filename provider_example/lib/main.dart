@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_exemple/change_notifier/provider_controller.dart';
 import 'package:provider_exemple/provider/user_model.dart';
 
+import 'change_notifier/change_notifier_page.dart';
 import 'provider/provider_page.dart';
 
 void main() {
@@ -13,21 +15,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Provider(
-      create: (_) {
-        return UserModel(
-          name: 'Carlos Aberto',
-          imgAvatar: 'https://avatars.githubusercontent.com/u/2157300?v=4',
-          birthDate: '29/04/1966',
-        );
-      },
+    return MultiProvider(
+      providers: [
+        Provider(
+          create: (_) {
+            return UserModel(
+              name: 'Carlos Aberto',
+              imgAvatar: 'https://avatars.githubusercontent.com/u/2157300?v=4',
+              birthDate: '29/04/1966',
+            );
+          },
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ProviderController(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        routes: {'/provider': (_) => const ProviderPage()},
+        routes: {
+          '/provider': (_) => const ProviderPage(),
+          '/change': (_) => const ChangeNotifierPage(),
+        },
         home: Builder(
           builder: (BuildContext context) {
             return Scaffold(
@@ -42,7 +54,11 @@ class MyApp extends StatelessWidget {
                       child: const Text('Provider'),
                     ),
                     ElevatedButton(
-                        onPressed: () {}, child: const Text('Change Notifier')),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/change');
+                      },
+                      child: const Text('Change Notifier'),
+                    ),
                   ],
                 ),
               ),
