@@ -4,6 +4,8 @@
         android:label="flutter_sqlite_exemple"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        android:allowBaclup="false"
+        android:fullBackupOnly="false"
         <activity
             android:name=".MainActivity"
             android:exported="true"
