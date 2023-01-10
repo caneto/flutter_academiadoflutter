@@ -63,9 +63,10 @@
 <table> 
   <tr>
     <td> 
-      <b><b>Hands-On (Todo List) Provider e SQLite em arquitetura de modulos</b> (Assets do Projeto, Apresentação do projeto, Criando projeto e configurando arquitetura de pastas)
+      <b>Apresentação</b> (Assets do Projeto, Apresentação do projeto, Criando projeto e configurando arquitetura de pastas)
     </td>
     <td>
+      <b>Configuração do Projeto</br> (Configuração Factory de Conexão com sqlite)
     </td>
     <td>
     </td>
