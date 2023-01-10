@@ -69,6 +69,7 @@
       <b>Configuração do Projeto</br> (Configuração Factory de Conexão com sqlite, Configurando as Migrations, Configurando SqlAdminConnection, Arquitetura de Módulos)
     </td>
     <td>
+      <b>Modulo Auth</b> (Contruindo layout de Login e configurando tema)
     </td>
   </tr>
 </table>   
