@@ -50,6 +50,7 @@ class SqliteConnectionFectory {
   Future<void> _onConfigure(Database db) async {
     await db.execute('PRAGMA foreign_keys = ON');
   }
+
   Future<void> _onCreate(Database db, int version) async {
     final batch = db.batch();
 
@@ -60,6 +61,7 @@ class SqliteConnectionFectory {
 
     batch.commit();
   }
+
   Future<void> _onUpgrade(Database db, int oldVersion, int version) async {
      final batch = db.batch();
 
@@ -70,5 +72,6 @@ class SqliteConnectionFectory {
 
     batch.commit();
   }
+  
   Future<void> _onDowngrade(Database db, int oldVersion, int version) async {}
 }
