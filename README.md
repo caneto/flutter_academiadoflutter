@@ -74,13 +74,11 @@
   </tr>
   <tr>
     <td> 
-      <b>Apresentação</b> (Assets do Projeto, Apresentação do projeto, Criando projeto e configurando arquitetura de pastas)
-    </td>
-    <td>
       <b>Firebase Auth</b> (Criando projeto Firebase)
     </td>
     <td>
-      
+    </td>
+    <td>
     </td>
   </tr>
 </table>   
