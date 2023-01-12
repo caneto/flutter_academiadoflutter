@@ -72,6 +72,17 @@
       <b>Modulo Auth</b> (Contruindo layout de Login e configurando tema, Customizando o TextFormField, Construindo layout de tela de cadastro)
     </td>
   </tr>
+  <tr>
+    <td> 
+      <b>Apresentação</b> (Assets do Projeto, Apresentação do projeto, Criando projeto e configurando arquitetura de pastas)
+    </td>
+    <td>
+      <b>Firebase Auth</b> (Criando projeto Firebase)
+    </td>
+    <td>
+      
+    </td>
+  </tr>
 </table>   
   
 
