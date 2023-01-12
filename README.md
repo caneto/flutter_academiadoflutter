@@ -74,9 +74,10 @@
   </tr>
   <tr>
     <td> 
-      <b>Firebase Auth</b> (Criando projeto Firebase)
+      <b>Firebase Auth</b> (Criando projeto Firebase,Configurando firebase-auth)
     </td>
     <td>
+      <b>Módulo Auth</b> (Construindo Repository e Service de usuário)
     </td>
     <td>
     </td>
