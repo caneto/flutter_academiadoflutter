@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.capsistema.todo_list_provider">
    <application
+        android:usesCleartextTraffic="true"
         android:label="todo_list_provider"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

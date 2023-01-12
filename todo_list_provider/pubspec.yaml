@@ -41,6 +41,8 @@ dependencies:
   path: ^1.8.2
   google_fonts: ^3.0.1
   flutter_signin_button: ^2.0.0
+  firebase_core: ^2.4.1
+  firebase_auth: ^4.2.5
 
 dev_dependencies:
   flutter_test:
