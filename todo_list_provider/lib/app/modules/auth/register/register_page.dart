@@ -38,9 +38,11 @@ class _RegisterPageState extends State<RegisterPage> {
       listenerInstance.dispose();
       Navigator.of(context).pop();
     },
-    errorCallback: (notifier, listenerInstance) {
-      print('Deu Erro !!!!');
-    });
+    //Esse atributo é opcional
+    //errorCallback: (notifier, listenerInstance) {
+    //  print('Deu Erro !!!!');
+    //}
+    );
    /*  context.read<RegisterController>().addListener(() {
       final controller = context.read<RegisterController>();
       var success = controller.success;
