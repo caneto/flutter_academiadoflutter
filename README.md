@@ -77,7 +77,7 @@
       <b>Firebase Auth</b> (Criando projeto Firebase,Configurando firebase-auth)
     </td>
     <td>
-      <b>Módulo Auth</b> (Construindo Repository e Service de usuário,Conectando RegisterController aos nossos serviços)
+      <b>Módulo Auth</b> (Construindo Repository e Service de usuário,Conectando RegisterController aos nossos serviços,Criando utilitários de controle de loader, success, error)
     </td>
     <td>
     </td>
