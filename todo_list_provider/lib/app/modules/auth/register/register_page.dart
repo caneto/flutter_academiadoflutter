@@ -1,10 +1,12 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_list_provider/app/core/ui/theme_extensions.dart';
+import 'package:todo_list_provider/app/core/validators/validators.dart';
 import 'package:todo_list_provider/app/core/widget/todo_list_field.dart';
 import 'package:todo_list_provider/app/core/widget/todo_list_logo.dart';
 import 'package:validatorless/validatorless.dart';
+
+import 'register_controller.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -15,16 +17,37 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final _formkey = GlobalKey<FormState>();
-  final emailEC = TextEditingController();
-  final passwordEC = TextEditingController();
-  final confirmPasswordEC = TextEditingController();
+  final _emailEC = TextEditingController();
+  final _passwordEC = TextEditingController();
+  final _confirmPasswordEC = TextEditingController();
 
   @override
   void dispose() {
-    emailEC.dispose();
-    passwordEC.dispose();
-    confirmPasswordEC.dispose();
+    _emailEC.dispose();
+    _passwordEC.dispose();
+    _confirmPasswordEC.dispose();
+    //context.read<RegisterController>().removeListener(() {}); //verificar
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<RegisterController>().addListener(() {
+      final controller = context.read<RegisterController>();
+      var success = controller.success;
+      var error = controller.error;
+      if (success) {
+        Navigator.of(context).pop();
+      } else if (error != null && error.isNotEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(error),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    });
   }
 
   @override
@@ -61,71 +84,89 @@ class _RegisterPageState extends State<RegisterPage> {
           ],
         ),
       ),
-      body: Form(
-        key: _formkey,
-        child: ListView(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.width * .5,
-              child: const FittedBox(
-                fit: BoxFit.fitHeight,
-                child: TodoListLogo(),
-              ),
+      body: ListView(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.width * .5,
+            child: const FittedBox(
+              fit: BoxFit.fitHeight,
+              child: TodoListLogo(),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-              child: Form(
-                child: Column(
-                  children: [
-                    TodoListField(
-                      label: 'E-Mail',
-                      controller: emailEC,
-                      validator: Validatorless.multiple([
-                        Validatorless.required('E-mail obrigatório'),
-                        Validatorless.email('E-mail inválido')
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            child: Form(
+              key: _formkey,
+              child: Column(
+                children: [
+                  TodoListField(
+                    label: 'E-Mail',
+                    controller: _emailEC,
+                    validator: Validatorless.multiple([
+                      Validatorless.required('E-mail obrigatório'),
+                      Validatorless.email('E-mail inválido')
+                    ]),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TodoListField(
+                    label: 'Senha',
+                    obscureText: true,
+                    controller: _passwordEC,
+                    validator: Validatorless.multiple([
+                      Validatorless.required('Senha obrigatória'),
+                      Validatorless.min(
+                          6, 'Senha deve ter pelo menos 6 caractewres'),
+                    ]),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TodoListField(
+                    label: 'Confirmar Senha',
+                    obscureText: true,
+                    controller: _confirmPasswordEC,
+                    validator: Validatorless.multiple([
+                      Validatorless.required('Senha obrigatória'),
+                      Validators.compate(
+                          _passwordEC, 'Senha diferente de confirma senha')
+                    ]),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        final formValid =
+                            _formkey.currentState?.validate() ?? false;
+                        if (formValid) {
+                          final email = _emailEC.text;
+                          final password = _passwordEC.text;
 
-                      ]),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TodoListField(
-                      label: 'Senha',
-                      obscureText: true,
-                      controller: passwordEC,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TodoListField(
-                      label: 'Confirmar Senha',
-                      obscureText: true,
-                      controller: confirmPasswordEC,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: Text('Salvar'),
+                          context
+                              .read<RegisterController>()
+                              .registerUser(email, password);
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
                         ),
                       ),
+                      child: const Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: Text('Salvar'),
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
