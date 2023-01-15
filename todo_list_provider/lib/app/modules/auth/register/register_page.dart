@@ -127,7 +127,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     validator: Validatorless.multiple([
                       Validatorless.required('Senha obrigatória'),
                       Validatorless.min(
-                          6, 'Senha deve ter pelo menos 6 caractewres'),
+                          6, 'Senha deve ter pelo menos 6 caracteres'),
                     ]),
                   ),
                   const SizedBox(
