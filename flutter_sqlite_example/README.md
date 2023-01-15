@@ -1,7 +1,6 @@
-# flutter_sqlite_exemple
 ## Academia do Flutter 
 
-<bStorages -- Abrange Introdução e criação do projeto, Criando e acessando nossa base de dados, AppInspector, Entendendo como atualizar e voltar versão de banco de dados, Desabilitando auto backup de arquivos do android, Manipulando dados do Sqlite</b>
+<b>Storages -- Abrange Introdução e criação do projeto, Criando e acessando nossa base de dados, AppInspector, Entendendo como atualizar e voltar versão de banco de dados, Desabilitando auto backup de arquivos do android, Manipulando dados do Sqlite</b>
 
 <b>Storages</b> (Introdução e criação do projeto, Criando e acessando nossa base de dados, AppInspector, Entendendo como atualizar e voltar versão de banco de dados, Desabilitando auto backup de arquivos do android, Manipulando dados do Sqlite)
 
