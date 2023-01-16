@@ -19,7 +19,7 @@
       <b>Firebase Auth</b> (Criando projeto Firebase,Configurando firebase-auth)
     </td>
     <td>
-      <b>Módulo Auth</b> (Construindo Repository e Service de usuário,Conectando RegisterController aos nossos serviços,Criando utilitários de controle de (loader, success, error), Integrando tela de login, Implementando esqueceu sua senha, Google Login)
+      <b>Módulo Auth</b> (Construindo Repository e Service de usuário,Conectando RegisterController aos nossos serviços,Criando utilitários de controle de (loader, success, error), Integrando tela de login, Implementando esqueceu sua senha, Google Login, Navegação sem Contexto e configurando home e splash)
     </td>
     <td>
     </td>
