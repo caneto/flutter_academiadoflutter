@@ -41,10 +41,14 @@ dependencies:
   sqflite: ^2.2.2
   path: ^1.8.2
   google_fonts: ^3.0.1
+  google_sign_in: ^5.4.3
   flutter_signin_button: ^2.0.0
   firebase_core: ^2.4.1
   firebase_auth: ^4.2.5
   flutter_overlay_loader: ^2.0.0
+
+
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
