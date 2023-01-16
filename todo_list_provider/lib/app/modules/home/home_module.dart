@@ -4,7 +4,7 @@ import 'package:todo_list_provider/app/modules/home/home_page.dart';
 
 class HomeModule extends TodoListModule {
   HomeModule() : super(
-    bindings: [],
+    //bindings: [],
     routers: {
       '/home':(context) => const HomePage(),
     }
