@@ -34,14 +34,16 @@ class _RegisterPageState extends State<RegisterPage> {
   void initState() {
     super.initState();
     var defaultListner = DefaultListenerNotifier(changeNotifier: context.read<RegisterController>());
-    defaultListner.listener(context: context, sucessVoidCallback: (notifier, listenerInstance) {
-      listenerInstance.dispose();
-     // Navigator.of(context).pop();
-    },
-    //Esse atributo é opcional
-    //errorCallback: (notifier, listenerInstance) {
-    //  print('Deu Erro !!!!');
-    //}
+    defaultListner.listener(
+      context: context, 
+      sucessVoidCallback: (notifier, listenerInstance) {
+        listenerInstance.dispose();
+        // Navigator.of(context).pop();
+      },
+      //Esse atributo é opcional
+      //errorCallback: (notifier, listenerInstance) {
+      //  print('Deu Erro !!!!');
+      //}
     );
    /*  context.read<RegisterController>().addListener(() {
       final controller = context.read<RegisterController>();
