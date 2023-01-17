@@ -83,6 +83,15 @@
       <b>Módulo Home</b> (Construindo header e filter, Construindo calendário e tasks)
     </td>
   </tr>
+  <tr>
+    <td> 
+      <b>Módulo Cadastro</b> (Construindo Layout e animação de Transição)
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
 </table>   
   
 
