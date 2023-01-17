@@ -88,10 +88,8 @@
       <b>Módulo Cadastro</b> (Construindo Layout e animação de Transição)
     </td>
     <td>
-      
     </td>
     <td>
-      
     </td>
   </tr>
 </table>   
