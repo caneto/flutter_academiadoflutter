@@ -1,7 +1,8 @@
+// ignore_for_file: depend_on_referenced_packages, constant_identifier_names
+
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:synchronized/synchronized.dart';
-import 'package:todo_list_provider/app/core/database/migration/migration.dart';
 import 'package:todo_list_provider/app/core/database/sqlite_migration_fectory.dart';
 
 class SqliteConnectionFectory {
@@ -16,9 +17,7 @@ class SqliteConnectionFectory {
   SqliteConnectionFectory._();
 
   factory SqliteConnectionFectory() {
-    if (_instance == null) {
-      _instance = SqliteConnectionFectory._();
-    }
+    _instance ??= SqliteConnectionFectory._();
     return _instance!;
   }
 
@@ -26,9 +25,8 @@ class SqliteConnectionFectory {
     var databasePath = await getDatabasesPath();
     var databasePathFinal = join(databasePath, _DATABASE_NAME);
     if(_db == null) {
-      _lock.synchronized(() async {
-        if(_db == null) {
-          _db = await openDatabase(
+      await _lock.synchronized(() async {
+        _db ??= await openDatabase(
             databasePathFinal,
             version: _VERSION,
             onConfigure: _onConfigure,
@@ -36,7 +34,6 @@ class SqliteConnectionFectory {
             onUpgrade: _onUpgrade,
             onDowngrade: _onDowngrade
           );
-        }
       });
     }
     return _db!;

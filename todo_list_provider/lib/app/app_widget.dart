@@ -45,6 +45,7 @@ class _AppWidgetState extends State<AppWidget> {
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
       // ignore: prefer_const_literals_to_create_immutables
       supportedLocales: [

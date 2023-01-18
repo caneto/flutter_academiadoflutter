@@ -9,11 +9,11 @@ class SqliteAdmConnection with WidgetsBindingObserver {
     final connection = SqliteConnectionFectory();
 
     switch(state) {
-      case AppLifecycleState.resumed:
+      case AppLifecycleState.resumed: // Aplicativo aberto em tela
         break;
-      case AppLifecycleState.inactive:
-      case AppLifecycleState.paused:
-      case AppLifecycleState.detached:
+      case AppLifecycleState.inactive:  // Clique na bolinha do meio
+      case AppLifecycleState.paused: // Atendeu alguma ligação ou outro app abriu por cima
+      case AppLifecycleState.detached:  // Matou o app
         connection.closeConnection();
         break;
     }
