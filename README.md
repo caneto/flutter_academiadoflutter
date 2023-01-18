@@ -85,9 +85,21 @@
   </tr>
   <tr>
     <td> 
-      <b>Módulo Cadastro</b> (Construindo Layout e animação de Transição)
+      <b>Firebase Auth</b> (Criando projeto Firebase,Configurando firebase-auth)
     </td>
     <td>
+      <b>Módulo Auth</b> (Construindo Repository e Service de usuário,Conectando RegisterController aos nossos serviços,Criando utilitários de controle de (loader, success, error), Integrando tela de login, Implementando esqueceu sua senha, Google Login, Navegação sem Contexto e configurando home e splash,Identificando se o usuário está logado, Alterando nome do usuário)
+    </td>
+    <td>
+      <b>Módulo Home</b> (Construindo header e filter, Construindo calendário e tasks)
+    </td>
+  </tr>
+  <tr>
+    <td> 
+      <b>Módulo Cadastro</b> (Construindo Layout e animação de Transição, Implementaçãop tela)
+    </td>
+    <td>
+      <b>Módulo Home</b> (Implementando componente de Filtros de dias)
     </td>
     <td>
     </td>

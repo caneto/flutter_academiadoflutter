@@ -27,9 +27,10 @@
   </tr>
   <tr>
     <td> 
-      <b>Módulo Cadastro</b> (Construindo Layout e animação de Transição)
+      <b>Módulo Cadastro</b> (Construindo Layout e animação de Transição, Implementaçãop tela)
     </td>
     <td>
+      <b>Módulo Home</b> (Implementando componente de Filtros de dias)
     </td>
     <td>
     </td>
