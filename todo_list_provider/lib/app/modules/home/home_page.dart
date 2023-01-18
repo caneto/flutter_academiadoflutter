@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:todo_list_provider/app/core/ui/theme_extensions.dart';
 import 'package:todo_list_provider/app/core/ui/todo_list_icons.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_drawer.dart';
-import 'package:todo_list_provider/app/modules/home/widgets/home_filter.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_header.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_tasks.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_week_filter.dart';
 import 'package:todo_list_provider/app/modules/tasks/tasks_module.dart';
+
+import 'widgets/home_filters.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -73,7 +74,7 @@ class HomePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       HomeHeader(),
-                      HomeFilter(),
+                      HomeFilters(),
                       HomeWeekFilter(),
                       HomeTasks()
                     ],
