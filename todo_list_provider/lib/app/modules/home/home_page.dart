@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:todo_list_provider/app/core/notifier/default_listener_notifier.dart';
 
 import 'package:todo_list_provider/app/core/ui/theme_extensions.dart';
 import 'package:todo_list_provider/app/core/ui/todo_list_icons.dart';
+import 'package:todo_list_provider/app/models/task_filter_enum.dart';
 import 'package:todo_list_provider/app/modules/home/home_controller.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_drawer.dart';
 import 'package:todo_list_provider/app/modules/home/widgets/home_header.dart';
@@ -13,29 +15,35 @@ import 'package:todo_list_provider/app/modules/tasks/tasks_module.dart';
 import 'widgets/home_filters.dart';
 
 class HomePage extends StatefulWidget {
-
   final HomeController _homeController;
 
   HomePage({
     Key? key,
     required HomeController homeController,
-  }) : _homeController = homeController, super(key: key);
+  })  : _homeController = homeController,
+        super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   void initState() {
     super.initState();
-    widget._homeController.loadTotalTasks();
+    DefaultListenerNotifier(changeNotifier: widget._homeController).listener(
+        context: context,
+        sucessVoidCallback: (notifier, listenerInstance) {
+          listenerInstance.dispose();
+        });
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) { 
+      widget._homeController.loadTotalTasks();  
+      widget._homeController.findTasks(filter: TaskFilterEnum.today);
+    });
   }
 
-
-  void _goToCreateTask(BuildContext context) {
-    Navigator.of(context).push(
+  Future<void> _goToCreateTask(BuildContext context) async {
+    await Navigator.of(context).push(
       //MaterialPageRoute(
       //  builder: (_) => TasksModule().getPage('/task/create', context),
       //),
@@ -55,6 +63,7 @@ class _HomePageState extends State<HomePage> {
         },
       ),
     );
+    widget._homeController.refreshPage();
   }
 
   @override
