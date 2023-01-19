@@ -16,10 +16,13 @@ class TasksModule extends TodoListModule {
             ),
           ),
           Provider<TasksServices>(
-            create: (context) => TasksServicesImpl(taskRepository: context.read()),
+            create: (context) => TasksServicesImpl(
+              taskRepository: context.read(),
+            ),
           ),
           ChangeNotifierProvider(
-            create: (context) => TaskCreateController(tasksServices: context.read()),
+            create: (context) =>
+                TaskCreateController(tasksServices: context.read()),
           )
         ], routers: {
           '/task/create': (context) => TaskCreatePage(
