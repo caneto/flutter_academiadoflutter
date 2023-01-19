@@ -99,7 +99,7 @@
       <b>Módulo Cadastro</b> (Construindo Layout e animação de Transição, Implementaçãop tela)
     </td>
     <td>
-      <b>Módulo Home</b> (Implementando componente de Filtros de dias, Busca de Tasks (Repository e Service), Correção na verificação da autenticação, Buscando todos e populando card de filtro, Implementando filtros de tasks)
+      <b>Módulo Home</b> (Implementando componente de Filtros de dias, Busca de Tasks (Repository e Service), Correção na verificação da autenticação, Buscando todos e populando card de filtro, Implementando filtros de tasks, Implementando filtro de dia da semana)
     </td>
     <td>
     </td>
