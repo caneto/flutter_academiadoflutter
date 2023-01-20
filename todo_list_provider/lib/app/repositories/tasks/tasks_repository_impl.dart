@@ -47,4 +47,16 @@ class TasksRepositoryImpl implements TasksRepository {
     await conn.rawUpdate(
         'update todo set finalizado = ? where id = ?', [finished, task.id]);
   }
+  
+  @override
+  Future<void> deleteAllTasks() async {
+    final conn = await _sqliteConnectionFectory.openConnection();
+    await conn.rawDelete("delete from todo");
+  }
+  
+  @override
+  Future<void> deleteById(int id) async {
+    final conn = await _sqliteConnectionFectory.openConnection();
+    await conn.rawDelete("delete from todo where id = ? ", [id]);
+  }
 }

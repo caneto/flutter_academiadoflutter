@@ -19,14 +19,22 @@ class TodoCardFilter extends StatelessWidget {
     this.totalTasksModel,
   });
 
+  int _getQtyTasks() {
+    final total = totalTasksModel?.totalTasks ?? 0;
+    final totalFinish = totalTasksModel?.totalTasksFinish ?? 0;
+    return total - totalFinish;
+  }
+
   double _getPercentFinish() {
     final total = totalTasksModel?.totalTasks ?? 0.0;
     final totalFinish = totalTasksModel?.totalTasksFinish ?? 0.1;
 
-    if (total == 0) return 0.0;
-
-    final percent = (totalFinish * 100) / total;
-    return percent / 100;
+    if (total == 0) {
+      return 0.0;
+    } else {
+      return (totalFinish * 100) / total / 100;
+    }
+    
   }
 
   @override
@@ -59,7 +67,7 @@ class TodoCardFilter extends StatelessWidget {
               child: CircularProgressIndicator(),
             ) */
             Text(
-              '${totalTasksModel?.totalTasks ?? 0} TASKS',
+              '${_getQtyTasks()} TASKS',
               style: context.titleStyle.copyWith(
                 fontSize: 10,
                 color: selected ? Colors.white : Colors.grey,

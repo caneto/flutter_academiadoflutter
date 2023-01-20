@@ -6,6 +6,7 @@ extension ThemeExtensions on BuildContext {
   // ignore: deprecated_member_use
   Color get buttonColor => Theme.of(this).buttonColor; 
   TextTheme get textTheme => Theme.of(this).textTheme;
+  Color get deleteColor => Theme.of(this).indicatorColor;
 
 
   TextStyle get titleStyle => const TextStyle(

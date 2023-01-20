@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_list_provider/app/core/auth/auth_provider.dart';
 import 'package:todo_list_provider/app/core/ui/messages.dart';
 import 'package:todo_list_provider/app/core/ui/theme_extensions.dart';
+import 'package:todo_list_provider/app/repositories/tasks/tasks_repository.dart';
 import 'package:todo_list_provider/app/services/user/user_service.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -66,9 +67,9 @@ class HomeDrawer extends StatelessWidget {
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.of(context).pop(),
-                          child: const Text(
+                          child: Text(
                             'Cancelar',
-                            style: TextStyle(color: Colors.red),
+                            style: TextStyle(color: Colors.blue.shade100),
                           ),
                         ),
                         TextButton(
@@ -76,7 +77,7 @@ class HomeDrawer extends StatelessWidget {
                             final nameValue = nameVN.value;
                             if (nameValue.isEmpty) {
                               Messages.of(context)
-                                  .showError('Nome obrigatório');
+                                  .showError('Por favor inserir um Nome, para atualizar o registro');
                             } else {
                               Loader.show(context);
                               context.read<UserService>().updateDisplayName(nameValue);
@@ -84,7 +85,7 @@ class HomeDrawer extends StatelessWidget {
                               Navigator.of(context).pop();
                             }
                           },
-                          child: const Text('Alterar'),
+                          child: const Text('Salvar'),
                         )
                       ],
                     );
@@ -93,7 +94,10 @@ class HomeDrawer extends StatelessWidget {
             title: const Text('Alterar Nome'),
           ),
           ListTile(
-            onTap: () => context.read<AuthProvider>().logout(),
+            onTap: () {
+              context.read<TasksRepository>().deleteAllTasks();
+              context.read<AuthProvider>().logout();
+            },
             title: const Text('Sair'),
           ),
         ],

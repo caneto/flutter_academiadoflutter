@@ -120,5 +120,17 @@ class HomeController extends DefaultChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> deleteTasks(int id) async {
+    await _tasksServices.deleteById(id);
+    refreshPage();
+    notifyListeners();
+  }
+
+  Future<void> showOnlyFinishTask() async {
+    filteredTasks = allTasks.where((task) {
+      return task.finished;
+    }).toList();
+    notifyListeners();
+  }
 
 }
