@@ -36,8 +36,8 @@ class _HomePageState extends State<HomePage> {
         sucessVoidCallback: (notifier, listenerInstance) {
           listenerInstance.dispose();
         });
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) { 
-      widget._homeController.loadTotalTasks();  
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      widget._homeController.loadTotalTasks();
       widget._homeController.findTasks(filter: TaskFilterEnum.today);
     });
   }
@@ -76,9 +76,16 @@ class _HomePageState extends State<HomePage> {
         actions: [
           PopupMenuButton(
             icon: const Icon(TodoListIcons.filter),
+            onSelected: (value) {
+              widget._homeController.showOrHideFinishTask();
+            },
             itemBuilder: (_) => [
-              const PopupMenuItem<bool>(
-                  child: Text('Mostrar tarefas concluidas'))
+              PopupMenuItem<bool>(
+                value: true,
+                child: Text(
+                  '${widget._homeController.showFinishingTasks ? 'Esconder' : 'Mostrar'} tarefas concluidas',
+                ),
+              )
             ],
           )
         ],

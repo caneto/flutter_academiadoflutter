@@ -27,17 +27,24 @@ class TasksRepositoryImpl implements TasksRepository {
     final endFilter = DateTime(end.year, end.month, end.day, 23, 59, 59);
 
     final conn = await _sqliteConnectionFectory.openConnection();
-    final result = await conn.rawQuery(
-        '''
+    final result = await conn.rawQuery('''
       select *
       from todo
       where data_hora between ? and ?
       order by data_hora
-    ''',
-        [
-          startFilter.toIso8601String(),
-          endFilter.toIso8601String(),
-        ]);
+    ''', [
+      startFilter.toIso8601String(),
+      endFilter.toIso8601String(),
+    ]);
     return result.map((e) => TaskModel.loadFromDB(e)).toList();
+  }
+
+  @override
+  Future<void> checkOrUncheckTask(TaskModel task) async {
+    final conn = await _sqliteConnectionFectory.openConnection();
+    final finished = task.finished ? 1 : 0;
+
+    await conn.rawUpdate(
+        'update todo set finalizado = ? where id = ?', [finished, task.id]);
   }
 }
