@@ -8,6 +8,7 @@
       <b>Freezed</b> (Freezed Estrutura, Union class e Pattern matching)
     </td>
     <td>
+      <b>Splash Screen Nativa</b> (Flutte Native Splash)
     </td>
     <td>
     </td>
