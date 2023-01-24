@@ -8,8 +8,11 @@ class AppWidget extends StatelessWidget {
    @override
    Widget build(BuildContext context) {
        // ignore: prefer_const_constructors
-       return MaterialApp(
+       return MaterialApp.router(
           title: 'Flutter Mudular Example',
-       ).modular();
+          routeInformationParser: Modular.routeInformationParser,
+          routerDelegate: Modular.routerDelegate,
+       );
+       
   }
 }
