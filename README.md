@@ -119,7 +119,7 @@
       <b>Splash Screen Nativa</b> (Flutte Native Splash)
     </td>
     <td>
-      <b>Flutter Modular</b> (Fundamento e configurações)
+      <b>Flutter Modular</b> (Fundamento e configurações, Tipos de Rotas & Navegação)
     </td>
   </tr>
 </table>   
