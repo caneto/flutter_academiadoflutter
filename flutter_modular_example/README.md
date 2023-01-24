@@ -1,7 +1,7 @@
 ## Flutter Modular Example
 
 
-<b>Flutter Modular</b> (Fundamento e configurações, Tipos de Rotas & Navegação)
+<b>Flutter Modular</b> (Fundamento e configurações, Tipos de Rotas & Navegação, Controle e injeção de dependências parte 1)
 
 
 
