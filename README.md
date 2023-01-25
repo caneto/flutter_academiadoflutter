@@ -124,18 +124,16 @@
   </tr>
 </table>   
 
-<b>Gerencia de Estado</b> -- Abrange Bloc (Primeiro BLOC, Primeiro Cubit, Importancia do equals no Bloc, Iniciando um novo Projeto e entendndo outros conceitos, Entendo outros widgets do bloc, Condicionando listen e build, Enviando padrâmentro pelo evento, Desafio, Configurando freezed, Implementando exemplo com Freezed, Configurando backend para o GRUD, Criando nosso modelo e repository, Implementando busca de contatos, Tratasndo erros e criando componente de loader, Adicionando pull refresh e direcionamentos para telas, Cadastro um novo contato, Desafio, Resoluão do desafio, Cubit, Desafio, Bloc Test (Testes Unitários), Desafio de testes, Controle e injeção de dependências parte 2, ModularState e Diposable)
+<b>Gerencia de Estado</b> -- Abrange Bloc (Primeiro BLOC, Primeiro Cubit, Importancia do equals no Bloc, Iniciando um novo Projeto e entendndo outros conceitos, Entendo outros widgets do bloc, Condicionando listen e build, Enviando padrâmentro pelo evento, Desafio, Configurando freezed, Implementando exemplo com Freezed, Configurando backend para o GRUD, Criando nosso modelo e repository, Implementando busca de contatos, Tratasndo erros e criando componente de loader, Adicionando pull refresh e direcionamentos para telas, Cadastro um novo contato, Desafio, Resoluão do desafio, Cubit, Desafio, Bloc Test (Testes Unitários), Desafio de testes), Mobx (Fundamentos do Mobx, Mobx com CodeGen e Reactions, Caluladora de IMC com Mobx, ObservableList, Modelo Observado, ObservableFuture(1), ObservableFuture(2)
 
 <table> 
   <tr>
     <td> 
-      <b>Freezed</b> (Freezed Estrutura, Union class e Pattern matching)
+      <b>Bloc</b> (Primeiro BLOC)
     </td>
     <td>
-      <b>Splash Screen Nativa</b> (Flutte Native Splash)
     </td>
     <td>
-      <b>Flutter Modular</b> (Fundamento e configurações, Tipos de Rotas & Navegação, Controle e injeção de dependências parte 1, Controle e injeção de dependências parte 2, ModularState e Diposable)
     </td>
   </tr>
 </table>  
