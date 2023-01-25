@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_modular_example/app/categoria/model/categoria_controller.dart';
 
 // ignore: must_be_immutable
 class CategoriaPage extends StatefulWidget {
@@ -21,7 +22,17 @@ class _CategoriaPageState extends State<CategoriaPage> {
         title: const Text('Categoria'),
       ),
       body: Center(
-        child: Text(widget.categoria ?? 'Não vou enviado a categoria'),
+        child: Column(
+          children: [
+            Text(widget.categoria ?? 'Não vou enviado a categoria'),
+            TextButton(
+              onPressed: () {
+                var controller = Modular.get<CategoriaController>();
+              },
+              child: const Text('Get Controller'),
+            )
+          ],
+        ),
       ),
     );
   }

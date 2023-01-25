@@ -25,6 +25,14 @@ class SplashPage extends StatelessWidget {
             TextButton(
               onPressed: () {
                 //Navigator.pushNamed(context, '/categoria');
+                //NamedPArameters: Recupera pelo Moduloar.args.data
+                Modular.to.pushNamed('/categoria/produto/Produto_Y/xyz');
+              },
+              child: const Text('Produto dentro da Categoria Module'),
+            ),
+            TextButton(
+              onPressed: () {
+                //Navigator.pushNamed(context, '/categoria');
                 //NamedPArameters: Recupera pelo Moduloar.args.params
                 Modular.to.pushNamed('/produto/Produto_Y/xyz');
               },

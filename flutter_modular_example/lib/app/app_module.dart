@@ -6,6 +6,7 @@ import 'package:flutter_modular_example/app/splash/splash_page.dart';
 class AppModule extends Module {
 
   // Dependencias
+  // Tudos modoso colocados no AppModule nunca é destruido
   @override
   List<Bind<Object>> get binds => const [];
 
