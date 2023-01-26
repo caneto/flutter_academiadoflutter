@@ -129,7 +129,7 @@
 <table> 
   <tr>
     <td> 
-      <b>Bloc</b> (Principios, Primeiro BLOC, Primeiro Cubit)
+      <b>Bloc</b> (Principios, Primeiro BLOC, Primeiro Cubit, Importância do equals no Bloc)
     </td>
     <td>
     </td>
