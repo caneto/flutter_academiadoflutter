@@ -1,4 +1,5 @@
 import 'package:counter_bloc/page_bloc/counter_bloc_page.dart';
+import 'package:counter_bloc/page_cubit/counter_cubit_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
               create: (context) => CounterBloc(),
               child: CounterBlocPage(),
             ),
+         '/cubit': (_) => CounterCubitPage(),   
       },
       home: const HomePage(),
     );
