@@ -129,7 +129,7 @@
 <table> 
   <tr>
     <td> 
-      <b>Bloc</b> (Primeiro BLOC)
+      <b>Bloc</b> (Primeiro BLOC, Primeiro BLOC)
     </td>
     <td>
     </td>
