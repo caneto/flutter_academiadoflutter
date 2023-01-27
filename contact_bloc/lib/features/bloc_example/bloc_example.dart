@@ -12,6 +12,14 @@ class BlocExample extends StatelessWidget {
         title: const Text('Bloc Example'),
       ),
       body: BlocListener<ExampleBloc, ExampleState>(
+        listenWhen: (previous, current) {
+          if (previous is ExampleStateInicial && current is ExampleStateData) {
+            if (current.names.length > 3) {
+              return true;
+            }
+          }
+          return false;
+        },
         listener: (context, state) {
           print('Estado alterado !!!!');
           if (state is ExampleStateData) {
@@ -25,6 +33,15 @@ class BlocExample extends StatelessWidget {
         child: Column(
           children: [
             BlocConsumer<ExampleBloc, ExampleState>(
+              buildWhen: (previous, current) {
+                if (previous is ExampleStateInicial &&
+                    current is ExampleStateData) {
+                  if (current.names.length > 3) {
+                    return true;
+                  }
+                }
+                return false;
+              },
               listener: (context, state) {
                 print('Total de nomes é  ${state.runtimeType}');
               },
@@ -56,22 +73,22 @@ class BlocExample extends StatelessWidget {
             ),
             BlocSelector<ExampleBloc, ExampleState, List<String>>(
               selector: (state) {
-                if(state is ExampleStateData) {
+                if (state is ExampleStateData) {
                   return state.names;
                 }
                 return [];
               },
               builder: (context, names) {
                 return ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: names.length,
-                    itemBuilder: (context, index) {
-                      final name = names[index];
-                      return ListTile(
-                        title: Text(name),
-                      );
-                    },
-                  );
+                  shrinkWrap: true,
+                  itemCount: names.length,
+                  itemBuilder: (context, index) {
+                    final name = names[index];
+                    return ListTile(
+                      title: Text(name),
+                    );
+                  },
+                );
               },
             ),
             // BlocBuilder<ExampleBloc, ExampleState>(
