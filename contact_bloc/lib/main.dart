@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (_) => const HomePage(),
         '/bloc/example/': (_) => BlocProvider(
-              create: (context) => ExampleBloc(),
+              create: (context) => ExampleBloc()..add(ExampleFindNameEvent()),
               child: const BlocExample(),
             ),
       },
