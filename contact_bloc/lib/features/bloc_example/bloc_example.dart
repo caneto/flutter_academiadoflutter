@@ -12,6 +12,7 @@ class BlocExample extends StatelessWidget {
         title: const Text('Bloc Example'),
       ),
       body: BlocListener<ExampleBloc, ExampleState>(
+        //bloc: nome do bloc,
         listenWhen: (previous, current) {
           if (previous is ExampleStateInicial && current is ExampleStateData) {
             if (current.names.length > 3) {
