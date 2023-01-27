@@ -86,6 +86,12 @@ class BlocExample extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final name = names[index];
                     return ListTile(
+                      onTap: () {
+                        context.read<ExampleBloc>().
+                        add(
+                          ExampleRemoveAddNameEvent(name: name),
+                        );
+                      },
                       title: Text(name),
                     );
                   },

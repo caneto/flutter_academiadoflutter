@@ -9,6 +9,30 @@ part 'example_state.dart';
 class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
   ExampleBloc() : super(ExampleStateInicial()) {
     on<ExampleFindNameEvent>(_findNames);
+    on<ExampleRemoveAddNameEvent>(_removeName);
+  }
+
+  FutureOr<void> _removeName(
+    ExampleRemoveAddNameEvent event,
+    Emitter<ExampleState> emit,
+  ) {
+
+    // Variavel local faz auto promoção sem precisar co cascate.
+    final stateExample = state;
+
+    //if(state is ExampleStateData) {
+    //  (state as ExampleStateData).names;
+    //}
+
+    // Simplificado
+    if(stateExample is ExampleStateData) {
+      final names = [...stateExample.names];
+      //Filtro em fart
+      names.retainWhere((element) => element != event.name);
+      emit(ExampleStateData(names: names));
+    }
+
+
   }
 
   FutureOr<void> _findNames(
@@ -16,7 +40,7 @@ class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
     Emitter<ExampleState> emit,
   ) async {
     await Future.delayed(const Duration(seconds: 5));
-  
+
     final names = [
       'Carlos Alberto',
       'Cristiane Oliveira',
