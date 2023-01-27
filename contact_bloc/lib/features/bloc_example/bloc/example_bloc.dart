@@ -8,8 +8,26 @@ part 'example_state.dart';
 
 class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
   ExampleBloc() : super(ExampleStateInicial()) {
+    on<ExampleAddNameEvent>(_addName);
     on<ExampleFindNameEvent>(_findNames);
     on<ExampleRemoveAddNameEvent>(_removeName);
+  }
+
+  FutureOr<void> _addName(
+    ExampleAddNameEvent event,
+    Emitter<ExampleState> emit,
+  ) {
+
+    final stateExample = state;
+
+    // Simplificado
+    if(stateExample is ExampleStateData) {
+      final names = [...stateExample.names];
+      //Filtro em fart
+      names.add(event.name);
+      //names.retainWhere((element) => element != event.name);
+      emit(ExampleStateData(names: names));
+    }
   }
 
   FutureOr<void> _removeName(
@@ -31,8 +49,6 @@ class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
       names.retainWhere((element) => element != event.name);
       emit(ExampleStateData(names: names));
     }
-
-
   }
 
   FutureOr<void> _findNames(

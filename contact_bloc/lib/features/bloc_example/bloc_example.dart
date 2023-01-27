@@ -87,16 +87,23 @@ class BlocExample extends StatelessWidget {
                     final name = names[index];
                     return ListTile(
                       onTap: () {
-                        context.read<ExampleBloc>().
-                        add(
-                          ExampleRemoveAddNameEvent(name: name),
-                        );
+                        context.read<ExampleBloc>().add(
+                              ExampleRemoveAddNameEvent(name: name),
+                            );
                       },
                       title: Text(name),
                     );
                   },
                 );
               },
+            ),
+            TextButton(
+              onPressed: () {
+                context.read<ExampleBloc>().add(
+                      ExampleAddNameEvent(name: 'Desafio Academia do Flutter'),
+                    );
+              },
+              child: const Text('Add'),
             ),
             // BlocBuilder<ExampleBloc, ExampleState>(
             //   builder: (context, state) {
