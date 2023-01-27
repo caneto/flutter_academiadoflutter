@@ -129,7 +129,7 @@
 <table> 
   <tr>
     <td> 
-      <b>Bloc</b> (Principios, Primeiro BLOC, Primeiro Cubit, Importância do equals no Bloc)
+      <b>Bloc</b> (Principios, Primeiro BLOC, Primeiro Cubit, Importância do equals no Bloc, Iniciando um novo projeto e entendendo outros conceitos)
     </td>
     <td>
     </td>
