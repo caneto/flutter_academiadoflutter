@@ -16,8 +16,33 @@ class ExampleFreezedBloc
     on<_ExampleFreezedEventRemoveName>(_removeName);
   }
 
-  FutureOr<void> _addName(
+  Future<FutureOr<void>> _addName(
     _ExampleFreezedEventAddName event,
+    Emitter<ExampleFreezedState> emit,
+  ) async {
+    final names = state.maybeWhen(
+      data: (names) => names,
+      orElse: () => const <String>[],
+    );
+
+    emit(
+      ExampleFreezedState.showBanner(
+        names: names,
+        message: 'Aguarde, nome sendo inserido',
+      ),
+    );
+    
+    await Future.delayed(const Duration(seconds: 2));
+
+    final newNames = [...names];
+
+    newNames.add(event.name);
+
+    emit(ExampleFreezedState.data(names: newNames));
+  }
+
+  FutureOr<void> _removeName(
+    _ExampleFreezedEventRemoveName event,
     Emitter<ExampleFreezedState> emit,
   ) {
     final names = state.maybeWhen(
@@ -27,27 +52,9 @@ class ExampleFreezedBloc
 
     final newNames = [...names];
 
-    newNames.add(event.name);
-
-    emit(ExampleFreezedState.data(names: newNames));
-    
-  }
-
-  FutureOr<void> _removeName(
-    _ExampleFreezedEventRemoveName event,
-    Emitter<ExampleFreezedState> emit,
-  ) {
-     final names = state.maybeWhen(
-      data: (names) => names,
-      orElse: () => const <String>[],
-    );
-
-    final newNames = [...names];
-
     newNames.retainWhere((element) => element != event.name);
-    
+
     emit(ExampleFreezedState.data(names: newNames));
-    
   }
 
   FutureOr<void> _findNames(
