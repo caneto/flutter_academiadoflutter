@@ -33,6 +33,7 @@ class HomePage extends StatelessWidget {
             _ButtonCard(
               textOption: 'Contact',
               onTap: () {                 
+                Navigator.of(context).pushNamed('/contacts/list');
               },
             ),
             _ButtonCard(

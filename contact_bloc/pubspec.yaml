@@ -41,6 +41,7 @@ dependencies:
   equatable: ^2.0.5
   freezed_annotation: ^2.2.0
   #json_annotation: ^4.8.0
+  dio: ^4.0.6
 
 dev_dependencies:
   flutter_test:
