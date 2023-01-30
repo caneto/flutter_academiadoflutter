@@ -129,7 +129,7 @@
 <table> 
   <tr>
     <td> 
-      <b>Bloc</b> (Principios, Primeiro BLOC, Primeiro Cubit, Importância do equals no Bloc, Iniciando um novo projeto e entendendo outros conceitos, Entendendo outros widgets do bloc, Condicionando listen e build, Desafio, Configurando freezed, Implementando exemplo com Freezed, Configurando backend para o CRUD, Criando nosso modelo e repository, Implementando busca de contatos, Tratando erros e criando componente de loader, Adicionando pull refresh e direcionamentos para telas, Cadastrando um novo contato)
+      <b>Bloc</b> (Principios, Primeiro BLOC, Primeiro Cubit, Importância do equals no Bloc, Iniciando um novo projeto e entendendo outros conceitos, Entendendo outros widgets do bloc, Condicionando listen e build, Desafio, Configurando freezed, Implementando exemplo com Freezed, Configurando backend para o CRUD, Criando nosso modelo e repository, Implementando busca de contatos, Tratando erros e criando componente de loader, Adicionando pull refresh e direcionamentos para telas, Cadastrando um novo contato, Alterando um contato)
     </td>
     <td>
     </td>
