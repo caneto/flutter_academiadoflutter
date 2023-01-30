@@ -29,15 +29,27 @@ class _ContactRegisterPageState extends State<ContactRegisterPage> {
         title: const Text('Contact Register'),
       ),
       body: BlocListener<ContactRegisterBloc, ContactRegisterState>(
+        listenWhen: (previous, current) {
+          return current.maybeWhen(
+            success: () => true,
+            error: (_) => true,
+            orElse: () => false,
+          );
+        },
         listener: (context, state) {
           state.whenOrNull(
-            success: () {
-
-            },
-            error: (message) {
-              
-            }
-          );
+              success: () => Navigator.of(context).pop(),
+              error: (message) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      message,
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: Colors.red,
+                  ),
+                );
+              });
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),

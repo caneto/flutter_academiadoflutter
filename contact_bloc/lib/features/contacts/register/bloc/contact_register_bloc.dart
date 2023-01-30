@@ -31,7 +31,7 @@ class ContactRegisterBloc
         name: event.name,
         email: event.email,
       );
-
+      //throw Exception();
       await _contactRepository.create(contactModel);
       emit(const ContactRegisterState.success());
     } catch (e, s) {
