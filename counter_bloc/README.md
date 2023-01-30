@@ -1,6 +1,6 @@
 ## Counter Bloc
 
-<b>Bloc</b> (Principios, Primeiro BLOC, Primeiro Cubit, Importância do equals no Bloc, Iniciando um novo projeto e entendendo outros conceitos)
+<b>Bloc</b> (Principios, Primeiro BLOC, Primeiro Cubit, Importância do equals no Bloc)
 
 <h2>📝 Licença</h2>
 
