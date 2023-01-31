@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:developer';
+import 'dart:developer' as developer;
 
 import 'package:bloc/bloc.dart';
 import 'package:contact_bloc/models/contact_model.dart';
@@ -30,9 +30,14 @@ class ContactUpdateBloc extends Bloc<ContactUpdateEvent, ContactUpdateState> {
 
       await _contactsRepository.update(model);
       emit(const ContactUpdateState.success());
-    } catch (e,s) {
-      log('Erro ao atualizar o contato', error: e, stackTrace: s);
-      emit(const ContactUpdateState.error(message: 'Erro ao atualizar o contato'));
+    } catch (e, s) {
+      developer.log(
+        'Erro ao atualizar o contato',
+        error: e.toString(),
+        stackTrace: s,
+      );
+      emit(const ContactUpdateState.error(
+          message: 'Erro ao atualizar o contato'));
     }
   }
 }

@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:developer';
+import 'dart:developer' as developer;
 
 import 'package:bloc/bloc.dart';
 import 'package:contact_bloc/models/contact_model.dart';
@@ -35,8 +35,13 @@ class ContactRegisterBloc
       await _contactRepository.create(contactModel);
       emit(const ContactRegisterState.success());
     } catch (e, s) {
-      log('Erro ao salvar um novo usuário', error: e, stackTrace: s);
-      emit(const ContactRegisterState.error(message: 'Erro ao salvar um novo contato'));
+      developer.log(
+        'Erro ao salvar um novo usuário',
+        error: e.toString(),
+        stackTrace: s,
+      );
+      emit(const ContactRegisterState.error(
+          message: 'Erro ao salvar um novo contato'));
     }
   }
 }
