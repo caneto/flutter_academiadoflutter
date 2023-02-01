@@ -1,6 +1,6 @@
 ## Contact Bloc
 
-<b>Bloc</b> (Iniciando um novo projeto e entendendo outros conceitos, Entendendo outros widgets do bloc, Condicionando listen e build, Desafio, Configurando freezed, Implementando exemplo com Freezed, Configurando backend para o CRUD, Criando nosso modelo e repository, Implementando busca de contatos, Tratando erros e criando componente de loader, Adicionando pull refresh e direcionamentos para telas, Cadastrando um novo contato, Alterando um contato, Desafio, Resolução do desafio, Cubit)
+<b>Bloc</b> (Iniciando um novo projeto e entendendo outros conceitos, Entendendo outros widgets do bloc, Condicionando listen e build, Desafio, Configurando freezed, Implementando exemplo com Freezed, Configurando backend para o CRUD, Criando nosso modelo e repository, Implementando busca de contatos, Tratando erros e criando componente de loader, Adicionando pull refresh e direcionamentos para telas, Cadastrando um novo contato, Alterando um contato, Desafio, Resolução do desafio, Cubit, Desafio)
 
 <h2>📝 Licença</h2>
 
