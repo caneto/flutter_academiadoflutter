@@ -21,6 +21,7 @@ mixin _$ContactRegisterCubitState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
+    required TResult Function() save,
     required TResult Function(String error) error,
     required TResult Function() success,
   }) =>
@@ -30,6 +31,7 @@ mixin _$ContactRegisterCubitState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
+    TResult? Function()? save,
     TResult? Function(String error)? error,
     TResult? Function()? success,
   }) =>
@@ -39,6 +41,7 @@ mixin _$ContactRegisterCubitState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
+    TResult Function()? save,
     TResult Function(String error)? error,
     TResult Function()? success,
     required TResult orElse(),
@@ -49,6 +52,7 @@ mixin _$ContactRegisterCubitState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
+    required TResult Function(_Save value) save,
     required TResult Function(_Error value) error,
     required TResult Function(_Sucess value) success,
   }) =>
@@ -58,6 +62,7 @@ mixin _$ContactRegisterCubitState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
+    TResult? Function(_Save value)? save,
     TResult? Function(_Error value)? error,
     TResult? Function(_Sucess value)? success,
   }) =>
@@ -67,6 +72,7 @@ mixin _$ContactRegisterCubitState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
+    TResult Function(_Save value)? save,
     TResult Function(_Error value)? error,
     TResult Function(_Sucess value)? success,
     required TResult orElse(),
@@ -133,6 +139,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
+    required TResult Function() save,
     required TResult Function(String error) error,
     required TResult Function() success,
   }) {
@@ -145,6 +152,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
+    TResult? Function()? save,
     TResult? Function(String error)? error,
     TResult? Function()? success,
   }) {
@@ -157,6 +165,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
+    TResult Function()? save,
     TResult Function(String error)? error,
     TResult Function()? success,
     required TResult orElse(),
@@ -173,6 +182,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
+    required TResult Function(_Save value) save,
     required TResult Function(_Error value) error,
     required TResult Function(_Sucess value) success,
   }) {
@@ -185,6 +195,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
+    TResult? Function(_Save value)? save,
     TResult? Function(_Error value)? error,
     TResult? Function(_Sucess value)? success,
   }) {
@@ -197,6 +208,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
+    TResult Function(_Save value)? save,
     TResult Function(_Error value)? error,
     TResult Function(_Sucess value)? success,
     required TResult orElse(),
@@ -252,6 +264,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
+    required TResult Function() save,
     required TResult Function(String error) error,
     required TResult Function() success,
   }) {
@@ -264,6 +277,7 @@ class _$_Loading implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
+    TResult? Function()? save,
     TResult? Function(String error)? error,
     TResult? Function()? success,
   }) {
@@ -276,6 +290,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
+    TResult Function()? save,
     TResult Function(String error)? error,
     TResult Function()? success,
     required TResult orElse(),
@@ -292,6 +307,7 @@ class _$_Loading implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
+    required TResult Function(_Save value) save,
     required TResult Function(_Error value) error,
     required TResult Function(_Sucess value) success,
   }) {
@@ -304,6 +320,7 @@ class _$_Loading implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
+    TResult? Function(_Save value)? save,
     TResult? Function(_Error value)? error,
     TResult? Function(_Sucess value)? success,
   }) {
@@ -316,6 +333,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
+    TResult Function(_Save value)? save,
     TResult Function(_Error value)? error,
     TResult Function(_Sucess value)? success,
     required TResult orElse(),
@@ -403,6 +421,7 @@ class _$_Data implements _Data {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
+    required TResult Function() save,
     required TResult Function(String error) error,
     required TResult Function() success,
   }) {
@@ -415,6 +434,7 @@ class _$_Data implements _Data {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
+    TResult? Function()? save,
     TResult? Function(String error)? error,
     TResult? Function()? success,
   }) {
@@ -427,6 +447,7 @@ class _$_Data implements _Data {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
+    TResult Function()? save,
     TResult Function(String error)? error,
     TResult Function()? success,
     required TResult orElse(),
@@ -443,6 +464,7 @@ class _$_Data implements _Data {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
+    required TResult Function(_Save value) save,
     required TResult Function(_Error value) error,
     required TResult Function(_Sucess value) success,
   }) {
@@ -455,6 +477,7 @@ class _$_Data implements _Data {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
+    TResult? Function(_Save value)? save,
     TResult? Function(_Error value)? error,
     TResult? Function(_Sucess value)? success,
   }) {
@@ -467,6 +490,7 @@ class _$_Data implements _Data {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
+    TResult Function(_Save value)? save,
     TResult Function(_Error value)? error,
     TResult Function(_Sucess value)? success,
     required TResult orElse(),
@@ -484,6 +508,130 @@ abstract class _Data implements ContactRegisterCubitState {
   List<ContactModel> get contacts;
   @JsonKey(ignore: true)
   _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_SaveCopyWith<$Res> {
+  factory _$$_SaveCopyWith(_$_Save value, $Res Function(_$_Save) then) =
+      __$$_SaveCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SaveCopyWithImpl<$Res>
+    extends _$ContactRegisterCubitStateCopyWithImpl<$Res, _$_Save>
+    implements _$$_SaveCopyWith<$Res> {
+  __$$_SaveCopyWithImpl(_$_Save _value, $Res Function(_$_Save) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Save implements _Save {
+  const _$_Save();
+
+  @override
+  String toString() {
+    return 'ContactRegisterCubitState.save()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Save);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ContactModel> contacts) data,
+    required TResult Function() save,
+    required TResult Function(String error) error,
+    required TResult Function() success,
+  }) {
+    return save();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ContactModel> contacts)? data,
+    TResult? Function()? save,
+    TResult? Function(String error)? error,
+    TResult? Function()? success,
+  }) {
+    return save?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ContactModel> contacts)? data,
+    TResult Function()? save,
+    TResult Function(String error)? error,
+    TResult Function()? success,
+    required TResult orElse(),
+  }) {
+    if (save != null) {
+      return save();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Data value) data,
+    required TResult Function(_Save value) save,
+    required TResult Function(_Error value) error,
+    required TResult Function(_Sucess value) success,
+  }) {
+    return save(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Save value)? save,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Sucess value)? success,
+  }) {
+    return save?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Data value)? data,
+    TResult Function(_Save value)? save,
+    TResult Function(_Error value)? error,
+    TResult Function(_Sucess value)? success,
+    required TResult orElse(),
+  }) {
+    if (save != null) {
+      return save(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Save implements ContactRegisterCubitState {
+  const factory _Save() = _$_Save;
 }
 
 /// @nodoc
@@ -551,6 +699,7 @@ class _$_Error implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
+    required TResult Function() save,
     required TResult Function(String error) error,
     required TResult Function() success,
   }) {
@@ -563,6 +712,7 @@ class _$_Error implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
+    TResult? Function()? save,
     TResult? Function(String error)? error,
     TResult? Function()? success,
   }) {
@@ -575,6 +725,7 @@ class _$_Error implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
+    TResult Function()? save,
     TResult Function(String error)? error,
     TResult Function()? success,
     required TResult orElse(),
@@ -591,6 +742,7 @@ class _$_Error implements _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
+    required TResult Function(_Save value) save,
     required TResult Function(_Error value) error,
     required TResult Function(_Sucess value) success,
   }) {
@@ -603,6 +755,7 @@ class _$_Error implements _Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
+    TResult? Function(_Save value)? save,
     TResult? Function(_Error value)? error,
     TResult? Function(_Sucess value)? success,
   }) {
@@ -615,6 +768,7 @@ class _$_Error implements _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
+    TResult Function(_Save value)? save,
     TResult Function(_Error value)? error,
     TResult Function(_Sucess value)? success,
     required TResult orElse(),
@@ -674,6 +828,7 @@ class _$_Sucess implements _Sucess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
+    required TResult Function() save,
     required TResult Function(String error) error,
     required TResult Function() success,
   }) {
@@ -686,6 +841,7 @@ class _$_Sucess implements _Sucess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
+    TResult? Function()? save,
     TResult? Function(String error)? error,
     TResult? Function()? success,
   }) {
@@ -698,6 +854,7 @@ class _$_Sucess implements _Sucess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
+    TResult Function()? save,
     TResult Function(String error)? error,
     TResult Function()? success,
     required TResult orElse(),
@@ -714,6 +871,7 @@ class _$_Sucess implements _Sucess {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
+    required TResult Function(_Save value) save,
     required TResult Function(_Error value) error,
     required TResult Function(_Sucess value) success,
   }) {
@@ -726,6 +884,7 @@ class _$_Sucess implements _Sucess {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
+    TResult? Function(_Save value)? save,
     TResult? Function(_Error value)? error,
     TResult? Function(_Sucess value)? success,
   }) {
@@ -738,6 +897,7 @@ class _$_Sucess implements _Sucess {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
+    TResult Function(_Save value)? save,
     TResult Function(_Error value)? error,
     TResult Function(_Sucess value)? success,
     required TResult orElse(),

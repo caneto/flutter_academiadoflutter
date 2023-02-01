@@ -14,22 +14,22 @@ class ContactListCubit extends Cubit<ContactListCubitState> {
 
   ContactListCubit({required ContactsRepository repository})
       : _repository = repository,
-        super(ContactListCubitState.initial());
+        super(const ContactListCubitState.initial());
 
   Future<void> findAll() async {
     try {
-      emit(ContactListCubitState.loading());
+      emit(const ContactListCubitState.loading());
       final contacts = await _repository.findAll();
       await Future.delayed(const Duration(seconds: 1));
       emit(ContactListCubitState.data(contacts: contacts));
     } catch (e, s) {
       log('Erro ao buscar contatos', error: e, stackTrace: s);
-      emit(ContactListCubitState.error(error: 'Erro ao buscar contatos'));
+      emit(const ContactListCubitState.error(error: 'Erro ao buscar contatos'));
     }
   }
 
    Future<void> deleteByModel(ContactModel model) async {
-    emit(ContactListCubitState.loading());
+    emit(const ContactListCubitState.loading());
     await _repository.delete(model);
     findAll();
   }
