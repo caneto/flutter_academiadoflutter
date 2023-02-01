@@ -4,6 +4,8 @@ import 'package:contact_bloc/features/bloc_example/bloc_freezed/example_freezed_
 import 'package:contact_bloc/features/bloc_example/bloc_freezed_example.dart';
 import 'package:contact_bloc/features/contacts/register/bloc/contact_register_bloc.dart';
 import 'package:contact_bloc/features/contacts/register/contact_register_page.dart';
+import 'package:contact_bloc/features/contacts_cubit/contacts_list_cubit_page.dart';
+import 'package:contact_bloc/features/contacts_cubit/list/cubit/contact_list_cubit.dart';
 import 'package:contact_bloc/models/contact_model.dart';
 import 'package:contact_bloc/repository/contacts_repository.dart';
 import 'package:flutter/material.dart';
@@ -66,6 +68,14 @@ class MyApp extends StatelessWidget {
               child: ContactUpdatePage(
                 contact: contact,
               ),
+            );
+          },
+          '/contacts/cubit/list': (context) {
+            return BlocProvider(
+              create: (context) => ContactListCubit(
+                repository: context.read(),
+              )..findAll(),
+              child: const ContactsListCubitPage(),
             );
           }
         },

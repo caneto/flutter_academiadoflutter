@@ -69,30 +69,31 @@ class ContactsListPage extends StatelessWidget {
                       },
                       builder: (_, contacts) {
                         return ListView.builder(
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemCount: contacts.length,
-                            itemBuilder: (context, index) {
-                              final contact = contacts[index];
-                              return ListTile(
-                                onLongPress: () async {
-                                  context.read<ContactListBloc>().add(
-                                        ContactListEvent.delete(model: contact),
-                                      );
-                                },
-                                onTap: () async {
-                                  await Navigator.pushNamed(
-                                      context, '/contacts/update',
-                                      arguments: contact);
-                                  // ignore: use_build_context_synchronously
-                                  context
-                                      .read<ContactListBloc>()
-                                      .add(const ContactListEvent.findAll());
-                                },
-                                title: Text(contact.name),
-                                subtitle: Text(contact.email),
-                              );
-                            });
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: contacts.length,
+                          itemBuilder: (context, index) {
+                            final contact = contacts[index];
+                            return ListTile(
+                              onLongPress: () async {
+                                context.read<ContactListBloc>().add(
+                                      ContactListEvent.delete(model: contact),
+                                    );
+                              },
+                              onTap: () async {
+                                await Navigator.pushNamed(
+                                    context, '/contacts/update',
+                                    arguments: contact);
+                                // ignore: use_build_context_synchronously
+                                context
+                                    .read<ContactListBloc>()
+                                    .add(const ContactListEvent.findAll());
+                              },
+                              title: Text(contact.name),
+                              subtitle: Text(contact.email),
+                            );
+                          },
+                        );
                       },
                     ),
                   ],

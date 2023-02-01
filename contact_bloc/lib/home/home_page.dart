@@ -39,6 +39,7 @@ class HomePage extends StatelessWidget {
             _ButtonCard(
               textOption: 'Contact Cubit',
               onTap: () {                 
+                Navigator.of(context).pushNamed('/contacts/cubit/list');
               },
             ),
           ],

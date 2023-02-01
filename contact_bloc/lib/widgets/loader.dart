@@ -4,7 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class Loader<B extends StateStreamable<S>, S> extends StatelessWidget {
   final BlocWidgetSelector<S, bool> selector;
 
-  const Loader({Key? key, required this.selector}) : super(key: key);
+  const Loader({
+    Key? key,
+    required this.selector,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
