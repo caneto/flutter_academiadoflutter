@@ -56,15 +56,13 @@ class ContactsListCubitPage extends StatelessWidget {
                             onLongPress: () => context
                                 .read<ContactListCubit>()
                                 .deleteByModel(contact),
-                            // onTap: () async {
-                            //   await Navigator.pushNamed(
-                            //       context, '/contacts/update',
-                            //       arguments: contact);
-                            //   // ignore: use_build_context_synchronously
-                            //   context
-                            //       .read<ContactListBloc>()
-                            //       .add(const ContactListEvent.findAll());
-                            // },
+                            onTap: () async {
+                               await Navigator.pushNamed(
+                                   context, '/contacts/cubit/update',
+                                   arguments: contact);
+                               context
+                                   .read<ContactListCubit>().findAll();
+                            },
                             title: Text(contact.name),
                             subtitle: Text(contact.email),
                           );
