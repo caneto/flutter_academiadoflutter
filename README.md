@@ -134,8 +134,6 @@
     <td>
       <b>Mobx</b> (Fundamentos do Mobx, Mobx com CodeGen e Reactions, , Caluladora de IMC com Mobx, ObservableList, Modelo Observado, ObservableFuture(1), ObservableFuture(2))
     </td>
-    <td>
-    </td>
   </tr>
 </table>  
 
