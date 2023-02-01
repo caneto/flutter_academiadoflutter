@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'contact_list_cubit.dart';
+part of 'contact_register_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,13 +15,14 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ContactListCubitState {
+mixin _$ContactRegisterCubitState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
     required TResult Function(String error) error,
+    required TResult Function() success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$ContactListCubitState {
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
     TResult? Function(String error)? error,
+    TResult? Function()? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$ContactListCubitState {
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
     TResult Function(String error)? error,
+    TResult Function()? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$ContactListCubitState {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
     required TResult Function(_Error value) error,
+    required TResult Function(_Sucess value) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$ContactListCubitState {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Sucess value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,23 +68,24 @@ mixin _$ContactListCubitState {
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
     TResult Function(_Error value)? error,
+    TResult Function(_Sucess value)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ContactListCubitStateCopyWith<$Res> {
-  factory $ContactListCubitStateCopyWith(ContactListCubitState value,
-          $Res Function(ContactListCubitState) then) =
-      _$ContactListCubitStateCopyWithImpl<$Res, ContactListCubitState>;
+abstract class $ContactRegisterCubitStateCopyWith<$Res> {
+  factory $ContactRegisterCubitStateCopyWith(ContactRegisterCubitState value,
+          $Res Function(ContactRegisterCubitState) then) =
+      _$ContactRegisterCubitStateCopyWithImpl<$Res, ContactRegisterCubitState>;
 }
 
 /// @nodoc
-class _$ContactListCubitStateCopyWithImpl<$Res,
-        $Val extends ContactListCubitState>
-    implements $ContactListCubitStateCopyWith<$Res> {
-  _$ContactListCubitStateCopyWithImpl(this._value, this._then);
+class _$ContactRegisterCubitStateCopyWithImpl<$Res,
+        $Val extends ContactRegisterCubitState>
+    implements $ContactRegisterCubitStateCopyWith<$Res> {
+  _$ContactRegisterCubitStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -96,7 +102,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$ContactListCubitStateCopyWithImpl<$Res, _$_Initial>
+    extends _$ContactRegisterCubitStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -109,7 +115,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ContactListCubitState.initial()';
+    return 'ContactRegisterCubitState.initial()';
   }
 
   @override
@@ -128,6 +134,7 @@ class _$_Initial implements _Initial {
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
     required TResult Function(String error) error,
+    required TResult Function() success,
   }) {
     return initial();
   }
@@ -139,6 +146,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
     TResult? Function(String error)? error,
+    TResult? Function()? success,
   }) {
     return initial?.call();
   }
@@ -150,6 +158,7 @@ class _$_Initial implements _Initial {
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
     TResult Function(String error)? error,
+    TResult Function()? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,6 +174,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
     required TResult Function(_Error value) error,
+    required TResult Function(_Sucess value) success,
   }) {
     return initial(this);
   }
@@ -176,6 +186,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Sucess value)? success,
   }) {
     return initial?.call(this);
   }
@@ -187,6 +198,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
     TResult Function(_Error value)? error,
+    TResult Function(_Sucess value)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -196,7 +208,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ContactListCubitState {
+abstract class _Initial implements ContactRegisterCubitState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -209,7 +221,7 @@ abstract class _$$_LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadingCopyWithImpl<$Res>
-    extends _$ContactListCubitStateCopyWithImpl<$Res, _$_Loading>
+    extends _$ContactRegisterCubitStateCopyWithImpl<$Res, _$_Loading>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
@@ -222,7 +234,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'ContactListCubitState.loading()';
+    return 'ContactRegisterCubitState.loading()';
   }
 
   @override
@@ -241,6 +253,7 @@ class _$_Loading implements _Loading {
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
     required TResult Function(String error) error,
+    required TResult Function() success,
   }) {
     return loading();
   }
@@ -252,6 +265,7 @@ class _$_Loading implements _Loading {
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
     TResult? Function(String error)? error,
+    TResult? Function()? success,
   }) {
     return loading?.call();
   }
@@ -263,6 +277,7 @@ class _$_Loading implements _Loading {
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
     TResult Function(String error)? error,
+    TResult Function()? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -278,6 +293,7 @@ class _$_Loading implements _Loading {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
     required TResult Function(_Error value) error,
+    required TResult Function(_Sucess value) success,
   }) {
     return loading(this);
   }
@@ -289,6 +305,7 @@ class _$_Loading implements _Loading {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Sucess value)? success,
   }) {
     return loading?.call(this);
   }
@@ -300,6 +317,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
     TResult Function(_Error value)? error,
+    TResult Function(_Sucess value)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -309,7 +327,7 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements ContactListCubitState {
+abstract class _Loading implements ContactRegisterCubitState {
   const factory _Loading() = _$_Loading;
 }
 
@@ -323,7 +341,7 @@ abstract class _$$_DataCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DataCopyWithImpl<$Res>
-    extends _$ContactListCubitStateCopyWithImpl<$Res, _$_Data>
+    extends _$ContactRegisterCubitStateCopyWithImpl<$Res, _$_Data>
     implements _$$_DataCopyWith<$Res> {
   __$$_DataCopyWithImpl(_$_Data _value, $Res Function(_$_Data) _then)
       : super(_value, _then);
@@ -358,7 +376,7 @@ class _$_Data implements _Data {
 
   @override
   String toString() {
-    return 'ContactListCubitState.data(contacts: $contacts)';
+    return 'ContactRegisterCubitState.data(contacts: $contacts)';
   }
 
   @override
@@ -386,6 +404,7 @@ class _$_Data implements _Data {
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
     required TResult Function(String error) error,
+    required TResult Function() success,
   }) {
     return data(contacts);
   }
@@ -397,6 +416,7 @@ class _$_Data implements _Data {
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
     TResult? Function(String error)? error,
+    TResult? Function()? success,
   }) {
     return data?.call(contacts);
   }
@@ -408,6 +428,7 @@ class _$_Data implements _Data {
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
     TResult Function(String error)? error,
+    TResult Function()? success,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -423,6 +444,7 @@ class _$_Data implements _Data {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
     required TResult Function(_Error value) error,
+    required TResult Function(_Sucess value) success,
   }) {
     return data(this);
   }
@@ -434,6 +456,7 @@ class _$_Data implements _Data {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Sucess value)? success,
   }) {
     return data?.call(this);
   }
@@ -445,6 +468,7 @@ class _$_Data implements _Data {
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
     TResult Function(_Error value)? error,
+    TResult Function(_Sucess value)? success,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -454,7 +478,7 @@ class _$_Data implements _Data {
   }
 }
 
-abstract class _Data implements ContactListCubitState {
+abstract class _Data implements ContactRegisterCubitState {
   const factory _Data({required final List<ContactModel> contacts}) = _$_Data;
 
   List<ContactModel> get contacts;
@@ -472,7 +496,7 @@ abstract class _$$_ErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ErrorCopyWithImpl<$Res>
-    extends _$ContactListCubitStateCopyWithImpl<$Res, _$_Error>
+    extends _$ContactRegisterCubitStateCopyWithImpl<$Res, _$_Error>
     implements _$$_ErrorCopyWith<$Res> {
   __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
       : super(_value, _then);
@@ -501,7 +525,7 @@ class _$_Error implements _Error {
 
   @override
   String toString() {
-    return 'ContactListCubitState.error(error: $error)';
+    return 'ContactRegisterCubitState.error(error: $error)';
   }
 
   @override
@@ -528,6 +552,7 @@ class _$_Error implements _Error {
     required TResult Function() loading,
     required TResult Function(List<ContactModel> contacts) data,
     required TResult Function(String error) error,
+    required TResult Function() success,
   }) {
     return error(this.error);
   }
@@ -539,6 +564,7 @@ class _$_Error implements _Error {
     TResult? Function()? loading,
     TResult? Function(List<ContactModel> contacts)? data,
     TResult? Function(String error)? error,
+    TResult? Function()? success,
   }) {
     return error?.call(this.error);
   }
@@ -550,6 +576,7 @@ class _$_Error implements _Error {
     TResult Function()? loading,
     TResult Function(List<ContactModel> contacts)? data,
     TResult Function(String error)? error,
+    TResult Function()? success,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -565,6 +592,7 @@ class _$_Error implements _Error {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Data value) data,
     required TResult Function(_Error value) error,
+    required TResult Function(_Sucess value) success,
   }) {
     return error(this);
   }
@@ -576,6 +604,7 @@ class _$_Error implements _Error {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Data value)? data,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Sucess value)? success,
   }) {
     return error?.call(this);
   }
@@ -587,6 +616,7 @@ class _$_Error implements _Error {
     TResult Function(_Loading value)? loading,
     TResult Function(_Data value)? data,
     TResult Function(_Error value)? error,
+    TResult Function(_Sucess value)? success,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -596,11 +626,129 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements ContactListCubitState {
+abstract class _Error implements ContactRegisterCubitState {
   const factory _Error({required final String error}) = _$_Error;
 
   String get error;
   @JsonKey(ignore: true)
   _$$_ErrorCopyWith<_$_Error> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_SucessCopyWith<$Res> {
+  factory _$$_SucessCopyWith(_$_Sucess value, $Res Function(_$_Sucess) then) =
+      __$$_SucessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SucessCopyWithImpl<$Res>
+    extends _$ContactRegisterCubitStateCopyWithImpl<$Res, _$_Sucess>
+    implements _$$_SucessCopyWith<$Res> {
+  __$$_SucessCopyWithImpl(_$_Sucess _value, $Res Function(_$_Sucess) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Sucess implements _Sucess {
+  const _$_Sucess();
+
+  @override
+  String toString() {
+    return 'ContactRegisterCubitState.success()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Sucess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ContactModel> contacts) data,
+    required TResult Function(String error) error,
+    required TResult Function() success,
+  }) {
+    return success();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ContactModel> contacts)? data,
+    TResult? Function(String error)? error,
+    TResult? Function()? success,
+  }) {
+    return success?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ContactModel> contacts)? data,
+    TResult Function(String error)? error,
+    TResult Function()? success,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Data value) data,
+    required TResult Function(_Error value) error,
+    required TResult Function(_Sucess value) success,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Sucess value)? success,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Data value)? data,
+    TResult Function(_Error value)? error,
+    TResult Function(_Sucess value)? success,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Sucess implements ContactRegisterCubitState {
+  const factory _Sucess() = _$_Sucess;
 }
