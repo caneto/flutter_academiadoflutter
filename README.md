@@ -140,9 +140,21 @@
 <b>FireBase</b> (Firebase Core (O que é o Firebase e quanto custa, Configurando nosso primeiro projeto no console do Firebase, Configurando Firebase no projeto Flutter), Firebase Auth (Configurando Firebase Auth e criando um novo usuário, Login com e-mail e senha e verificação de email, Alterando dados complementares do usuário [Nome, foto, email, password],Recuperando o usuário logado e registrando um listener de alteração de dados do usuário)
 
 
-  <b>Hands-on Cuidapet (modular+mobx)</b> Geral (Sobre o Flutter 3, Apresentação do Projeto), Configurações (Subindo backend para atender o cuidapet,Criando e configurando projeto e suas dependências, SplashScreen e encapsulamento do flutter_screenutil)
+  <b>Hands-on Cuidapet (modular+mobx)</b> Geral (Sobre o Flutter 3, Apresentação do Projeto), Configurações (Subindo backend para atender o cuidapet,Criando e configurando projeto e suas dependências, SplashScreen e encapsulamento do flutter_screenutil), Core (Configurando Tema, Iniciando identificação usuário logado, Criando componente de TextField, Adicionando icones ao projeto, Criando componente de botão de rede social, Criando botão default da aplicação)
   
-  
+<table> 
+  <tr>
+    <td> 
+      <b>Geral</b> (Sobre o Flutter 3, Apresentação do Projeto)
+    </td>
+    <td>
+      <b>Configurações</b> (Subindo backend para atender o cuidapet,Criando e configurando projeto e suas dependências, SplashScreen e encapsulamento do flutter_screenutil)
+    </td>
+    <td>
+      <b>Core</b> (Configurando Tema)
+    </td>
+  </tr>
+</table>   
   
 <h2>📝 Licença</h2>
 
