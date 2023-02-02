@@ -137,6 +137,8 @@
   </tr>
 </table>  
 
+<b>FireBase</b> (Firebase Core (O que é o Firebase e quanto custa, Configurando nosso primeiro projeto no console do Firebase, Configurando Firebase no projeto Flutter), Firebase Auth (Configurando Firebase Auth e criando um novo usuário, Login com e-mail e senha e verificação de email, Alterando dados complementares do usuário [Nome, foto, email, password],Recuperando o usuário logado e registrando um listener de alteração de dados do usuário)
+
 
 <h2>📝 Licença</h2>
 
