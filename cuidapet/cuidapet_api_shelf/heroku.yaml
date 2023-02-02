@@ -1,0 +1,7 @@
+PORT: 80
+database:
+  host: us-cdbr-east-05.cleardb.net
+  port: 3306
+  user: b971cb78aa174e
+  password: 775aeddd
+  database: heroku_f6e3f0839d24006

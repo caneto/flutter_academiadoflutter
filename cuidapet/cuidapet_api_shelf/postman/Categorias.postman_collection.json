@@ -1,0 +1,33 @@
+{
+	"info": {
+		"_postman_id": "0dc453a6-f93d-4ef2-aef4-4c3254a0c67a",
+		"name": "Categorias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buscar Todos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/categorias",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "d423344d-8b2b-4a34-9e0a-153eaf5d1db9",
+		"name": "login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5ff016e7-cdb0-4030-87c1-612335daaaff",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"rodrigorahman@gmail.com\",\n\t\"senha\": \"123123\",\n\t\"facebookLogin\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.15.100:8888/login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"15",
+						"100"
+					],
+					"port": "8888",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Avatar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2cfcb61c-fd75-431a-a4e6-2f9645841862",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{access_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url_avatar\": \"https://i.pinimg.com/originals/20/ec/24/20ec2480e5d0e9397a254a7a83ebd060.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/usuario/avatar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"usuario",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf266ea9-76a7-4963-b18a-9c3b786d44b6",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"rodrigorahman@gmail.com\",\n\t\"senha\": \"123123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login/cadastrar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f95c9478-e00c-4227-b912-1b975aa0bc84",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"rodrigorahman@gmail.com\",\n\t\"senha\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/usuario",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Facebook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f513db6-d289-4e8e-9641-78039c24974d",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"kxkppdsrot_1590560458@tfbnw.net3\",\n\t\"facebookLogin\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirmar Login",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"android_token\": \"android TOKEN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login/confirmar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login",
+						"confirmar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{access_token}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTI2OTY3MzYsImlhdCI6MTU5MjYxMDMzNiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdCIsIm5iZiI6MTU5MjYxMDMzNiwic3ViIjoiMSJ9.3O2QBO-Ihhqd7fPhR696PHxwQARj3TcOR6URu-lWquw\",\n\t\"refresh_token\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjQxNDYzNDMsImlhdCI6MTU5MjYxMDM0MywiaXNzIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMU9USTJPVFkzTXpZc0ltbGhkQ0k2TVRVNU1qWXhNRE16Tml3aWFYTnpJam9pYUhSMGNEb3ZMMnh2WTJGc2FHOXpkQ0lzSW01aVppSTZNVFU1TWpZeE1ETXpOaXdpYzNWaUlqb2lNU0o5LjNPMlFCTy1JaGhxZDdmUGhSNjk2UEh4d1FBUmozVGNPUjZVUnUtbFdxdXciLCJuYmYiOjE1OTI1MjM5NDMsInN1YiI6IlJlZnJlc2hUb2tlbiJ9.2aUNMNxV83uuaZy1vME7lXbhuCXmianIjOZMT3wVkC8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login/refresh",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Device",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{access_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"e3r4hmX8tEX-g3JMj7T2zJ:APA91bENxLWUSNJDIc1VzBLDWKwHKI1EEpMQ4GiVTRiWT8gBuNc1ohwqG9sb1PKgql7X4ZtUcNwxqnbvhdhPV-CX1lKxTpS3vcNFK6qaQm8vgmbQAy-_5I7Fr_hCaqb9lQ8GjsZHO7i0\",\n\t\"platform\": \"IOS\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/usuario/device",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"usuario",
+						"device"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

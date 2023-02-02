@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "bd196c75-e032-4abe-87a4-48722c98d4ae",
+		"name": "chats",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Chats usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{access_token}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTEzODQzNDUsImlhdCI6MTU5MTI5Nzk0NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdCIsIm5iZiI6MTU5MTI5Nzk0NSwic3ViIjoiMSJ9.rmryTtPXQW1Coi39ULZcEvtSYgIZjTKtVKXI7W9ON8U",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/chats/usuario",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"chats",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Iniciar Chat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{access_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data_agendamento\": \"2020-05-19T10:00:00\",\n\t\"fornecedor_id\" : 1,\n\t\"servicos\": [1,2,3],\n\t\"nome\": \"Rodrigo\",\n\t\"nome_pet\": \"Marley\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/chat/agendamento/:id/iniciar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"chat",
+						"agendamento",
+						":id",
+						"iniciar"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat Notification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{access_token}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTEzODQzNDUsImlhdCI6MTU5MTI5Nzk0NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdCIsIm5iZiI6MTU5MTI5Nzk0NSwic3ViIjoiMSJ9.rmryTtPXQW1Coi39ULZcEvtSYgIZjTKtVKXI7W9ON8U",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"chat\": 1,\n\t\"mensagem\" : \"Chega ou nao chega\",\n\t\"para\": \"F\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/chats/notificar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"chats",
+						"notificar"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

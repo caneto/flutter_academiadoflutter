@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "3f7a66c1-1302-4809-aaf2-1da30b56a1cd",
+		"name": "Fornecedores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Proximos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/fornecedores?lat=37.3518115&long=-122.0001837",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fornecedores"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "37.3518115"
+						},
+						{
+							"key": "long",
+							"value": "-122.0001837"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{access_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/fornecedores/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fornecedores",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Servicos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{access_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/fornecedores/servicos/:fornecedorId",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"fornecedores",
+						"servicos",
+						":fornecedorId"
+					],
+					"variable": [
+						{
+							"key": "fornecedorId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
