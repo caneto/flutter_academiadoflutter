@@ -151,7 +151,7 @@
       <b>Configurações</b> (Subindo backend para atender o cuidapet,Criando e configurando projeto e suas dependências, SplashScreen e encapsulamento do flutter_screenutil)
     </td>
     <td>
-      <b>Core</b> (Configurando Tema)
+      <b>Core</b> (Configurando Tema, Iniciando identificação usuário logado)
     </td>
   </tr>
 </table>   
