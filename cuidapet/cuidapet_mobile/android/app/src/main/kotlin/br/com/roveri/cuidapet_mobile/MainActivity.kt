@@ -1,4 +1,4 @@
-package br.com.capsistema.cuidapet
+package br.com.capsistema.cuidapet_mobile
 
 import io.flutter.embedding.android.FlutterActivity
 

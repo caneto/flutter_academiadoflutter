@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "cuidapet_mobile",
+            "name": "cuidapet_mobile_x",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "cuidapet_mobile (profile mode)",
+            "name": "cuidapet_mobile_x (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "cuidapet_mobile (release mode)",
+            "name": "cuidapet_mobile_x (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

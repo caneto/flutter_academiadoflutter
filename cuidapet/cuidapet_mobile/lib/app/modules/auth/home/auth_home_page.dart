@@ -1,44 +1,35 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:cuidapet/app/models/user_model.dart';
 import 'package:flutter/material.dart';
-
-import 'package:cuidapet/app/core/ui/extensions/size_screen_extension.dart';
-import 'package:cuidapet/app/modules/core/auth/auth_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
-class AuthHomePage extends StatefulWidget {
-  final AuthStore _authStore;
+import '../../../core/ui/extensions/screen_size_extension.dart';
+import '../../../models/user_model.dart';
+import '../../core/auth/auth_store.dart';
 
-  const AuthHomePage({
-    Key? key,
-    required AuthStore authStore,
-  })  : _authStore = authStore,
-        super(key: key);
+class AuthHomePage extends StatefulWidget {
+  const AuthHomePage({super.key});
 
   @override
   State<AuthHomePage> createState() => _AuthHomePageState();
 }
 
 class _AuthHomePageState extends State<AuthHomePage> {
+  final _controller = Modular.get<AuthStore>();
 
   @override
   void initState() {
     super.initState();
-
-    reaction<UserModel?>((_) => widget._authStore.userLogged, (userLogger) {
-      if(userLogger != null && userLogger.email.isNotEmpty) {
-        Modular.to.navigate('/home');
+    reaction<UserModel?>((_) => _controller.loggedUser, (loggedUser) {
+      if (loggedUser != null && loggedUser.email.isNotEmpty) {
+        Modular.to.navigate('/home/');
       } else {
         Modular.to.navigate('/auth/login/');
       }
     });
 
-    WidgetsBinding.instance.addPersistentFrameCallback((_) {
-      widget._authStore.loadUSerLogged();
-     });
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => _controller.loadLoggedUser());
   }
-
 
   @override
   Widget build(BuildContext context) {
