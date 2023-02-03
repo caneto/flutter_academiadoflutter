@@ -9,22 +9,30 @@ part of 'auth_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$AuthStore on _AuthStoreBase, Store {
-  late final _$_userModelAtom =
-      Atom(name: '_AuthStoreBase._userModel', context: context);
+  late final _$_userLoggedAtom =
+      Atom(name: '_AuthStoreBase._userLogged', context: context);
 
-  UserModel? get userModel {
-    _$_userModelAtom.reportRead();
-    return super._userModel;
+  UserModel? get userLogged {
+    _$_userLoggedAtom.reportRead();
+    return super._userLogged;
   }
 
   @override
-  UserModel? get _userModel => userModel;
+  UserModel? get _userLogged => userLogged;
 
   @override
-  set _userModel(UserModel? value) {
-    _$_userModelAtom.reportWrite(value, super._userModel, () {
-      super._userModel = value;
+  set _userLogged(UserModel? value) {
+    _$_userLoggedAtom.reportWrite(value, super._userLogged, () {
+      super._userLogged = value;
     });
+  }
+
+  late final _$loadUSerLoggedAsyncAction =
+      AsyncAction('_AuthStoreBase.loadUSerLogged', context: context);
+
+  @override
+  Future<void> loadUSerLogged() {
+    return _$loadUSerLoggedAsyncAction.run(() => super.loadUSerLogged());
   }
 
   @override

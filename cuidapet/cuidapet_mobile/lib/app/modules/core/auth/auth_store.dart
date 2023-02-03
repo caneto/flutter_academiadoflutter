@@ -8,7 +8,12 @@ class AuthStore = _AuthStoreBase with _$AuthStore;
 abstract class _AuthStoreBase with Store {
   
   @readonly
-  UserModel? _userModel;
+  UserModel? _userLogged;
+
+  @action
+  Future<void> loadUSerLogged() async {
+    _userLogged = UserModel.empty();
+  }
 
 }
 
