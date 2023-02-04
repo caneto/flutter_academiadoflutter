@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/ui/widgets/cuidapet_textform_field.dart';
+
 class LoginPage extends StatelessWidget {
 
   const LoginPage({ Key? key }) : super(key: key);
@@ -8,7 +10,11 @@ class LoginPage extends StatelessWidget {
    Widget build(BuildContext context) {
        return Scaffold(
            appBar: AppBar(title: const Text('Login Page'),),
-           body: Container(),
+           body: Column(
+             children: const [
+               CuidapetTextformField(),
+             ],
+           ),
        );
   }
 }
