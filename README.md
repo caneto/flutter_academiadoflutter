@@ -155,6 +155,8 @@
     <td>
       <b>Core</b> (Configurando Tema, Iniciando identificação usuário logado, Criando componente de TextField, Adicionando icones ao projeto, Criando componente de botão de rede social, Criando botão default da aplicação)
     </td>
+  </tr>
+  <tr>
     <td>
       <b>Auth</b> (Layout Tela de Login,)
     </td>
