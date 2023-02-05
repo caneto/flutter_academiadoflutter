@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class CuidapetTextformField extends StatelessWidget {
+class AppTextformField extends StatelessWidget {
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
   final String label;
   final bool obscureText;
   final ValueNotifier<bool> _obscureTextVN;
 
-  CuidapetTextformField({
+  AppTextformField({
     Key? key,
     required this.label,
     this.obscureText = false,

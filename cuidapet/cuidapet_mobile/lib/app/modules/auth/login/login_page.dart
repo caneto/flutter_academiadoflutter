@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/ui/widgets/cuidapet_textform_field.dart';
+import '../../../core/ui/extensions/screen_size_extension.dart';
+import '../../../core/ui/icons/app_icons.dart';
+import '../../../core/ui/widgets/app_textform_field.dart';
+import '../../../core/ui/widgets/rounded_button_with_icon.dart';
 
 class LoginPage extends StatelessWidget {
   final loginEC = TextEditingController();
@@ -21,7 +24,7 @@ class LoginPage extends StatelessWidget {
           key: formKey,
           child: Column(
             children: [
-              CuidapetTextformField(
+              AppTextformField(
                 label: 'Login',
                 controller: loginEC,
                 validator: (String? value) {
@@ -39,6 +42,8 @@ class LoginPage extends StatelessWidget {
                 },
                 child: Text('Validar'),
               ),
+              RoundedButtonWithIcon(onTap: (){}, width: 160.h, color: Colors.blue, icon: AppIcons.facebook, label: 'Facebook'),
+              RoundedButtonWithIcon(onTap: (){}, width: 160.h, color: Colors.orange, icon: AppIcons.google, label: 'Google'),
             ],
           ),
         ),
