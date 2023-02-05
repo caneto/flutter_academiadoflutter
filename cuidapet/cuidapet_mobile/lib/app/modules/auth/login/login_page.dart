@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/ui/extensions/screen_size_extension.dart';
 import '../../../core/ui/icons/app_icons.dart';
+import '../../../core/ui/widgets/app_default_button.dart';
 import '../../../core/ui/widgets/app_textform_field.dart';
 import '../../../core/ui/widgets/rounded_button_with_icon.dart';
 
@@ -44,6 +45,7 @@ class LoginPage extends StatelessWidget {
               ),
               RoundedButtonWithIcon(onTap: (){}, width: 160.h, color: Colors.blue, icon: AppIcons.facebook, label: 'Facebook'),
               RoundedButtonWithIcon(onTap: (){}, width: 160.h, color: Colors.orange, icon: AppIcons.google, label: 'Google'),
+              AppDefaultButton(onPressed: () {}, label: 'Salvar')
             ],
           ),
         ),
