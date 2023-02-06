@@ -8,6 +8,7 @@ class AppTextformField extends StatelessWidget {
   final String label;
   final bool obscureText;
   final ValueNotifier<bool> _obscureTextVN;
+  final TextInputType? keyboardType;
 
   AppTextformField({
     Key? key,
@@ -15,6 +16,7 @@ class AppTextformField extends StatelessWidget {
     this.obscureText = false,
     this.controller,
     this.validator,
+    this.keyboardType,
   })  : _obscureTextVN = ValueNotifier<bool>(obscureText),
         super(key: key);
 
@@ -26,6 +28,7 @@ class AppTextformField extends StatelessWidget {
         return TextFormField(
           controller: controller,
           obscureText: obscureTextVNValue,
+          keyboardType: keyboardType,
           validator: validator,
           decoration: InputDecoration(
             labelText: label,
