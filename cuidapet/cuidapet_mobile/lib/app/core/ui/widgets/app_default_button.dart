@@ -42,8 +42,10 @@ class AppDefaultButton extends StatelessWidget {
         ),
         child: Text(
           label,
-          style:
-              TextStyle(fontSize: labelSize, color: labelColor ?? Colors.white),
+          style: TextStyle(
+            fontSize: labelSize,
+            color: labelColor ?? Colors.white,
+          ),
         ),
       ),
     );
