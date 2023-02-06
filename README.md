@@ -163,6 +163,9 @@
     <td>
       <b>Configuração do Firebase ao Projeto</b> (Instalando o NVM, Instalando e fazendo login com firebase, Configurando projeto)
     </td>
+    <td>
+      <b>Env e Remote Config</b> (Configurando variáveis de ambiente (env e remote config))
+    </td>
   </tr>
 </table>   
   
