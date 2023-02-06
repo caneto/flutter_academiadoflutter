@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1957387278-aaes5phlgng85cbbevp3r6g66083jdka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.capsistema.cuidapet_mobile",
+            "certificate_hash": "ae0f2f29475c87650cf92c5a1ac7e5374368401f"
+          }
+        },
+        {
           "client_id": "1957387278-4n8g8gj0gebi9jlgdd389r7k2vtljsjt.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/helpers/enviroments.dart';
 import '../../../core/ui/extensions/screen_size_extension.dart';
 import '../../../core/ui/extensions/theme_extension.dart';
 import '../../../core/ui/icons/app_icons.dart';
@@ -26,6 +27,7 @@ class LoginPage extends StatelessWidget {
           padding: const EdgeInsets.all(15),
           child: Column(
             children: [
+              Text(Environments.params('base_url') ?? ''),
               SizedBox(
                 height: 50.h,
               ),
