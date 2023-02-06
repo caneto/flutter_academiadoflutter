@@ -161,7 +161,7 @@
       <b>Auth</b> (Layout Tela de Login, Layout tela de cadastro por login e senha, Entendendo o fluxo de cadastro de um novo usuário, Resolvendo problema do ScreenUtil e Firebase oAuth2 client already exists)
     </td>
     <td>
-      <b>Configuração do Firebase ao Projeto</b> (Instalando o NVM, Instalando e fazendo login com firebase)
+      <b>Configuração do Firebase ao Projeto</b> (Instalando o NVM, Instalando e fazendo login com firebase, Configurando projeto)
     </td>
   </tr>
 </table>   
