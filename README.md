@@ -158,7 +158,7 @@
   </tr>
   <tr>
     <td>
-      <b>Auth</b> (Layout Tela de Login, Layout tela de cadastro por login e senha)
+      <b>Auth</b> (Layout Tela de Login, Layout tela de cadastro por login e senha, Entendendo o fluxo de cadastro de um novo usuário)
     </td>
   </tr>
 </table>   
