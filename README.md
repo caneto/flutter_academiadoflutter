@@ -169,7 +169,7 @@
   </tr>
     <tr>
     <td>
-      <b>Encapsulamentos</b> (Interface RestClient, Encapsulando o DIO, Encapsulando logs da aplicação)
+      <b>Encapsulamentos</b> (Interface RestClient, Encapsulando o DIO, Encapsulando logs da aplicação, Encapsulando Shared Preferences)
     </td>
     <td>
     </td>
