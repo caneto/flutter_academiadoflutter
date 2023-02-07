@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../core/helpers/enviroments.dart';
-import '../../../core/logger/app_logger.dart';
 import '../../../core/ui/extensions/screen_size_extension.dart';
 import '../../../core/ui/extensions/theme_extension.dart';
 import '../../../core/ui/icons/app_icons.dart';
@@ -25,12 +24,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var log = Modular.get<AppLogger>();
-    log.append('Mensagem 1');
-    log.append('Mensagem 2');
-    log.append('Mensagem 3');
-    log.append('Mensagem 4');
-    log.closeAppend();
+    
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
