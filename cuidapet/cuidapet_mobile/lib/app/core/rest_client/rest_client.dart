@@ -36,7 +36,7 @@ abstract class RestClient {
     }
   );
 
-  Future<RestClientResponse<T>> ptatch<T>(
+  Future<RestClientResponse<T>> patch<T>(
     String path,{
       dynamic data,
       Map<String,dynamic>? queryParameters,
