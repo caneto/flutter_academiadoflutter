@@ -167,6 +167,15 @@
       <b>Env e Remote Config</b> (Configurando variáveis de ambiente (env e remote config))
     </td>
   </tr>
+    <tr>
+    <td>
+      <b>Encapsulamentos</b> (Interface RestClient, Encapsulando o DIO)
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
 </table>   
   
 <h2>📝 Licença</h2>
