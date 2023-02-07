@@ -142,7 +142,7 @@
 <b>FireBase</b> (Firebase Core (O que é o Firebase e quanto custa, Configurando nosso primeiro projeto no console do Firebase, Configurando Firebase no projeto Flutter), Firebase Auth (Configurando Firebase Auth e criando um novo usuário, Login com e-mail e senha e verificação de email, Alterando dados complementares do usuário [Nome, foto, email, password],Recuperando o usuário logado e registrando um listener de alteração de dados do usuário)
 
 
-  <b>Hands-on Cuidapet (modular+mobx)</b> Geral (Sobre o Flutter 3, Apresentação do Projeto), Configurações (Subindo backend para atender o cuidapet,Criando e configurando projeto e suas dependências, SplashScreen e encapsulamento do flutter_screenutil), Core (Configurando Tema, Iniciando identificação usuário logado, Criando componente de TextField, Adicionando icones ao projeto, Criando componente de botão de rede social, Criando botão default da aplicação)
+  <b>Hands-on Cuidapet (modular+mobx)</b> Geral (Sobre o Flutter 3, Apresentação do Projeto), Configurações (Subindo backend para atender o cuidapet,Criando e configurando projeto e suas dependências, SplashScreen e encapsulamento do flutter_screenutil), Core (Configurando Tema, Iniciando identificação usuário logado, Criando componente de TextField, Adicionando icones ao projeto, Criando componente de botão de rede social, Criando botão default da aplicação), Auth (Layout Tela de Login, Layout tela de cadastro por login e senha, Entendendo o fluxo de cadastro de um novo usuário, Resolvendo problema do ScreenUtil e Firebase oAuth2 client already exists), Configuração do Firebase ao Projeto (Instalando o NVM, Instalando e fazendo login com firebase, Configurando projeto) Env e Remote Config (Configurando variáveis de ambiente (env e remote config)), Encapsulamentos (Interface RestClient, Encapsulando o DIO, Encapsulando logs da aplicação, Encapsulando Shared Preferences, Encapsulando Flutter Secure 
   
 <table> 
   <tr>
@@ -169,9 +169,10 @@
   </tr>
     <tr>
     <td>
-      <b>Encapsulamentos</b> (Interface RestClient, Encapsulando o DIO, Encapsulando logs da aplicação, Encapsulando Shared Preferences)
+      <b>Encapsulamentos</b> (Interface RestClient, Encapsulando o DIO, Encapsulando logs da aplicação, Encapsulando Shared Preferences, Encapsulando Flutter Secure Storage)
     </td>
     <td>
+      <b>Componentes</b> (Componente de Loader)
     </td>
     <td>
     </td>
