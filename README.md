@@ -172,7 +172,7 @@
       <b>Encapsulamentos</b> (Interface RestClient, Encapsulando o DIO, Encapsulando logs da aplicação, Encapsulando Shared Preferences, Encapsulando Flutter Secure Storage)
     </td>
     <td>
-      <b>Componentes</b> (Componente de Loader)
+      <b>Componentes</b> (Componente de Loader, Componente de Mensagem (Snackbar com Asuka))
     </td>
     <td>
     </td>
