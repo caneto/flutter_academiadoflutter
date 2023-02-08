@@ -1,0 +1,757 @@
+{
+	"info": {
+		"_postman_id": "1583fa81-9ded-4f15-8b47-9672f836666f",
+		"name": "Cuidapet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3209702"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Data By Token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server_url}}/user/",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Device Token",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"ANDROID_TOKEN_UPDATE\",\n    \"platform\": \"ANDROID\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/user/device",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"user",
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Avatar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url_avatar\": \"https://s2.glbimg.com/oGOP1N5kCTMEZa35A7OE1zNZsiA=/e.glbimg.com/og/ed/f/original/2020/01/08/baby-yoda.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/user/avatar",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"user",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suppliers",
+			"item": [
+				{
+					"name": "Search Near By Me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server_url}}/suppliers/?lat=-23.561001980198558&lng=-46.656465744306665",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"suppliers",
+								""
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "-23.561001980198558"
+								},
+								{
+									"key": "lng",
+									"value": "-46.656465744306665"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server_url}}/suppliers/26",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"suppliers",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by user logged",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server_url}}/suppliers/user/logged",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"suppliers",
+								"user",
+								"logged"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Services By Supplier",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server_url}}/suppliers/:supplier/services",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"suppliers",
+								":supplier",
+								"services"
+							],
+							"variable": [
+								{
+									"key": "supplier",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Emails Exists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server_url}}/suppliers/user?email=academiadoflutter99@gmail.com",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"suppliers",
+								"user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "academiadoflutter99@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new supplier and supplier user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"supplier_name\": \"PET SHOP ACADEMIA DO FLUTTER\",\n    \"email\": \"petshop2@academiadoflutter.com.br\",\n    \"password\": \"123123\",\n    \"category_id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/suppliers/user",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"suppliers",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Supplier",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"PET SHOP ACADEMIA DO FLUTTER\",\n    \"logo\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRGjsAhGNDXKoVEzQWvvWcVYpxflhPviNe9vqJtlXM2OrBC3-3OSfLUNV8pfYWfShaNlM&usqp=CAU\",\n    \"address\": \"AV Paulista, 100 - Sp\",\n    \"phone\": \"999292292\",\n    \"lat\": -23.561001980198558,\n    \"lng\": -46.656465744306665,\n    \"category\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/suppliers/",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"suppliers",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedules",
+			"item": [
+				{
+					"name": "Schedule Services",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schedule_data\": \"2021-09-20T12:00:00\",\n    \"name\": \"Guilherme Rahman\",\n    \"pet_name\": \"Marley\",\n    \"supplier_id\": 6,\n    \"services\": [\n        16,\n        17\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/schedules/",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"schedules",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All By User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server_url}}/schedules/",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"schedules",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All By User Supplier",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server_url}}/schedules/supplier",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"schedules",
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schedule_data\": \"\",\n    \"name\": \"\",\n    \"pet_name\": \"\",\n    \"supplier_id\": \"\",\n    \"services\": []\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/schedules/:id/status/:status",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"schedules",
+								":id",
+								"status",
+								":status"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								},
+								{
+									"key": "status",
+									"value": "F"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"academiadoflutter@gmail.com\",\n    \"password\": \"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/auth/register",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Supplier",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set('access_token', jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"petshop@academiadoflutter.com.br\",\n    \"password\": \"123123\",\n    \"social_login\": false,\n    \"supplier_user\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/auth/",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login With Social",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set('access_token', jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"yoda@gmail.com\",\n    \"social_login\": true,\n    \"avatar\": \"https://static.wikia.nocookie.net/ptstarwars/images/6/6c/2511.jpg/revision/latest?cb=20121107230903\",\n    \"social_type\": \"Google\",\n    \"social_key\": \"12313g13gi21g3i1\",\n    \"supplier_user\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/auth/",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Supplier 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set('access_token', jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"clinicajardim@gmail.com\",\n    \"password\": \"123123\",\n    \"social_login\": false,\n    \"supplier_user\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/auth/",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login With Email and Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set('access_token', jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"academiadoflutter99@gmail.com\",\n    \"password\": \"123123\",\n    \"social_login\": false,\n    \"supplier_user\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/auth/",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set('access_token', jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"android_token\": \"ANDROID_TOKEN_dgiagfidsgfiusdg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/auth/confirm",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"auth",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.globals.set('access_token', jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDE1MDA4MjIsImlhdCI6MTY0MTUwMDc5MiwiaXNzIjoiY3VpZGFwZXQiLCJuYmYiOjE2NDE1MDA3OTIsInN1YiI6IjI1Iiwic3VwcGxpZXIiOm51bGx9.mFQu3UuwUrz8gACN7OPQTDVa00S-Ueb7uE_9JxZFOgw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"refresh_token\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDMyMjg3OTIsImlhdCI6MTY0MTUwMDc5MiwiaXNzIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5ERTFNREE0TWpJc0ltbGhkQ0k2TVRZME1UVXdNRGM1TWl3aWFYTnpJam9pWTNWcFpHRndaWFFpTENKdVltWWlPakUyTkRFMU1EQTNPVElzSW5OMVlpSTZJakkxSWl3aWMzVndjR3hwWlhJaU9tNTFiR3g5Lm1GUXUzVXV3VXJ6OGdBQ043T1BRVERWYTAwUy1VZWI3dUVfOUp4WkZPZ3ciLCJuYmYiOjE2NDE1NDM5OTIsInN1YiI6IlJlZnJlc2hUb2tlbiJ9.9BdaFsskXctnGpbbcFghmYi8DwhAWvQimGwMoyr1Wy8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server_url}}/auth/refresh",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{access_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{server_url}}/categories/",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

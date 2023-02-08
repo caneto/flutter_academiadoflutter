@@ -25,13 +25,13 @@ class DioRestClient implements RestClient {
 
   @override
   RestClient auth() {
-    _defaultOptions.extra['auth_riquired'] = true;
+    _defaultOptions.extra[Constants.restClientAuthRequiredKey] = true;
     return this;
   }
 
   @override
   RestClient unauth() {
-    _defaultOptions.extra['auth_riquired'] = false;
+    _defaultOptions.extra[Constants.restClientAuthRequiredKey] = false;
     return this;
   }
 
@@ -43,14 +43,14 @@ class DioRestClient implements RestClient {
     Map<String, dynamic>? headers,
   }) async {
     try {
-      final response = await _dio.delete(
+      final response = await _dio.delete<T>(
         path,
         data: data,
         queryParameters: queryParameters,
         options: Options(headers: headers),
       );
 
-      return _dioResponseConverter(response);
+      return _dioResponseConverter<T>(response);
     } on DioError catch (e, s) {
       _throwRestClientException(e, s);
     }
@@ -63,13 +63,13 @@ class DioRestClient implements RestClient {
     Map<String, dynamic>? headers,
   }) async {
     try {
-      final response = await _dio.get(
+      final response = await _dio.get<T>(
         path,
         queryParameters: queryParameters,
         options: Options(headers: headers),
       );
 
-      return _dioResponseConverter(response);
+      return _dioResponseConverter<T>(response);
     } on DioError catch (e, s) {
       _throwRestClientException(e, s);
     }
@@ -83,14 +83,14 @@ class DioRestClient implements RestClient {
     Map<String, dynamic>? headers,
   }) async {
     try {
-      final response = await _dio.patch(
+      final response = await _dio.patch<T>(
         path,
         data: data,
         queryParameters: queryParameters,
         options: Options(headers: headers),
       );
 
-      return _dioResponseConverter(response);
+      return _dioResponseConverter<T>(response);
     } on DioError catch (e, s) {
       _throwRestClientException(e, s);
     }
@@ -104,13 +104,14 @@ class DioRestClient implements RestClient {
     Map<String, dynamic>? headers,
   }) async {
     try {
-      final response = await _dio.post(
+      final response = await _dio.post<T>(
         path,
+        data: data,
         queryParameters: queryParameters,
         options: Options(headers: headers),
       );
 
-      return _dioResponseConverter(response);
+      return _dioResponseConverter<T>(response);
     } on DioError catch (e, s) {
       _throwRestClientException(e, s);
     }
@@ -124,14 +125,14 @@ class DioRestClient implements RestClient {
     Map<String, dynamic>? headers,
   }) async {
     try {
-      final response = await _dio.put(
+      final response = await _dio.put<T>(
         path,
         data: data,
         queryParameters: queryParameters,
         options: Options(headers: headers),
       );
 
-      return _dioResponseConverter(response);
+      return _dioResponseConverter<T>(response);
     } on DioError catch (e, s) {
       _throwRestClientException(e, s);
     }
@@ -146,7 +147,7 @@ class DioRestClient implements RestClient {
     Map<String, dynamic>? headers,
   }) async {
     try {
-      final response = await _dio.request(
+      final response = await _dio.request<T>(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -162,15 +163,12 @@ class DioRestClient implements RestClient {
     }
   }
 
-  Future<RestClientResponse<T>> _dioResponseConverter<T>(
-    Response<dynamic> response,
-  ) async {
-    return RestClientResponse<T>(
-      data: response.data,
-      statusCode: response.statusCode,
-      statusMessage: response.statusMessage,
-    );
-  }
+RestClientResponse<T> _dioResponseConverter<T>(Response<dynamic> response) =>
+      RestClientResponse<T>(
+        data: response.data,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+      );
 
   Never _throwRestClientException(DioError dioError, StackTrace s) {
     final response = dioError.response;

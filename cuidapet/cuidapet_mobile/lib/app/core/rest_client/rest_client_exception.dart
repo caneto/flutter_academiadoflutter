@@ -1,22 +1,19 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, always_put_required_named_parameters_first
-
 import 'rest_client_response.dart';
 
 class RestClientException implements Exception {
-  String? message;
-  int? statusCode;
-  dynamic error;
-  RestClientResponse response;  
+  final int? statusCode;
+  final String? message;
+  final dynamic error;
+  final RestClientResponse response;
 
-  RestClientException({
-    this.message,
-    this.statusCode,
+  const RestClientException({
     required this.error,
     required this.response,
+    this.statusCode,
+    this.message,
   });
 
   @override
-  String toString() {
-    return 'RestClientException(message: $message, statusCode: $statusCode, error: $error, response: $response)';
-  }
+  String toString() =>
+      'RestClientException(statusCode: $statusCode, message: $message, error: $error, response: $response)';
 }

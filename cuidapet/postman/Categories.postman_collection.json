@@ -1,0 +1,33 @@
+{
+	"info": {
+		"_postman_id": "faf1c80d-9423-49b1-a480-8f1ed4da3641",
+		"name": "Categories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server_url}}/categories/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

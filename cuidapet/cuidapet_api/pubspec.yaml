@@ -1,0 +1,34 @@
+name: cuidapet_api
+description: A web server built using the shelf package.
+# version: 1.0.0
+# homepage: https://www.example.com
+environment:
+  sdk: '>=2.15.0 <3.0.0'
+
+dependencies:
+  args: ^2.0.0
+  dotenv: ^4.0.1
+  mysql1: ^0.20.0
+  shelf: ^1.1.0
+  shelf_router: ^1.0.0
+  get_it: ^7.1.3
+  logger: ^1.0.0
+  injectable: ^1.2.2
+  jaguar_jwt: ^3.0.0
+  http: ^0.13.1
+  
+dev_dependencies:
+  pedantic: ^1.9.0
+  build_runner: ^2.0.3
+  injectable_generator: ^1.2.2
+  shelf_router_generator: ^1.0.0
+  # shelf_router_generator: 
+  #   git:
+  #     url: https://github.com/google/dart-neats.git
+  #     path: shelf_router_generator
+  test: ^1.16.8
+  mocktail: ^0.1.1
+
+# dependency_overrides:
+#   # Foi sobrescrito devido ao shelf_router_generator 
+#   source_gen: ^1.0.0

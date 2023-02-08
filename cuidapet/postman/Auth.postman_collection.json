@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "019ccd9d-7203-4187-9ed6-bae792200a05",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"academiadoflutter@gmail.com\",\n    \"password\": \"123123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/auth/register",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login With Email and Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set('access_token', jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"academiadoflutter99@gmail.com\",\n    \"password\": \"123123\",\n    \"social_login\": false,\n    \"supplier_user\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/auth/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Supplier",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set('access_token', jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"petshop@academiadoflutter.com.br\",\n    \"password\": \"123123\",\n    \"social_login\": false,\n    \"supplier_user\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/auth/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Supplier 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set('access_token', jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"clinicajardim@gmail.com\",\n    \"password\": \"123123\",\n    \"social_login\": false,\n    \"supplier_user\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/auth/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login With Social",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set('access_token', jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"yoda@gmail.com\",\n    \"social_login\": true,\n    \"avatar\": \"https://static.wikia.nocookie.net/ptstarwars/images/6/6c/2511.jpg/revision/latest?cb=20121107230903\",\n    \"social_type\": \"Google\",\n    \"social_key\": \"12313g13gi21g3i1\",\n    \"supplier_user\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/auth/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set('access_token', jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"android_token\": \"ANDROID_TOKEN_dgiagfidsgfiusdg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/auth/confirm",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"auth",
+						"confirm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set('access_token', jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDE1MDA4MjIsImlhdCI6MTY0MTUwMDc5MiwiaXNzIjoiY3VpZGFwZXQiLCJuYmYiOjE2NDE1MDA3OTIsInN1YiI6IjI1Iiwic3VwcGxpZXIiOm51bGx9.mFQu3UuwUrz8gACN7OPQTDVa00S-Ueb7uE_9JxZFOgw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"refresh_token\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDMyMjg3OTIsImlhdCI6MTY0MTUwMDc5MiwiaXNzIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5ERTFNREE0TWpJc0ltbGhkQ0k2TVRZME1UVXdNRGM1TWl3aWFYTnpJam9pWTNWcFpHRndaWFFpTENKdVltWWlPakUyTkRFMU1EQTNPVElzSW5OMVlpSTZJakkxSWl3aWMzVndjR3hwWlhJaU9tNTFiR3g5Lm1GUXUzVXV3VXJ6OGdBQ043T1BRVERWYTAwUy1VZWI3dUVfOUp4WkZPZ3ciLCJuYmYiOjE2NDE1NDM5OTIsInN1YiI6IlJlZnJlc2hUb2tlbiJ9.9BdaFsskXctnGpbbcFghmYi8DwhAWvQimGwMoyr1Wy8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/auth/refresh",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "dbe06a09-e0a0-45f8-b1b1-a50e9854e92a",
+		"name": "Schedules",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Schedule Services",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"schedule_data\": \"2021-09-20T12:00:00\",\n    \"name\": \"Guilherme Rahman\",\n    \"pet_name\": \"Marley\",\n    \"supplier_id\": 6,\n    \"services\": [\n        16,\n        17\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/schedules/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"schedules",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All By User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server_url}}/schedules/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"schedules",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All By User Supplier",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server_url}}/schedules/supplier",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"schedules",
+						"supplier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Status",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"schedule_data\": \"\",\n    \"name\": \"\",\n    \"pet_name\": \"\",\n    \"supplier_id\": \"\",\n    \"services\": []\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/schedules/:id/status/:status",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"schedules",
+						":id",
+						"status",
+						":status"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4"
+						},
+						{
+							"key": "status",
+							"value": "F"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

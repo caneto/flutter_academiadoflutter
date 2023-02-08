@@ -8,7 +8,7 @@ class _RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<_RegisterForm> {
-  //final _controller = Modular.get<RegisterController>();
+  final _controller = Modular.get<RegisterController>();
   final _formKey = GlobalKey<FormState>();
   final _loginEC = TextEditingController();
   final _passwordEC = TextEditingController();
@@ -30,32 +30,32 @@ class _RegisterFormState extends State<_RegisterForm> {
           children: [
             AppTextformField(
               label: 'Login',
-              //controller: _loginEC,
+              controller: _loginEC,
               keyboardType: TextInputType.emailAddress,
-              //validator: Validatorless.multiple([
-              //  Validatorless.required('Login obrigatório'),
-              //  Validatorless.email('Email inválido'),
-              //]),
+              validator: Validatorless.multiple([
+                Validatorless.required('Login obrigatório'),
+                Validatorless.email('Email inválido'),
+              ]),
             ),
             const SizedBox(height: 20),
             AppTextformField(
               label: 'Senha',
               obscureText: true,
-              //controller: _passwordEC,
-              //validator: Validatorless.multiple([
-              //  Validatorless.required('Senha obrigatório'),
-              //  Validatorless.min(6, 'No mínimo 6 caracteres'),
-              //]),
+              controller: _passwordEC,
+              validator: Validatorless.multiple([
+                Validatorless.required('Senha obrigatório'),
+                Validatorless.min(6, 'No mínimo 6 caracteres'),
+              ]),
             ),
             const SizedBox(height: 20),
             AppTextformField(
               label: 'Confirmar senha',
               obscureText: true,
-              //validator: Validatorless.multiple([
-              //  Validatorless.required('Confirmar senha obrigatório'),
-              //  Validatorless.min(6, 'No mínimo 6 carecteres'),
-              //  Validatorless.compare(_passwordEC, 'Senhas não conferem'),
-              //]),
+              validator: Validatorless.multiple([
+                Validatorless.required('Confirmar senha obrigatório'),
+                Validatorless.min(6, 'No mínimo 6 carecteres'),
+                Validatorless.compare(_passwordEC, 'Senhas não conferem'),
+              ]),
             ),
             const SizedBox(height: 20),
             AppDefaultButton(
@@ -73,7 +73,7 @@ class _RegisterFormState extends State<_RegisterForm> {
 
     if (formValid) {
       FocusScope.of(context).unfocus();
-//      _controller.register(email: _loginEC.text, password: _passwordEC.text);
+      _controller.register(email: _loginEC.text, password: _passwordEC.text);
     }
   }
 }

@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "9515015f-02a9-4bf8-9b53-82579a06c00c",
+		"name": "Suppliers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search Near By Me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server_url}}/suppliers/?lat=-23.561001980198558&lng=-46.656465744306665",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"suppliers",
+						""
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "-23.561001980198558"
+						},
+						{
+							"key": "lng",
+							"value": "-46.656465744306665"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server_url}}/suppliers/26",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"suppliers",
+						"26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find by user logged",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server_url}}/suppliers/user/logged",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"suppliers",
+						"user",
+						"logged"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Services By Supplier",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server_url}}/suppliers/:supplier/services",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"suppliers",
+						":supplier",
+						"services"
+					],
+					"variable": [
+						{
+							"key": "supplier",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Emails Exists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_url}}/suppliers/user?email=academiadoflutter99@gmail.com",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"suppliers",
+						"user"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "academiadoflutter99@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new supplier and supplier user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"supplier_name\": \"PET SHOP ACADEMIA DO FLUTTER\",\n    \"email\": \"petshop2@academiadoflutter.com.br\",\n    \"password\": \"123123\",\n    \"category_id\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/suppliers/user",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"suppliers",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Supplier",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"PET SHOP ACADEMIA DO FLUTTER\",\n    \"logo\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRGjsAhGNDXKoVEzQWvvWcVYpxflhPviNe9vqJtlXM2OrBC3-3OSfLUNV8pfYWfShaNlM&usqp=CAU\",\n    \"address\": \"AV Paulista, 100 - Sp\",\n    \"phone\": \"999292292\",\n    \"lat\": -23.561001980198558,\n    \"lng\": -46.656465744306665,\n    \"category\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/suppliers/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"suppliers",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

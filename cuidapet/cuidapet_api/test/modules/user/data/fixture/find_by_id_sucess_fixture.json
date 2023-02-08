@@ -1,0 +1,10 @@
+{
+    "id": 1,
+    "email": "rodrigorahman@academiadoflutter.com.br",
+    "tipo_cadastro": "App",
+    "ios_token": "teste",
+    "android_token": "teste",
+    "refresh_token": "teste",
+    "img_avatar": "teste",
+    "fornecedor_id": 1
+}

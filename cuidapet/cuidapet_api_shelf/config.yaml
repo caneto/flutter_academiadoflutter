@@ -1,6 +1,0 @@
-database:
-  host: localhost
-  user: root
-  port: 3306
-  password: cuidapet
-  database: cuidapet_db

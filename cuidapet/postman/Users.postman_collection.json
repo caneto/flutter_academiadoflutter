@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "77e7b5c0-afdd-4bb6-a3ff-6417694907ec",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Data By Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server_url}}/user/",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Avatar",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url_avatar\": \"https://s2.glbimg.com/oGOP1N5kCTMEZa35A7OE1zNZsiA=/e.glbimg.com/og/ed/f/original/2020/01/08/baby-yoda.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/user/avatar",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"user",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Device Token",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"ANDROID_TOKEN_UPDATE\",\n    \"platform\": \"ANDROID\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/user/device",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"user",
+						"device"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
