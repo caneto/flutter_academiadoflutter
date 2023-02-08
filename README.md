@@ -175,6 +175,7 @@
       <b>Componentes</b> (Componente de Loader, Componente de Mensagem (Snackbar com Asuka))
     </td>
     <td>
+      <b>Auth</b> (Implementando tela de cadastro por e-mail e senha)
     </td>
   </tr>
 </table>   
