@@ -175,7 +175,7 @@
       <b>Componentes</b> (Componente de Loader, Componente de Mensagem (Snackbar com Asuka))
     </td>
     <td>
-      <b>Auth</b> (Implementando tela de cadastro por e-mail e senha, Conectando tela de cadastro ao backend e firebase, Entendendo o Fluxo de login do Cuidapet, Implementando tela de login (Ligando os pontos), Login e-mail e password (Firebase), Login e-mail e password (Backend Login), (Auth DIO Interceptor) adicionando token no header das requisições)
+      <b>Auth</b> (Implementando tela de cadastro por e-mail e senha, Conectando tela de cadastro ao backend e firebase, Entendendo o Fluxo de login do Cuidapet, Implementando tela de login (Ligando os pontos), Login e-mail e password (Firebase), Login e-mail e password (Backend Login), (Auth DIO Interceptor) adicionando token no header das requisições,Confirmar login e FirebaseMessage)
     </td>
   </tr>
 </table>   
