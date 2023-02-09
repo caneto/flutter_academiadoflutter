@@ -24,9 +24,10 @@ abstract class LoginControllerBase with Store {
   Future<void> login({required String login, required String password}) async {
     try {
       Loader.show();
-   //   await _service.login(email: login, password: password);
+      await _service.login(email: login, password: password);
       Loader.hide();
-      Modular.to.navigate('/auth/');
+      //Modular.to.navigate('/auth/');
+      
     } on Failure catch (e) {
       final errorMessage = e.message ?? 'Error while trying to login';
 
