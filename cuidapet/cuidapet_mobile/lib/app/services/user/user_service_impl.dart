@@ -5,18 +5,26 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../../core/exceptions/failure.dart';
 import '../../core/exceptions/user_exists_exception.dart';
 import '../../core/exceptions/user_not_exists_exception.dart';
+import '../../core/helpers/constants.dart';
+import '../../core/local_storage/local_storage.dart';
 import '../../core/logger/app_logger.dart';
 import '../../repositories/user/user_repository.dart';
 import './user_service.dart';
 
 class UserServiceImpl implements UserService {
+  final LocalStorage _localStorage;
+  final LocalSecureStorage _localSecureStorage;
   final UserRepository _userRepository;
   final AppLogger _log;
 
   UserServiceImpl({
     required UserRepository userRepository,
     required AppLogger log,
-  })  : _userRepository = userRepository,
+    required LocalStorage localStorage,
+    required LocalSecureStorage localSecureStorage,
+  })  : _localStorage = localStorage,
+        _localSecureStorage = localSecureStorage,
+        _userRepository = userRepository,
         _log = log;
 
   @override
@@ -44,7 +52,7 @@ class UserServiceImpl implements UserService {
       await userRegisterCredential.user?.sendEmailVerification();
     } on FirebaseException catch (e, s) {
       _log.error('Erro ao criar usuário no firebsse', e, s);
-      
+
       Error.throwWithStackTrace(
         const Failure(message: 'Erro ao criar usuário'),
         s,
@@ -58,8 +66,6 @@ class UserServiceImpl implements UserService {
       final firebaseAuth = FirebaseAuth.instance;
 
       final loginMethods = await firebaseAuth.fetchSignInMethodsForEmail(email);
-
-      print(loginMethods);
 
       if (loginMethods.isEmpty) {
         throw UserNotExistsException();
@@ -78,12 +84,13 @@ class UserServiceImpl implements UserService {
           throw const Failure(
             message: 'E-mail não confirmado. Verifique sua caixa de spam.',
           );
-        } 
-        
-        print("Email Verificado e Valido");
+        }
 
-        //final user = await _repository.login(email: email, password: password);
-        //await _saveAccessToken(user);
+        final user =
+            await _userRepository.login(email: email, password: password);
+        await _saveAccessToken(user);
+        final xx = await _localStorage.read<String>(Constants.localStorageAccessTokenKey);
+        print(xx);
         //await _confirmLogin();
         //await _getUserData();
       } else {
@@ -98,4 +105,23 @@ class UserServiceImpl implements UserService {
     }
   }
 
+  Future<void> _saveAccessToken(String accessToken) => _localStorage
+      .write<String>(Constants.localStorageAccessTokenKey, accessToken);
+
+//  Future<void> _confirmLogin() async {
+//    final confirmLoginModel = await _userRepository.confirmLogin();
+//    await _saveAccessToken(confirmLoginModel.accessToken);
+//    await _localSecureStorage.write(
+//      Constants.localStorageRefreshTokenKey,
+//      confirmLoginModel.refreshToken,
+//    );
+//  }
+
+ // Future<void> _getUserData() async {
+ //   final userModel = await _userRepository.getLoggedUser();
+ //   await _localStorage.write<String>(
+ //     Constants.localStorageLoggedUserDataKey,
+ //     userModel.toJson(),
+ //   );
+ // }
 }

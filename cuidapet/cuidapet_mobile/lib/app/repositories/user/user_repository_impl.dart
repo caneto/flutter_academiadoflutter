@@ -44,4 +44,50 @@ class UserRepositoryImpl implements UserRepository {
       );
     }
   }
+
+  @override
+  Future<String> login({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      final response = await _restClient.unauth().post<Map<String, dynamic>>(
+        '/auth/',
+        data: {
+          'login': email, // por dentro do backend é login, não email
+          'password': password,
+          'supplier_user': false,
+          'social_login': false,
+        },
+      );
+
+      return response.data!['access_token'];
+    } on RestClientException catch (e, s) {
+      _loginRestClientError(e, s);
+    }
+  }
+
+
+  Never _loginRestClientError(
+    RestClientException error,
+    StackTrace stackTrace,
+  ) {
+    if (error.statusCode == HttpStatus.forbidden) {
+      return Error.throwWithStackTrace(
+        const Failure(
+          message: 'Usuário inconsistente. Entre em contato com o suporte',
+        ),
+        stackTrace,
+      );
+    }
+    _log.error('Erro ao realizar login', error, stackTrace);
+
+    return Error.throwWithStackTrace(
+      const Failure(
+        message: 'Erro ao realizar login. Tente novamente mais tarde',
+      ),
+      stackTrace,
+    );
+  }
+
 }
