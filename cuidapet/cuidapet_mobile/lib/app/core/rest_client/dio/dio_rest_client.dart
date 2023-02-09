@@ -1,10 +1,16 @@
-import 'package:dio/dio.dart';
+// ignore_for_file: always_put_required_named_parameters_first
 
+import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
+
+import '../../../modules/core/auth/auth_store.dart';
 import '../../helpers/constants.dart';
 import '../../helpers/enviroments.dart';
+import '../../local_storage/local_storage.dart';
 import '../rest_client.dart';
 import '../rest_client_exception.dart';
 import '../rest_client_response.dart';
+import 'interceptors/auth_interceptor.dart';
 
 class DioRestClient implements RestClient {
   late final Dio _dio;
@@ -19,8 +25,23 @@ class DioRestClient implements RestClient {
     ),
   );
 
-  DioRestClient({BaseOptions? baseOptions}) {
+  DioRestClient({
+    BaseOptions? baseOptions,
+    required LocalStorage localStorage,
+    required AuthStore authStore,
+  }) {
     _dio = Dio(baseOptions ?? _defaultOptions);
+    _dio.interceptors.addAll([
+      AuthInterceptor(localStorage: localStorage, authStore: authStore),
+      if (kDebugMode) LogInterceptor(requestBody: true, responseBody: true),
+      /* AuthRefreshTokenInterceptor(
+        authStore: authStore,
+        localStorage: localStorage,
+        localSecureStorage: localSecureStorage,
+        restClient: this,
+        logger: logger,
+      ), */
+    ]);
   }
 
   @override
@@ -163,7 +184,7 @@ class DioRestClient implements RestClient {
     }
   }
 
-RestClientResponse<T> _dioResponseConverter<T>(Response<dynamic> response) =>
+  RestClientResponse<T> _dioResponseConverter<T>(Response<dynamic> response) =>
       RestClientResponse<T>(
         data: response.data,
         statusCode: response.statusCode,
