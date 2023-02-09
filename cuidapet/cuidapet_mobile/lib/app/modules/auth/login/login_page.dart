@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:validatorless/validatorless.dart';
 
 import '../../../core/helpers/enviroments.dart';
 import '../../../core/ui/extensions/screen_size_extension.dart';
@@ -11,6 +12,7 @@ import '../../../core/ui/styles/colors_app.dart';
 import '../../../core/ui/widgets/app_default_button.dart';
 import '../../../core/ui/widgets/app_textform_field.dart';
 import '../../../core/ui/widgets/rounded_button_with_icon.dart';
+import 'login_controller.dart';
 part 'widgets/login_form.dart';
 part 'widgets/login_divider.dart';
 part 'widgets/login_register_buttons.dart';
