@@ -90,11 +90,11 @@ class UserServiceImpl implements UserService {
         final user =
             await _userRepository.login(email: email, password: password);
         await _saveAccessToken(user);
-        final xx = await _localStorage
-            .read<String>(Constants.localStorageAccessTokenKey);
-        if (kDebugMode) {
-          print(xx);
-        }
+        //final xx = await _localStorage
+        //    .read<String>(Constants.localStorageAccessTokenKey);
+        //if (kDebugMode) {
+        //  print(xx);
+        //}
         await _confirmLogin();
         //await _getUserData();
       } else {
