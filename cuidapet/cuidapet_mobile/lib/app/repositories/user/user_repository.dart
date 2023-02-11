@@ -1,3 +1,5 @@
+import '../../models/confirm_login_model.dart';
+
 abstract class UserRepository {
   Future<void> register({
     required String email,

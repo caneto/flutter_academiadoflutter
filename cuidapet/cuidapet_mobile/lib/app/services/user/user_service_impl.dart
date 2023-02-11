@@ -1,6 +1,7 @@
 // ignore_for_file: directives_ordering
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../core/exceptions/failure.dart';
 import '../../core/exceptions/user_exists_exception.dart';
@@ -89,9 +90,12 @@ class UserServiceImpl implements UserService {
         final user =
             await _userRepository.login(email: email, password: password);
         await _saveAccessToken(user);
-        final xx = await _localStorage.read<String>(Constants.localStorageAccessTokenKey);
-        print(xx);
-        //await _confirmLogin();
+        final xx = await _localStorage
+            .read<String>(Constants.localStorageAccessTokenKey);
+        if (kDebugMode) {
+          print(xx);
+        }
+        await _confirmLogin();
         //await _getUserData();
       } else {
         throw const Failure(message: 'Login not found');
@@ -108,20 +112,20 @@ class UserServiceImpl implements UserService {
   Future<void> _saveAccessToken(String accessToken) => _localStorage
       .write<String>(Constants.localStorageAccessTokenKey, accessToken);
 
-//  Future<void> _confirmLogin() async {
-//    final confirmLoginModel = await _userRepository.confirmLogin();
-//    await _saveAccessToken(confirmLoginModel.accessToken);
-//    await _localSecureStorage.write(
-//      Constants.localStorageRefreshTokenKey,
-//      confirmLoginModel.refreshToken,
-//    );
-//  }
+  Future<void> _confirmLogin() async {
+    final confirmLoginModel = await _userRepository.confirmLogin();
+    await _saveAccessToken(confirmLoginModel.accessToken);
+    await _localSecureStorage.write(
+      Constants.localStorageRefreshTokenKey,
+      confirmLoginModel.refreshToken,
+    );
+  }
 
- // Future<void> _getUserData() async {
- //   final userModel = await _userRepository.getLoggedUser();
- //   await _localStorage.write<String>(
- //     Constants.localStorageLoggedUserDataKey,
- //     userModel.toJson(),
- //   );
- // }
+  // Future<void> _getUserData() async {
+  //   final userModel = await _userRepository.getLoggedUser();
+  //   await _localStorage.write<String>(
+  //     Constants.localStorageLoggedUserDataKey,
+  //     userModel.toJson(),
+  //   );
+  // }
 }
