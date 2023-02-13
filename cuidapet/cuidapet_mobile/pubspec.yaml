@@ -35,6 +35,9 @@ dependencies:
   firebase_messaging: ^14.2.1
   google_sign_in: ^5.4.3  
 
+  #FaceBook
+  flutter_facebook_auth: ^5.0.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
