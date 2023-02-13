@@ -8,6 +8,7 @@ import '../../core/logger/app_logger.dart';
 import '../../core/rest_client/rest_client.dart';
 import '../../core/rest_client/rest_client_exception.dart';
 import '../../models/confirm_login_model.dart';
+import '../../models/social_network_model.dart';
 import '../../models/user_model.dart';
 import './user_repository.dart';
 
@@ -71,30 +72,7 @@ class UserRepositoryImpl implements UserRepository {
     }
   }
 
-
-  Never _loginRestClientError(
-    RestClientException error,
-    StackTrace stackTrace,
-  ) {
-    if (error.statusCode == HttpStatus.forbidden) {
-      return Error.throwWithStackTrace(
-        const Failure(
-          message: 'Usuário inconsistente. Entre em contato com o suporte',
-        ),
-        stackTrace,
-      );
-    }
-    _log.error('Erro ao realizar login', error, stackTrace);
-
-    return Error.throwWithStackTrace(
-      const Failure(
-        message: 'Erro ao realizar login. Tente novamente mais tarde',
-      ),
-      stackTrace,
-    );
-  }
-
-    @override
+  @override
   Future<ConfirmLoginModel> confirmLogin() async {
     try {
       final deviceToken = await FirebaseMessaging.instance.getToken();
@@ -133,5 +111,48 @@ class UserRepositoryImpl implements UserRepository {
         s,
       );
     }
+  }
+
+  @override
+  Future<String> loginSocial(SocialNetworkModel model) async {
+    try {
+      final response = await _restClient.unauth().post<Map<String, dynamic>>(
+        '/auth/',
+        data: {
+          'login': model.email, // Trocar email pór login 
+          'social_login': true,
+          'avatar': model.avatar,
+          'social_type': model.type,
+          'social_key': model.id,
+          'supplier_user': false,
+        },
+      );
+
+      return response.data!['access_token'];
+    } on RestClientException catch (e, s) {
+      _loginRestClientError(e, s);
+    }
+  }
+
+  Never _loginRestClientError(
+    RestClientException error,
+    StackTrace stackTrace,
+  ) {
+    if (error.statusCode == HttpStatus.forbidden) {
+      return Error.throwWithStackTrace(
+        const Failure(
+          message: 'Usuário inconsistente. Entre em contato com o suporte',
+        ),
+        stackTrace,
+      );
+    }
+    _log.error('Erro ao realizar login', error, stackTrace);
+
+    return Error.throwWithStackTrace(
+      const Failure(
+        message: 'Erro ao realizar login. Tente novamente mais tarde',
+      ),
+      stackTrace,
+    );
   }
 }

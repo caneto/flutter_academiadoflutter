@@ -166,10 +166,10 @@ class UserServiceImpl implements UserService {
       }
 
       await firebaseAuth.signInWithCredential(authCredential);
-      //final result = await _repository.loginSocial(socialNetworkModel);
-      //await _saveAccessToken(result);
-      //await _confirmLogin();
-      //await _getUserData();
+      final result = await _userRepository.loginSocial(socialNetworkModel);
+      await _saveAccessToken(result);
+      await _confirmLogin();
+      await _getUserData();
     } on FirebaseAuthException catch (e, s) {
       _socialLoginError(type, e, s);
     } on PlatformException catch (e, s) {
