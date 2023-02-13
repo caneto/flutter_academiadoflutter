@@ -2,6 +2,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../core/exceptions/failure.dart';
+import '../../../core/exceptions/user_not_exists_exception.dart';
 import '../../../core/logger/app_logger.dart';
 import '../../../core/ui/widgets/loader.dart';
 import '../../../core/ui/widgets/messages.dart';
@@ -26,8 +27,7 @@ abstract class LoginControllerBase with Store {
       Loader.show();
       await _service.login(email: login, password: password);
       Loader.hide();
-      //Modular.to.navigate('/auth/');
-      
+      Modular.to.navigate('/auth/');
     } on Failure catch (e) {
       final errorMessage = e.message ?? 'Error while trying to login';
 
@@ -35,13 +35,11 @@ abstract class LoginControllerBase with Store {
 
       _logger.error(errorMessage);
       Messages.alert(errorMessage);
-    //} on UserNotExistsException {
-    //  const errorMessage = 'Usuário não encontrado';
-
-    //  Loader.hide();
-
-    //  _logger.error(errorMessage);
-    //  Messages.alert(errorMessage);
+    } on UserNotExistsException {
+      const errorMessage = 'Usuário não encontrado';
+      Loader.hide();
+      _logger.error(errorMessage);
+      Messages.alert(errorMessage);
     }
   }
 

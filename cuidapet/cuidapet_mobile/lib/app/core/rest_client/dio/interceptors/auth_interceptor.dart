@@ -29,7 +29,7 @@ class AuthInterceptor extends Interceptor {
           .read<String>(Constants.localStorageAccessTokenKey);
 
       if (accessToken == null) {
-        //await _authStore.logout();
+        await _authStore.logout();
         handler.reject(
           DioError(
             requestOptions: options,

@@ -12,10 +12,6 @@ import 'auth/auth_store.dart';
 class CoreModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind.lazySingleton<AuthStore>(
-      (i) => AuthStore(),
-      export: true,
-    ),
     Bind.lazySingleton<AppLogger>(
       (i) => AppLoggerImpl(),
       export: true,
@@ -32,6 +28,13 @@ class CoreModule extends Module {
       (_) => FlutterSecureStorageLocalStorageImpl(),
       export: true,
     ),
+    Bind.lazySingleton<AuthStore>(
+      (i) => AuthStore(
+        localSecureStorage: i(),
+        localStorage: i(),
+      ),
+      export: true,
+    ),
     Bind.lazySingleton<RestClient>(
       (i) => DioRestClient(
         authStore: i(),
@@ -39,6 +42,5 @@ class CoreModule extends Module {
       ),
       export: true,
     ),
-    
   ];
 }
