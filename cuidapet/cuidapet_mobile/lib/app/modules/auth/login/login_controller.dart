@@ -6,6 +6,7 @@ import '../../../core/exceptions/user_not_exists_exception.dart';
 import '../../../core/logger/app_logger.dart';
 import '../../../core/ui/widgets/loader.dart';
 import '../../../core/ui/widgets/messages.dart';
+import '../../../models/social_login_type.dart';
 import '../../../services/user/user_service.dart';
 
 part 'login_controller.g.dart';
@@ -43,7 +44,7 @@ abstract class LoginControllerBase with Store {
     }
   }
 
-  /*Future<void> socialLogin(SocialLoginType type) async {
+  Future<void> socialLogin(SocialLoginType type) async {
     try {
       Loader.show();
       await _service.socialLogin(type);
@@ -56,5 +57,5 @@ abstract class LoginControllerBase with Store {
       _logger.error(errorMessage, e, s);
       Messages.alert(e.message ?? errorMessage);
     }
-  }*/
+  }
 }

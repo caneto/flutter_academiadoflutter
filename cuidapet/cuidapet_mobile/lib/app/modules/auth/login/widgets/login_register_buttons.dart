@@ -1,7 +1,7 @@
 part of '../login_page.dart';
 
 class _LoginRegisterButtons extends StatelessWidget {
-  //final _controller = Modular.get<LoginController>();
+  final _controller = Modular.get<LoginController>();
   final _roundedButtonWidth = 0.42.sw;
 
   @override
@@ -19,7 +19,7 @@ class _LoginRegisterButtons extends StatelessWidget {
           label: 'Facebook',
         ),
         RoundedButtonWithIcon(
-          onTap: () {}, // => _controller.socialLogin(SocialLoginType.google),
+          onTap: () => _controller.socialLogin(SocialLoginType.google),
           width: _roundedButtonWidth,
           color: ColorsApp.instance.googleColor,
           icon: AppIcons.google,

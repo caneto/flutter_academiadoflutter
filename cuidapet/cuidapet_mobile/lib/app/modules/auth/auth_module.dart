@@ -1,5 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../repositories/social/social_repository.dart';
+import '../../repositories/social/social_repository_impl.dart';
 import '../../repositories/user/user_repository_impl.dart';
 import '../../services/user/user_service_impl.dart';
 import '../core/core_module.dart';
@@ -13,6 +15,7 @@ class AuthModule extends Module {
 
   @override
   final List<Bind> binds = [
+    Bind.lazySingleton<SocialRepository>((_) => SocialRepositoryImpl()),
     Bind.lazySingleton(
       (i) => UserRepositoryImpl(
         log: i(), // CoreModule
@@ -24,7 +27,8 @@ class AuthModule extends Module {
         log: i(), // CoreModule
         userRepository: i(), // AuthModule
         localStorage: i(), // CoreModule
-        localSecureStorage: i(), // CoreModule
+        localSecureStorage: i(), // CoreModule 
+        socialRepository: i(), 
       ),
     ),
   ];

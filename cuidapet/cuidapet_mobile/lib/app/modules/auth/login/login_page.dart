@@ -12,6 +12,7 @@ import '../../../core/ui/styles/colors_app.dart';
 import '../../../core/ui/widgets/app_default_button.dart';
 import '../../../core/ui/widgets/app_textform_field.dart';
 import '../../../core/ui/widgets/rounded_button_with_icon.dart';
+import '../../../models/social_login_type.dart';
 import 'login_controller.dart';
 part 'widgets/login_form.dart';
 part 'widgets/login_divider.dart';

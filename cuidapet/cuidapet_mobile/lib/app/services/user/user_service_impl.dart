@@ -2,6 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 
 import '../../core/exceptions/failure.dart';
 import '../../core/exceptions/user_exists_exception.dart';
@@ -9,6 +10,9 @@ import '../../core/exceptions/user_not_exists_exception.dart';
 import '../../core/helpers/constants.dart';
 import '../../core/local_storage/local_storage.dart';
 import '../../core/logger/app_logger.dart';
+import '../../models/social_login_type.dart';
+import '../../models/social_network_model.dart';
+import '../../repositories/social/social_repository.dart';
 import '../../repositories/user/user_repository.dart';
 import './user_service.dart';
 
@@ -16,17 +20,20 @@ class UserServiceImpl implements UserService {
   final LocalStorage _localStorage;
   final LocalSecureStorage _localSecureStorage;
   final UserRepository _userRepository;
+  final SocialRepository _socialRepository;
   final AppLogger _log;
 
   UserServiceImpl({
-    required UserRepository userRepository,
     required AppLogger log,
+    required UserRepository userRepository,
+    required SocialRepository socialRepository,
     required LocalStorage localStorage,
     required LocalSecureStorage localSecureStorage,
-  })  : _localStorage = localStorage,
+  })  : _log = log,
+        _localStorage = localStorage,
         _localSecureStorage = localSecureStorage,
         _userRepository = userRepository,
-        _log = log;
+        _socialRepository = socialRepository;
 
   @override
   Future<void> register({
@@ -126,6 +133,56 @@ class UserServiceImpl implements UserService {
     await _localStorage.write<String>(
        Constants.localStorageLoggedUserDataKey,
        userModel.toJson(),
+    );
+  }
+
+   @override
+  Future<void> socialLogin(SocialLoginType type) async {
+    try {
+      final SocialNetworkModel socialNetworkModel;
+      final AuthCredential authCredential;
+      final firebaseAuth = FirebaseAuth.instance;
+
+      switch (type) {
+        case SocialLoginType.facebook:
+          socialNetworkModel = await _socialRepository.facebookLogin();
+          authCredential =
+              FacebookAuthProvider.credential(socialNetworkModel.accessToken);
+          break;
+        case SocialLoginType.google:
+          socialNetworkModel = await _socialRepository.googleLogin();
+          authCredential = GoogleAuthProvider.credential(
+            accessToken: socialNetworkModel.accessToken,
+            idToken: socialNetworkModel.id,
+          );
+          break;
+      }
+
+      final loginMethods = await firebaseAuth
+          .fetchSignInMethodsForEmail(socialNetworkModel.email);
+
+      if (loginMethods.isNotEmpty && !loginMethods.contains(type.domain)) {
+        throw Failure(message: 'Login não pode ser feito por ${type.value}.');
+      }
+
+      await firebaseAuth.signInWithCredential(authCredential);
+      //final result = await _repository.loginSocial(socialNetworkModel);
+      //await _saveAccessToken(result);
+      //await _confirmLogin();
+      //await _getUserData();
+    } on FirebaseAuthException catch (e, s) {
+      _socialLoginError(type, e, s);
+    } on PlatformException catch (e, s) {
+      _socialLoginError(type, e, s);
+    }
+  }
+
+  Never _socialLoginError(SocialLoginType type, dynamic e, StackTrace s) {
+    _log.error('Erro ao realizar login com ${type.value}', e, s);
+
+    return Error.throwWithStackTrace(
+      const Failure(message: 'Erro ao realizar login'),
+      s,
     );
   }
 }
