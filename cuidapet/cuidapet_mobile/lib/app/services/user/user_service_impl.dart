@@ -96,7 +96,7 @@ class UserServiceImpl implements UserService {
         //  print(xx);
         //}
         await _confirmLogin();
-        //await _getUserData();
+        await _getUserData();
       } else {
         throw const Failure(message: 'Login not found');
       }
@@ -121,11 +121,11 @@ class UserServiceImpl implements UserService {
     );
   }
 
-  // Future<void> _getUserData() async {
-  //   final userModel = await _userRepository.getLoggedUser();
-  //   await _localStorage.write<String>(
-  //     Constants.localStorageLoggedUserDataKey,
-  //     userModel.toJson(),
-  //   );
-  // }
+  Future<void> _getUserData() async {
+   final userModel = await _userRepository.getLoggedUser();
+    await _localStorage.write<String>(
+       Constants.localStorageLoggedUserDataKey,
+       userModel.toJson(),
+    );
+  }
 }

@@ -8,6 +8,7 @@ import '../../core/logger/app_logger.dart';
 import '../../core/rest_client/rest_client.dart';
 import '../../core/rest_client/rest_client_exception.dart';
 import '../../models/confirm_login_model.dart';
+import '../../models/user_model.dart';
 import './user_repository.dart';
 
 class UserRepositoryImpl implements UserRepository {
@@ -117,5 +118,20 @@ class UserRepositoryImpl implements UserRepository {
     }
   }
 
+  @override
+  Future<UserModel> getLoggedUser() async {
+    try {
+      final response = await _restClient.get<Map<String, dynamic>>('/user/');
 
+      return UserModel.fromMap(response.data!);
+    } on RestClientException catch (e, s) {
+      const errorMessage = 'Erro ao buscar dados do usuário logado';
+      _log.error(errorMessage, e, s);
+
+      Error.throwWithStackTrace(
+        const Failure(message: errorMessage),
+        s,
+      );
+    }
+  }
 }
