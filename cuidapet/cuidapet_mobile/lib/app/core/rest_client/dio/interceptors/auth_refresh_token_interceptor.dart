@@ -14,19 +14,19 @@ class AuthRefreshTokenInterceptor extends Interceptor {
   final LocalStorage _localStorage;
   final LocalSecureStorage _localSecureStorage;
   final RestClient _restClient;
-  final AppLogger _logger;
+  final AppLogger _log;
 
   AuthRefreshTokenInterceptor({
     required AuthStore authStore,
     required LocalStorage localStorage,
     required LocalSecureStorage localSecureStorage,
     required RestClient restClient,
-    required AppLogger logger,
+    required AppLogger log,
   })  : _authStore = authStore,
         _localStorage = localStorage,
         _localSecureStorage = localSecureStorage,
         _restClient = restClient,
-        _logger = logger;
+        _log = log;
 
   @override
   Future<void> onError(DioError err, ErrorInterceptorHandler handler) async {
@@ -42,7 +42,7 @@ class AuthRefreshTokenInterceptor extends Interceptor {
                   false;
 
           if (authRequired) {
-            _logger.append('##### REFRESH TOKEN #####');
+            _log.append('##### REFRESH TOKEN #####');
             await _refreshToken();
             await _retryRequest(err, handler);
           } else {
@@ -55,15 +55,15 @@ class AuthRefreshTokenInterceptor extends Interceptor {
         Error.throwWithStackTrace(err, StackTrace.current);
       }
     } on ExpireTokenException {
-      //_authStore.logout();
+      _authStore.logout();
       handler.next(err);
     } on DioError catch (e) {
       handler.next(e);
     } catch (e, s) {
-      _logger.error('Rest client error', e, s);
+      _log.error('Rest client error', e, s);
       handler.next(err);
     } finally {
-      _logger.closeAppend();
+      _log.closeAppend();
     }
   }
 
@@ -95,7 +95,7 @@ class AuthRefreshTokenInterceptor extends Interceptor {
     DioError err,
     ErrorInterceptorHandler handler,
   ) async {
-    _logger.append('######## Retry request ########');
+    _log.append('######## Retry request ########');
     final requestOptions = err.requestOptions;
 
     final result = await _restClient.request(
