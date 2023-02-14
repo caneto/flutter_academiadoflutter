@@ -181,7 +181,7 @@
   <tr>
     <td><b>Refresh Token</b> (Refresh token entendendo o fluxo, Alterando backend para atender o desenvolvimento do refresh token, Implementando Refresh Token, Voltando alterações no backend)</td>
     <td><b>Core Review</b> (Removendo ModularState do projeto)</td>
-    <td><b>Core</b> ( )</td>
+    <td><b>Core</b> (LifeCyclePage - Implementando ciclo de vida dentro da controller, LifeCyclePage - Implementando código)</td>
   </tr>
 </table>   
   
