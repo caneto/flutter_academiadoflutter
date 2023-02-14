@@ -178,6 +178,9 @@
       <b>Auth</b> (Implementando tela de cadastro por e-mail e senha, Conectando tela de cadastro ao backend e firebase, Entendendo o Fluxo de login do Cuidapet, Implementando tela de login (Ligando os pontos), Login e-mail e password (Firebase), Login e-mail e password (Backend Login), (Auth DIO Interceptor) adicionando token no header das requisições, Confirmar login e FirebaseMessage, Recuperar dados do usuário logado, Identificando se o usuário já está logado (Login permanente), Login com rede social (Google) configuração e implementação, Integrando login do Google com nosso Backend, Login com rede social (Facebook) implementando)
     </td>
   </tr>
+  <tr>
+    <td><b>Refresh Token</b> (Refresh token entendendo o fluxo)</td>
+  </tr>
 </table>   
   
 <h2>📝 Licença</h2>
