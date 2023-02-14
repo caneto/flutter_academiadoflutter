@@ -166,23 +166,27 @@
     <td>
       <b>Env e Remote Config</b> (Configurando variáveis de ambiente (env e remote config))
     </td>
-  </tr>
+    </tr>
     <tr>
-    <td>
+     <td>
       <b>Encapsulamentos</b> (Interface RestClient, Encapsulando o DIO, Encapsulando logs da aplicação, Encapsulando Shared Preferences, Encapsulando Flutter Secure Storage)
-    </td>
-    <td>
+     </td>
+     <td>
       <b>Componentes</b> (Componente de Loader, Componente de Mensagem (Snackbar com Asuka))
-    </td>
-    <td>
+     </td>
+     <td>
       <b>Auth</b> (Implementando tela de cadastro por e-mail e senha, Conectando tela de cadastro ao backend e firebase, Entendendo o Fluxo de login do Cuidapet, Implementando tela de login (Ligando os pontos), Login e-mail e password (Firebase), Login e-mail e password (Backend Login), (Auth DIO Interceptor) adicionando token no header das requisições, Confirmar login e FirebaseMessage, Recuperar dados do usuário logado, Identificando se o usuário já está logado (Login permanente), Login com rede social (Google) configuração e implementação, Integrando login do Google com nosso Backend, Login com rede social (Facebook) implementando, Implementando Refresh Token)
-    </td>
-  </tr>
-  <tr>
+     </td>
+   </tr>
+   <tr>
     <td><b>Refresh Token</b> (Refresh token entendendo o fluxo, Alterando backend para atender o desenvolvimento do refresh token, Implementando Refresh Token, Voltando alterações no backend)</td>
     <td><b>Core Review</b> (Removendo ModularState do projeto)</td>
     <td><b>Core</b> (LifeCyclePage - Implementando ciclo de vida dentro da controller, LifeCyclePage - Implementando código)</td>
+   </tr>
+   <tr>
     <td><b>Endereço</b> (Iniciando módulo de endereço (Montando tela), Criando componente de auto_complete, Integrando com Google Places)</td>
+    <td></td>
+    <td></td>
   </tr>
 </table>   
   
