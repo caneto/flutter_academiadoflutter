@@ -1,4 +1,5 @@
 //import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../core/exceptions/failure.dart';
@@ -6,7 +7,8 @@ import '../../models/social_network_model.dart';
 import 'social_repository.dart';
 
 class SocialRepositoryImpl implements SocialRepository {
-  /* @override
+  
+  @override
   Future<SocialNetworkModel> facebookLogin() async {
     final facebookAuth = FacebookAuth.instance;
     final result = await facebookAuth.login();
@@ -28,7 +30,7 @@ class SocialRepositoryImpl implements SocialRepository {
       case LoginStatus.operationInProgress:
         throw Failure(message: result.message);
     }
-  } */
+  } 
 
   @override
   Future<SocialNetworkModel> googleLogin() async {
@@ -56,9 +58,5 @@ class SocialRepositoryImpl implements SocialRepository {
     }
   }
   
-  @override
-  Future<SocialNetworkModel> facebookLogin() {
-    // TODO: implement facebookLogin
-    throw UnimplementedError();
-  }
+  
 }
