@@ -179,7 +179,7 @@
     </td>
   </tr>
   <tr>
-    <td><b>Refresh Token</b> (Refresh token entendendo o fluxo)</td>
+    <td><b>Refresh Token</b> (Refresh token entendendo o fluxo, Alterando backend para atender o desenvolvimento do refresh token)</td>
   </tr>
 </table>   
   
