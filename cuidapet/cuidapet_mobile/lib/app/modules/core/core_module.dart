@@ -38,7 +38,9 @@ class CoreModule extends Module {
     Bind.lazySingleton<RestClient>(
       (i) => DioRestClient(
         authStore: i(),
-        localStorage: i(),
+        localStorage: i(), 
+        localSecureStorage: i(), 
+        log: i(),
       ),
       export: true,
     ),
