@@ -35,6 +35,7 @@ dependencies:
   firebase_remote_config: ^3.0.9
   firebase_messaging: ^14.2.1
   google_sign_in: ^5.4.3  
+  google_maps_flutter: ^2.2.3
   google_place: ^0.4.7   ### Package Desativad, ver depois o que substituir
 
   #FaceBook
