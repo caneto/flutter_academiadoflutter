@@ -184,7 +184,7 @@
     <td><b>Core</b> (LifeCyclePage - Implementando ciclo de vida dentro da controller, LifeCyclePage - Implementando código)</td>
    </tr>
    <tr>
-    <td><b>Endereço</b> (Iniciando módulo de endereço (Montando tela), Criando componente de auto_complete, Integrando com Google Places)</td>
+    <td><b>Endereço</b> (Iniciando módulo de endereço (Montando tela), Criando componente de auto_complete, Integrando com Google Places, Finalizando auto_complete e lincando com google places)</td>
     <td></td>
     <td></td>
   </tr>
