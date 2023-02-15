@@ -38,7 +38,7 @@ class AddressPage extends StatelessWidget {
               ),
               _AddressSearchWidget(
                 onAddressSelected: (place) {
-                  print(place);
+                  Modular.to.pushNamed('/address/detail/', arguments: place);
                 },
               ),
               const SizedBox(
