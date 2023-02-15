@@ -57,7 +57,7 @@ app.*.map.json
 **/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
 **/android/app/src/google-services.json
-**/android/app/src/main/res/values/string.xml
+**/android/app/src/main/res/values/strings.xml
 
 # iOS/XCode related
 **/ios/**/*.mode1v3
