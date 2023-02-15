@@ -7,6 +7,9 @@ import '../../core/logger/app_logger.dart';
 import '../../core/logger/app_logger_impl.dart';
 import '../../core/rest_client/dio/dio_rest_client.dart';
 import '../../core/rest_client/rest_client.dart';
+import '../../repositories/address/address_repository.dart';
+import '../../repositories/address/address_repository_impl.dart';
+import '../../services/address/address_service_impl.dart';
 import 'auth/auth_store.dart';
 
 class CoreModule extends Module {
@@ -41,6 +44,19 @@ class CoreModule extends Module {
         localStorage: i(), 
         localSecureStorage: i(), 
         log: i(),
+      ),
+      export: true,
+    ),
+    Bind.lazySingleton<AddressRepository>(
+      (i) => AddressRepositoryImpl(
+        //connectionFactory: i<SqliteConnectionFactory>(),
+      ),
+      export: true,
+    ),
+    Bind.lazySingleton(
+      (i) => AddressServiceImpl(
+        addressRepository: i<AddressRepository>(),
+        localStorage: i<LocalStorage>(),
       ),
       export: true,
     ),
