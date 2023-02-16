@@ -8,6 +8,7 @@ import 'package:mobx/mobx.dart';
 
 import '../../../core/ui/extensions/theme_extension.dart';
 import '../../../core/ui/widgets/app_default_button.dart';
+import '../../../entities/address_entity.dart';
 import '../../../models/place_model.dart';
 import 'address_detail_controller.dart';
 
@@ -34,11 +35,11 @@ class _AddressDetailPageState extends State<AddressDetailPage> {
   @override
   void initState() {
     super.initState();
-    //addressDisposer = reaction((_) => _controller.address, (address) {
-    //  if (address != null) {
-//        Navigator.pop<AddressEntity>(context, address);
-    //  }
-    //});
+    addressDisposer = reaction((_) => _controller.address, (address) {
+      if (address != null) {
+        Navigator.pop<AddressEntity>(context, address);
+      }
+    });
   }
 
   @override
