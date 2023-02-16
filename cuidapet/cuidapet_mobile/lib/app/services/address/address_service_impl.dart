@@ -1,4 +1,5 @@
 import '../../core/local_storage/local_storage.dart';
+import '../../entities/address_entity.dart';
 import '../../models/place_model.dart';
 import '../../repositories/address/address_repository.dart';
 import './address_service.dart';
@@ -18,5 +19,28 @@ class AddressServiceImpl implements AddressService {
     String addressPattern,
   ) =>
       _addressRepository.findAddressByGooglePlace(addressPattern);
+
+   @override
+  Future<void> deleteAll() => _addressRepository.deleteAll();
+
+  @override
+  Future<List<AddressEntity>> getAddress() => _addressRepository.getAddress();
+
+  @override
+  Future<AddressEntity> saveAddress(
+    PlaceModel place,
+    String additionalInfo,
+  ) async {
+    final address = AddressEntity(
+      address: place.address,
+      lat: place.latitude,
+      lng: place.longitude,
+      additionalInfo: additionalInfo,
+    );
+
+    final addressId = await _addressRepository.saveAddress(address);
+
+    return address.copyWith(id: addressId);
+  }
 
 }

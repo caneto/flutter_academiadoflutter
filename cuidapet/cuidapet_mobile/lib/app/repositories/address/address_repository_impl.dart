@@ -1,11 +1,21 @@
 import 'package:google_place/google_place.dart';
 
+import '../../core/database/sqlite_connection_factory.dart';
 import '../../core/exceptions/failure.dart';
 import '../../core/helpers/enviroments.dart';
+import '../../entities/address_entity.dart';
 import '../../models/place_model.dart';
 import './address_repository.dart';
 
 class AddressRepositoryImpl implements AddressRepository {
+ 
+  final SqliteConnectionFactory _connectionFactory;
+
+  const AddressRepositoryImpl({
+    required SqliteConnectionFactory connectionFactory,
+  }) : _connectionFactory = connectionFactory;
+
+
   @override
   Future<List<PlaceModel>> findAddressByGooglePlace(
     String addressPattern,
@@ -37,4 +47,35 @@ class AddressRepositoryImpl implements AddressRepository {
 
     return const [];
   }
+
+
+  @override
+  Future<void> deleteAll() async {
+    final connection = await _connectionFactory.openConnection();
+
+    await connection.delete('address');
+  }
+
+  @override
+  Future<List<AddressEntity>> getAddress() async {
+    final connection = await _connectionFactory.openConnection();
+
+    final result = await connection.rawQuery('SELECT * FROM address');
+
+    return result.map<AddressEntity>(AddressEntity.fromMap).toList();
+  }
+
+  @override
+  Future<int> saveAddress(AddressEntity address) async {
+    final connection = await _connectionFactory.openConnection();
+
+    return connection.rawInsert('INSERT INTO address VALUES (?, ?, ?, ?, ?)', [
+      null,
+      address.address,
+      address.lat,
+      address.lng,
+      address.additionalInfo,
+    ]);
+  }
+
 }
