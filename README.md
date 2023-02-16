@@ -184,7 +184,7 @@
     <td><b>Core</b> (LifeCyclePage - Implementando ciclo de vida dentro da controller, LifeCyclePage - Implementando código)</td>
    </tr>
    <tr>
-    <td><b>Endereço</b> (Iniciando módulo de endereço (Montando tela), Criando componente de auto_complete, Integrando com Google Places, Finalizando auto_complete e lincando com google places, Configurando Google Maps API, Construindo tela de detalhe de endereço, Configurando Sqlite, Construindo camadas de inclusão de endereço ao sqlite)</td>
+    <td><b>Endereço</b> (Iniciando módulo de endereço (Montando tela), Criando componente de auto_complete, Integrando com Google Places, Finalizando auto_complete e lincando com google places, Configurando Google Maps API, Construindo tela de detalhe de endereço, Configurando Sqlite, Construindo camadas de inclusão de endereço ao sqlite, Cadastrando endereço no sqlite)</td>
     <td></td>
     <td></td>
   </tr>
