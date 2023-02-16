@@ -41,6 +41,9 @@ dependencies:
   google_maps_flutter: ^2.2.3
   google_place: ^0.4.7   ### Package Desativad, ver depois o que substituir
 
+  geocoding: ^2.0.5
+  geolocator: ^9.0.2
+
   #FaceBook
   flutter_facebook_auth: ^5.0.7
 
