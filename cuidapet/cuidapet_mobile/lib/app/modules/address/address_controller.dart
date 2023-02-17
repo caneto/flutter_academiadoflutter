@@ -1,8 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-//import 'package:geocoding/geocoding.dart';
-//import 'package:geolocator/geolocator.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../core/life_cycle/controller_life_cycle.dart';
