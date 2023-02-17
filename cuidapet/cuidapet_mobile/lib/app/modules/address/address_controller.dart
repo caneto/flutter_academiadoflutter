@@ -1,4 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 //import 'package:geocoding/geocoding.dart';
 //import 'package:geolocator/geolocator.dart';
 import 'package:mobx/mobx.dart';
@@ -31,8 +33,8 @@ abstract class AddressControllerBase with Store, ControllerLifeCycle {
   @readonly
   var _locationServiceUnavailable = false;
 
-  //@readonly
-  //LocationPermission? _locationPermission;
+  @readonly
+  LocationPermission? _locationPermission;
 
   @readonly
   PlaceModel? _placeModel;
@@ -46,58 +48,55 @@ abstract class AddressControllerBase with Store, ControllerLifeCycle {
 
   @action
   Future<void> getMyLocation() async {
-    //_locationPermission = null;
+    _locationPermission = null;
     _locationServiceUnavailable = false;
 
-    //final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    final serviceEnabled = await Geolocator.isLocationServiceEnabled();
 
-    //if (!serviceEnabled) {
-    //  _locationServiceUnavailable = true;
+    if (!serviceEnabled) {
+      _locationServiceUnavailable = true;
+      return;
+    }
 
-    //  return;
-    //}
+    final locationPermission = await Geolocator.checkPermission();
 
-    //final locationPermission = await Geolocator.checkPermission();
-
-    // switch (locationPermission) {
-    //   case LocationPermission.denied:
-    //     final permission = await Geolocator.requestPermission();
-    //     if (permission == LocationPermission.denied ||
-    //         permission == LocationPermission.deniedForever) {
-    //       _locationPermission = permission;
-
-    //       return;
-    //     }
-    //     break;
-    //   case LocationPermission.deniedForever:
-    //     _locationPermission = locationPermission;
-
-    //     return;
-    //   case LocationPermission.whileInUse:
-    //   case LocationPermission.always:
-    //   case LocationPermission.unableToDetermine:
-    //     break;
-    // }
+    switch (locationPermission) {
+      case LocationPermission.denied:
+        final permission = await Geolocator.requestPermission();
+        if (permission == LocationPermission.denied ||
+            permission == LocationPermission.deniedForever) {
+          _locationPermission = permission;
+          return;
+        }
+        break;
+      case LocationPermission.deniedForever:
+        _locationPermission = locationPermission;
+        return;
+      case LocationPermission.whileInUse:
+      case LocationPermission.always:
+      case LocationPermission.unableToDetermine:
+        break;
+    }
 
     Loader.show();
 
-    //final position = await Geolocator.getCurrentPosition(
-    //  desiredAccuracy: LocationAccuracy.high,
-    //);
+    final position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
 
-    //final placemark =
-    //    await placemarkFromCoordinates(position.latitude, position.longitude);
-    //final place = placemark.first;
-    //final address = '${place.thoroughfare} ${place.subThoroughfare}';
+    final placemark =
+        await placemarkFromCoordinates(position.latitude, position.longitude);
+    final place = placemark.first;
+    final address = '${place.thoroughfare} ${place.subThoroughfare}';
 
-    //final placeModel = PlaceModel(
-    //  address: address,
-    //  latitude: position.latitude,
-    //  longitude: position.longitude,
-    //);
+    final placeModel = PlaceModel(
+      address: address,
+      latitude: position.latitude,
+      longitude: position.longitude,
+    );
 
     Loader.hide();
-    //goToAddressDetail(placeModel);
+    goToAddressDetail(placeModel);
   }
 
   Future<void> goToAddressDetail(PlaceModel place) async {

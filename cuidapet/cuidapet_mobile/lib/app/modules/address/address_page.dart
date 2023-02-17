@@ -47,14 +47,15 @@ class _AddressPageState
               ),
               _AddressSearchWidget(
                 onAddressSelected: (place) {
-                  Modular.to.pushNamed('/address/detail/', arguments: place);
+                  controller.goToAddressDetail(place);
                 },
               ),
               const SizedBox(
                 height: 30,
               ),
-              const ListTile(
-                leading: CircleAvatar(
+              ListTile(
+                onTap: controller.getMyLocation,
+                leading: const CircleAvatar(
                   backgroundColor: Colors.red,
                   radius: 30,
                   child: Icon(
@@ -62,13 +63,13 @@ class _AddressPageState
                     color: Colors.white,
                   ),
                 ),
-                title: Text(
+                title: const Text(
                   'Localização Atual',
                   style: TextStyle(
                     fontSize: 20,
                   ),
                 ),
-                trailing: Icon(Icons.arrow_forward_ios),
+                trailing: const Icon(Icons.arrow_forward_ios),
               ),
               const SizedBox(
                 height: 20,
