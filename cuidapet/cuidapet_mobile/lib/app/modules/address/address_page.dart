@@ -88,10 +88,12 @@ class _AddressPageState
               const SizedBox(
                 height: 20,
               ),
-              _AddressSearchWidget(
-                onAddressSelected: (place) {
-                  controller.goToAddressDetail(place);
-                },
+              Observer(
+                builder: (_) => _AddressSearchWidget(
+                  key: UniqueKey(),
+                  onAddressSelected: controller.goToAddressDetail,
+                  place: controller.placeModel,
+                ),
               ),
               const SizedBox(
                 height: 30,
