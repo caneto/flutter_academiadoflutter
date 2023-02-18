@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../core/exceptions/failure.dart';
@@ -29,6 +30,12 @@ abstract class _RegisterControllerBase with Store {
       Loader.show();
       await _userService.register(email: email, password: password);
       Loader.hide();
+
+      Messages.success(
+        'Usuário cadastrado com sucesso! Por favor, confirme seu e-mail.',
+      );
+
+      Modular.to.pop();
     } on UserExistsException {
       Loader.hide();
       Messages.alert('Email já utilizado.');

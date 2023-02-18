@@ -1,3 +1,4 @@
+import '../../core/helpers/constants.dart';
 import '../../core/local_storage/local_storage.dart';
 import '../../entities/address_entity.dart';
 import '../../models/place_model.dart';
@@ -42,5 +43,24 @@ class AddressServiceImpl implements AddressService {
 
     return address.copyWith(id: addressId);
   }
+
+    @override
+  Future<AddressEntity?> getSelectedAddress() async {
+    final jsonAddress = await _localStorage
+        .read<String>(Constants.localStorageDefaultAddressDataKey);
+
+    if (jsonAddress != null) {
+      return AddressEntity.fromJson(jsonAddress);
+    }
+
+    return null;
+  }
+
+  @override
+  Future<void> selectAddress(AddressEntity address) =>
+      _localStorage.write<String>(
+        Constants.localStorageDefaultAddressDataKey,
+        address.toJson(),
+      );
 
 }
