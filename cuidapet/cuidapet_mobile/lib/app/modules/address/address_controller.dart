@@ -116,15 +116,15 @@ abstract class AddressControllerBase with Store, ControllerLifeCycle {
     Modular.to.pop<AddressEntity>(address);
   }
 
-  // Future<bool> wasAddressSelected() async {
-  //   final address = await _addressService.getSelectedAddress();
+  Future<bool> wasAddressSelected() async {
+     final address = await _addressService.getSelectedAddress();
 
-  //   if (address != null) {
-  //     return true;
-  //   } else {
-  //     Messages.alert('Selecione ou cadastre um endereço!');
+    if (address != null) {
+       return true;
+     } else {
+       Messages.alert('Selecione ou cadastre um endereço!');
 
-  //     return false;
-  //   }
-  // }
+       return false;
+     }
+  }
 }
