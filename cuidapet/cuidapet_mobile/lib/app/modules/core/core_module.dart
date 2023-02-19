@@ -10,6 +10,7 @@ import '../../core/rest_client/dio/dio_rest_client.dart';
 import '../../core/rest_client/rest_client.dart';
 import '../../repositories/address/address_repository.dart';
 import '../../repositories/address/address_repository_impl.dart';
+import '../../services/address/address_service.dart';
 import '../../services/address/address_service_impl.dart';
 import 'auth/auth_store.dart';
 
@@ -30,10 +31,11 @@ class CoreModule extends Module {
       (_) => FlutterSecureStorageLocalStorageImpl(),
       export: true,
     ),
-    Bind.lazySingleton<AuthStore>(
+     Bind.lazySingleton<AuthStore>(
       (i) => AuthStore(
-        localSecureStorage: i(),
-        localStorage: i(),
+        localStorage: i<LocalStorage>(),
+        localSecureStorage: i<LocalSecureStorage>(),
+        addressService: i<AddressService>(),
       ),
       export: true,
     ),

@@ -4,21 +4,24 @@ import 'package:mobx/mobx.dart';
 import '../../../core/helpers/constants.dart';
 import '../../../core/local_storage/local_storage.dart';
 import '../../../models/user_model.dart';
+import '../../../services/address/address_service.dart';
 
 part 'auth_store.g.dart';
 
 class AuthStore = AuthStoreBase with _$AuthStore;
 
 abstract class AuthStoreBase with Store {
-  
- final LocalStorage _localStorage;
- final LocalSecureStorage _localSecureStorage;
+  final LocalStorage _localStorage;
+  final LocalSecureStorage _localSecureStorage;
+  final AddressService _addressService;
 
- AuthStoreBase({
+  AuthStoreBase({
     required LocalStorage localStorage,
     required LocalSecureStorage localSecureStorage,
+    required AddressService addressService,
   })  : _localStorage = localStorage,
-        _localSecureStorage = localSecureStorage;
+        _localSecureStorage = localSecureStorage,
+        _addressService = addressService;
 
   @readonly
   UserModel? _loggedUser;
@@ -33,7 +36,7 @@ abstract class AuthStoreBase with Store {
 
     FirebaseAuth.instance.authStateChanges().listen((user) async {
       if (user == null) {
-          await logout();
+        await logout();
       }
     });
   }
@@ -42,7 +45,7 @@ abstract class AuthStoreBase with Store {
   Future<void> logout() async {
     await _localStorage.clear();
     await _localSecureStorage.clear();
-    //await _addressService.deleteAll();
+    await _addressService.deleteAll();
     _loggedUser = const UserModel.empty();
   }
 }
