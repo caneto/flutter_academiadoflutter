@@ -185,7 +185,7 @@
    </tr>
    <tr>
     <td><b>Endereço</b> (Iniciando módulo de endereço (Montando tela), Criando componente de auto_complete, Integrando com Google Places, Finalizando auto_complete e lincando com google places, Configurando Google Maps API, Construindo tela de detalhe de endereço, Configurando Sqlite, Construindo camadas de inclusão de endereço ao sqlite, Cadastrando endereço no sqlite, Configurando packages de GPS (Geolocation), Recuperando localização do usuário, Mostrando mensagens de GPS para o usuário, Problema com mobx versão 2.0.7+4, Editando endereço, Selecionando endereço e adicionando o Local Storage, Adicionando componente correto na lista de endereços, Acertos no logout do nosso projeto, Buscando endereço selecionado, Bloqueando saída da tela endereço sem selecionar um endereço)</td>
-    <td><b>Home</b> (Construindo AppBar da HomePage, Implementando componente de apresentação do endereço) </td>
+    <td><b>Home</b> (Construindo AppBar da HomePage, Implementando componente de apresentação do endereço, Criando componente de categorias) </td>
     <td></td>
   </tr>
 </table>   
