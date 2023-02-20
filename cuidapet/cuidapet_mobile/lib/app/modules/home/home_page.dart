@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../core/helpers/debouncer.dart';
@@ -9,6 +10,7 @@ import '../core/auth/auth_store.dart';
 import 'home_controller.dart';
 
 part 'widgets/home_appbar.dart';
+part 'widgets/home_address_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -59,7 +61,7 @@ class _HomePageState extends PageLifeCycleState<HomeController, HomePage> {
         controller: _scrollController,
         headerSliverBuilder: (_, __) => [
           HomeAppBar(controller),
-          //SliverToBoxAdapter(child: _HomeAddressWidget(controller: controller)),
+          SliverToBoxAdapter(child: _HomeAddressWidget(controller: controller)),
           //SliverToBoxAdapter(
           //  child: _HomeCategoriesWidget(controller: controller),
           //),
