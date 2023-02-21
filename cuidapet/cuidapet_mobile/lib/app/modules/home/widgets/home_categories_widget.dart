@@ -32,7 +32,7 @@ class _CategoryItem extends StatelessWidget {
   //final SupplierCategoryModel category;
 
   const _CategoryItem({
-    required this.category,
+    //required this.category,
     required this.controller,
   });
 

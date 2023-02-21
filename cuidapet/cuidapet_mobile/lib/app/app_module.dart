@@ -11,6 +11,7 @@ class AppModule extends Module {
         ModuleRoute('/auth', module: AuthModule()),
         ModuleRoute('/home', module: HomeModule()),
         ModuleRoute('/address', module: AddressModule()),
+        
       ];
 
   @override
