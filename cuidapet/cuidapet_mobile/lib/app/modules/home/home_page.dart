@@ -13,9 +13,10 @@ import 'home_controller.dart';
 part 'widgets/home_appbar.dart';
 part 'widgets/home_address_widget.dart';
 part 'widgets/home_categories_widget.dart';
+part 'widgets/home_supplier_tab.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -68,7 +69,7 @@ class _HomePageState extends PageLifeCycleState<HomeController, HomePage> {
            child: _HomeCategoriesWidget(controller: controller),
           ),
         ],
-        body: Container(), //_HomeSupplierTab(controller: controller),
+        body: _HomeSupplierTab(controller: controller),
       ),
     );
   }

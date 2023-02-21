@@ -10,6 +10,8 @@ import '../../services/address/address_service.dart';
 import '../../services/supplier/supplier_service.dart';
 part 'home_controller.g.dart';
 
+enum SupplierPageType { list, grid }
+
 class HomeController = HomeControllerBase with _$HomeController;
 
 abstract class HomeControllerBase with Store, ControllerLifeCycle {
@@ -22,6 +24,8 @@ abstract class HomeControllerBase with Store, ControllerLifeCycle {
   @readonly
   var _categories = const <SupplierCategoryModel>[];
 
+  @readonly
+  var _suppliersPageType = SupplierPageType.list;
 
   HomeControllerBase({
     required AddressService addressService,
@@ -72,5 +76,10 @@ abstract class HomeControllerBase with Store, ControllerLifeCycle {
       Error.throwWithStackTrace(e, s);
     }
   }
+
+  @action
+  void changeSupplierPageType(SupplierPageType type) =>
+      _suppliersPageType = type;
+
 
 }
