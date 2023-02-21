@@ -11,6 +11,7 @@ import 'home_controller.dart';
 
 part 'widgets/home_appbar.dart';
 part 'widgets/home_address_widget.dart';
+part 'widgets/home_categories_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
