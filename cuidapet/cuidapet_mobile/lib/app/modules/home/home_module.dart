@@ -7,7 +7,12 @@ import 'home_page.dart';
 class HomeModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind.singleton((i) => HomeController(addressService: i())),
+    Bind.singleton(
+      (i) => HomeController(
+        addressService: i(),
+        supplierService: i(),
+      ),
+    ),
   ];
 
   @override
@@ -15,7 +20,6 @@ class HomeModule extends Module {
     ChildRoute(Modular.initialRoute, child: (_, __) => const HomePage()),
   ];
 
-   @override
+  @override
   List<Module> get imports => [SupplierCoreModule()];
-
 }

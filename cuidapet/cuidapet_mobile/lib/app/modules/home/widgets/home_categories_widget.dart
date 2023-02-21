@@ -29,10 +29,10 @@ class _HomeCategoriesWidget extends StatelessWidget {
 class _CategoryItem extends StatelessWidget {
   final HomeController controller;
 
-  //final SupplierCategoryModel category;
+  final SupplierCategoryModel category;
 
   const _CategoryItem({
-    //required this.category,
+    required this.category,
     required this.controller,
   });
 
@@ -47,9 +47,18 @@ class _CategoryItem extends StatelessWidget {
     return InkWell(
       //onTap: () => controller.changeSupplierCategoryFilter(category),
       child: Container(
-        margin: const EdgeInsets.all(20),
+        width: 90,
+        margin: const EdgeInsets.all(10),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          boxShadow: [
+            BoxShadow(blurRadius: 7.2, color: Colors.black38, spreadRadius: 0.2)
+          ],
+        ),
         child: Column(
           children: [
+            const SizedBox(height: 10),
             Observer(
               builder: (_) => CircleAvatar(
                 //backgroundColor:

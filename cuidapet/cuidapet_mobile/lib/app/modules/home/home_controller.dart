@@ -5,22 +5,29 @@ import '../../core/life_cycle/controller_life_cycle.dart';
 import '../../core/ui/widgets/loader.dart';
 import '../../core/ui/widgets/messages.dart';
 import '../../entities/address_entity.dart';
+import '../../models/supplier_category_model.dart';
 import '../../services/address/address_service.dart';
+import '../../services/supplier/supplier_service.dart';
 part 'home_controller.g.dart';
 
 class HomeController = HomeControllerBase with _$HomeController;
 
 abstract class HomeControllerBase with Store, ControllerLifeCycle {
   final AddressService _addressService;
+  final SupplierService _supplierService;
 
   @readonly
   AddressEntity? _addressEntity;
 
+  @readonly
+  var _categories = const <SupplierCategoryModel>[];
+
+
   HomeControllerBase({
     required AddressService addressService,
-    //required SupplierService supplierService,
-  })  : _addressService = addressService;
-        //_supplierService = supplierService;
+    required SupplierService supplierService,
+  })  : _addressService = addressService,
+        _supplierService = supplierService;
 
   
   @override
@@ -30,7 +37,7 @@ abstract class HomeControllerBase with Store, ControllerLifeCycle {
       Loader.show();
       await Future.wait([getSelectedAddress(), _getCategories()]);
       if (_addressEntity != null) {
-        //await _supplierService.getSuppliersNearbyMe(_addressEntity!);
+       // await _supplierService.getSuppliersNearbyMe(_addressEntity!);
       }
     } finally {
       Loader.hide();
@@ -57,8 +64,8 @@ abstract class HomeControllerBase with Store, ControllerLifeCycle {
    @action
   Future<void> _getCategories() async {
     try {
-      //final categories = await _supplierService.getCategories();
-      //_categories = [...categories];
+      final categories = await _supplierService.getCategories();
+      _categories = [...categories];
     } catch (e, s) {
       Messages.alert('Erro ao carregar categorias');
 

@@ -38,13 +38,13 @@ class DioRestClient implements RestClient {
     _dio.interceptors.addAll([
       AuthInterceptor(localStorage: localStorage, authStore: authStore),
       if (kDebugMode) LogInterceptor(requestBody: true, responseBody: true),
-       AuthRefreshTokenInterceptor(
+      AuthRefreshTokenInterceptor(
         authStore: authStore,
         localStorage: localStorage,
         localSecureStorage: localSecureStorage,
         restClient: this,
         log: log,
-      ), 
+      ),
     ]);
   }
 
