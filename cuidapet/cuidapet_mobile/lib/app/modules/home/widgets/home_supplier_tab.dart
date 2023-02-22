@@ -80,9 +80,9 @@ class _HomeTabHeader extends StatelessWidget {
          Observer(
            builder: (_) => SliverList(
              delegate: SliverChildBuilderDelegate(
-               childCount: 5, //controller.suppliersByAddress.length,
-               (_, index) => const _HomeSupplierListItemWidget(
-                 //supplier: controller.suppliersByAddress[index],
+               childCount: controller.suppliersByAddress.length,
+               (_, index) => _HomeSupplierListItemWidget(
+                 supplier: controller.suppliersByAddress[index],
                ),
              ),
            ),
@@ -93,11 +93,9 @@ class _HomeTabHeader extends StatelessWidget {
 } 
 
  class _HomeSupplierListItemWidget extends StatelessWidget {
-  //final SupplierNearbyMeModel supplier;
+  final SupplierNearbyMeModel supplier;
 
-  //const _HomeSupplierListItemWidget({required this.supplier});
-
-  const _HomeSupplierListItemWidget();
+  const _HomeSupplierListItemWidget({required this.supplier});
 
   @override
   Widget build(BuildContext context) {
@@ -125,8 +123,8 @@ class _HomeTabHeader extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
-                            "Text", //supplier.name,
+                          Text(
+                            supplier.name,
                             overflow: TextOverflow.ellipsis,
                           ),
                           const SizedBox(height: 10),
@@ -135,7 +133,7 @@ class _HomeTabHeader extends StatelessWidget {
                               const Icon(Icons.location_on, size: 16),
                               const SizedBox(width: 5),
                               Text(
-                                "22", //'${supplier.distance.toStringAsFixed(2)} km',
+                                '${supplier.distance.toStringAsFixed(2)} km',
                               ),
                             ],
                           ),
@@ -176,11 +174,11 @@ class _HomeTabHeader extends StatelessWidget {
                   ),
                   color: Colors.grey,
                   borderRadius: const BorderRadius.all(Radius.circular(100)),
-                  //image: DecorationImage(
-                  //  onError: (_, __) => const Nil(),
-                  //  image: NetworkImage(supplier.logo),
-                  //  fit: BoxFit.contain,
-                  //),
+                  image: DecorationImage(
+                    onError: (_, __) => const Nil(),
+                    image: NetworkImage(supplier.logo),
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),
