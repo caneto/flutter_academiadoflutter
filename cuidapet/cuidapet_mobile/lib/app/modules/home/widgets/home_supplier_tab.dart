@@ -196,11 +196,10 @@ class _HomeSupplierGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("Supplier Grid");
-    ///const CustomScrollView(
-    //  slivers: [
+    return CustomScrollView(
+      slivers: [
         
-        /* Observer(
+         Observer(
           builder: (_) => SliverGrid(
             delegate: SliverChildBuilderDelegate(
               (_, index) => _HomeSupplierCardItemWidget(
@@ -213,13 +212,13 @@ class _HomeSupplierGrid extends StatelessWidget {
               childAspectRatio: 1.1,
             ),
           ),
-        ), */
-      //],
-   // );
+        ), 
+      ],
+    );
   }
 }
 
-/*class _HomeSupplierCardItemWidget extends StatelessWidget {
+class _HomeSupplierCardItemWidget extends StatelessWidget {
   final SupplierNearbyMeModel supplier;
 
   const _HomeSupplierCardItemWidget({required this.supplier});
@@ -227,8 +226,8 @@ class _HomeSupplierGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () =>
-          Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
+      //onTap: () =>
+      //    Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
       child: Stack(
         children: [
           Card(
@@ -250,13 +249,13 @@ class _HomeSupplierGrid extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      supplier.name,
+                      "Teste Grid", //supplier.name,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
                       style: context.textTheme.titleSmall,
                     ),
                     Text(
-                      '${supplier.distance.toStringAsFixed(2)} km',
+                      "1.5 km de Distancia ", //'${supplier.distance.toStringAsFixed(2)} km',
                       overflow: TextOverflow.ellipsis,
                     ),
                   ],
@@ -271,7 +270,7 @@ class _HomeSupplierGrid extends StatelessWidget {
               backgroundColor: Colors.grey[200],
             ),
           ),
-          Positioned(
+          /* Positioned(
             top: 4,
             left: 0,
             right: 0,
@@ -281,9 +280,9 @@ class _HomeSupplierGrid extends StatelessWidget {
                 backgroundImage: NetworkImage(supplier.logo),
               ),
             ),
-          ),
+          ), */
         ],
       ),
     );
   } 
-} */
+} 
