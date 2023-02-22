@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:nil/nil.dart';
 
 import '../../core/helpers/debouncer.dart';
 import '../../core/life_cycle/page_life_cycle_state.dart';

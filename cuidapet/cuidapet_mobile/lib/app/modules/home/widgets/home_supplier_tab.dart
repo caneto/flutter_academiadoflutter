@@ -75,35 +75,35 @@ class _HomeTabHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Supplier List');
-      //const CustomScrollView(
-     // slivers: [
-        
-        // Observer(
-        //   builder: (_) => SliverList(
-        //     delegate: SliverChildBuilderDelegate(
-        //       childCount: controller.suppliersByAddress.length,
-        //       (_, index) => _HomeSupplierListItemWidget(
-        //         supplier: controller.suppliersByAddress[index],
-        //       ),
-        //     ),
-        //   ),
-        // ),
-      //],
-    //);
+    return CustomScrollView(
+      slivers: [
+         Observer(
+           builder: (_) => SliverList(
+             delegate: SliverChildBuilderDelegate(
+               childCount: 5, //controller.suppliersByAddress.length,
+               (_, index) => const _HomeSupplierListItemWidget(
+                 //supplier: controller.suppliersByAddress[index],
+               ),
+             ),
+           ),
+         ),
+      ],
+    );
   }
 } 
 
-/* class _HomeSupplierListItemWidget extends StatelessWidget {
-  final SupplierNearbyMeModel supplier;
+ class _HomeSupplierListItemWidget extends StatelessWidget {
+  //final SupplierNearbyMeModel supplier;
 
-  const _HomeSupplierListItemWidget({required this.supplier});
+  //const _HomeSupplierListItemWidget({required this.supplier});
+
+  const _HomeSupplierListItemWidget();
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () =>
-          Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
+    //  onTap: () =>
+    //      Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Stack(
@@ -125,8 +125,8 @@ class _HomeTabHeader extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            supplier.name,
+                          const Text(
+                            "Text", //supplier.name,
                             overflow: TextOverflow.ellipsis,
                           ),
                           const SizedBox(height: 10),
@@ -135,7 +135,7 @@ class _HomeTabHeader extends StatelessWidget {
                               const Icon(Icons.location_on, size: 16),
                               const SizedBox(width: 5),
                               Text(
-                                '${supplier.distance.toStringAsFixed(2)} km',
+                                "22", //'${supplier.distance.toStringAsFixed(2)} km',
                               ),
                             ],
                           ),
@@ -176,11 +176,11 @@ class _HomeTabHeader extends StatelessWidget {
                   ),
                   color: Colors.grey,
                   borderRadius: const BorderRadius.all(Radius.circular(100)),
-                  image: DecorationImage(
-                    onError: (_, __) => const Nil(),
-                    image: NetworkImage(supplier.logo),
-                    fit: BoxFit.contain,
-                  ),
+                  //image: DecorationImage(
+                  //  onError: (_, __) => const Nil(),
+                  //  image: NetworkImage(supplier.logo),
+                  //  fit: BoxFit.contain,
+                  //),
                 ),
               ),
             ),
@@ -189,7 +189,7 @@ class _HomeTabHeader extends StatelessWidget {
       ),
     );
   }
-} */
+} 
 
 class _HomeSupplierGrid extends StatelessWidget {
   final HomeController controller;
