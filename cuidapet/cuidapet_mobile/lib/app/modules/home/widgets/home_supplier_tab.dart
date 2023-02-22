@@ -249,13 +249,13 @@ class _HomeSupplierCardItemWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      "Teste Grid", //supplier.name,
+                      supplier.name,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
                       style: context.textTheme.titleSmall,
                     ),
                     Text(
-                      "1.5 km de Distancia ", //'${supplier.distance.toStringAsFixed(2)} km',
+                      '${supplier.distance.toStringAsFixed(2)} km',
                       overflow: TextOverflow.ellipsis,
                     ),
                   ],
@@ -270,7 +270,7 @@ class _HomeSupplierCardItemWidget extends StatelessWidget {
               backgroundColor: Colors.grey[200],
             ),
           ),
-          /* Positioned(
+          Positioned(
             top: 4,
             left: 0,
             right: 0,
@@ -280,7 +280,7 @@ class _HomeSupplierCardItemWidget extends StatelessWidget {
                 backgroundImage: NetworkImage(supplier.logo),
               ),
             ),
-          ), */
+          ), 
         ],
       ),
     );
