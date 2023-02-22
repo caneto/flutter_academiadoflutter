@@ -1,5 +1,7 @@
 // ignore_for_file: unnecessary_lambdas
 
+import '../../entities/address_entity.dart';
+import '../../models/supplier_nearby_me_model.dart';
 import './supplier_repository.dart';
 import '../../core/exceptions/failure.dart';
 import '../../core/logger/app_logger.dart';
@@ -28,10 +30,36 @@ class SupplierRepositoryImpl implements SupplierRepository {
                 SupplierCategoryModel.fromMap(categorieResponse),
           )
           .toList();
-          
     } on RestClientException catch (e, s) {
       const message = 'Error getting categories';
       _log.error(message, e);
+
+      Error.throwWithStackTrace(const Failure(message: message), s);
+    }
+  }
+
+  @override
+  Future<List<SupplierNearbyMeModel>> getSuppliersNearbyMe(
+    AddressEntity address,
+  ) async {
+    try {
+      final response = await _restClient.auth().get(
+        '/suppliers/',
+        queryParameters: {
+          'lat': address.lat,
+          'lng': address.lng,
+        },
+      );
+
+      return response.data
+          ?.map<SupplierNearbyMeModel>(
+            (supplierResponse) =>
+                SupplierNearbyMeModel.fromMap(supplierResponse),
+          )
+          .toList();
+    } on RestClientException catch (e, s) {
+      const message = 'Error getting suppliers nearby';
+      _log.error(message, e, s);
 
       Error.throwWithStackTrace(const Failure(message: message), s);
     }
