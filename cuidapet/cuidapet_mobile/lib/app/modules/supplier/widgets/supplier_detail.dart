@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/ui/extensions/theme_extension.dart';
 
 class SupplierDetail extends StatelessWidget {
+
   const SupplierDetail({Key? key}) : super(key: key);
 
   @override

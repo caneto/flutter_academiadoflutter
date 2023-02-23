@@ -1,13 +1,14 @@
 // ignore_for_file: unnecessary_lambdas
 
-import '../../entities/address_entity.dart';
-import '../../models/supplier_nearby_me_model.dart';
 import './supplier_repository.dart';
 import '../../core/exceptions/failure.dart';
 import '../../core/logger/app_logger.dart';
 import '../../core/rest_client/rest_client.dart';
 import '../../core/rest_client/rest_client_exception.dart';
+import '../../entities/address_entity.dart';
 import '../../models/supplier_category_model.dart';
+import '../../models/supplier_model.dart';
+import '../../models/supplier_nearby_me_model.dart';
 
 class SupplierRepositoryImpl implements SupplierRepository {
   final RestClient _restClient;
@@ -59,6 +60,21 @@ class SupplierRepositoryImpl implements SupplierRepository {
           .toList();
     } on RestClientException catch (e, s) {
       const message = 'Error getting suppliers nearby';
+      _log.error(message, e, s);
+
+      Error.throwWithStackTrace(const Failure(message: message), s);
+    }
+  }
+
+  @override
+  Future<SupplierModel> getSupplierById(int id) async {
+    try {
+      final response = await _restClient.auth().get('/suppliers/$id');
+
+      return SupplierModel.fromJson(response.data!);
+      
+    } on RestClientException catch (e, s) {
+      const message = 'Error fetching supplier';
       _log.error(message, e, s);
 
       Error.throwWithStackTrace(const Failure(message: message), s);

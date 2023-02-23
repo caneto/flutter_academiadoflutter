@@ -1,6 +1,7 @@
 import './supplier_service.dart';
 import '../../entities/address_entity.dart';
 import '../../models/supplier_category_model.dart';
+import '../../models/supplier_model.dart';
 import '../../models/supplier_nearby_me_model.dart';
 import '../../repositories/supplier/supplier_repository.dart';
 
@@ -19,4 +20,8 @@ class SupplierServiceImpl implements SupplierService {
     AddressEntity address,
   ) =>
       _repository.getSuppliersNearbyMe(address);
+
+  @override
+  Future<SupplierModel> getSupplierById(int id) =>
+      _repository.getSupplierById(id);
 }
