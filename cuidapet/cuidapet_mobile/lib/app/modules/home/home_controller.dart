@@ -125,6 +125,18 @@ abstract class HomeControllerBase with Store, ControllerLifeCycle {
   }
 
   @action
+  void changeSupplierCategoryFilter(SupplierCategoryModel category) {
+    _supplierCategoryFilterSelected =
+        _supplierCategoryFilterSelected == category ? null : category;
+    _filterSupplier();
+  }
+
+  void filterSupplierBySearchText(String text) {
+    _searchText = text;
+    _filterSupplier();
+  }
+
+  @action
   void _filterSupplier() {
     var suppliers = [..._suppliersByAddressCache];
 

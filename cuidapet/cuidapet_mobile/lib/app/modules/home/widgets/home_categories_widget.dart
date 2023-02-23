@@ -45,7 +45,7 @@ class _CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      //onTap: () => controller.changeSupplierCategoryFilter(category),
+      onTap: () => controller.changeSupplierCategoryFilter(category),
       child: Container(
         width: 90,
         margin: const EdgeInsets.all(10),
@@ -61,10 +61,10 @@ class _CategoryItem extends StatelessWidget {
             const SizedBox(height: 10),
             Observer(
               builder: (_) => CircleAvatar(
-                //backgroundColor:
-                //    controller.supplierCategoryFilterSelected?.id == category.id
-                //        ? context.primaryColor
-                //        : context.primaryColorLight,
+                backgroundColor:
+                    controller.supplierCategoryFilterSelected?.id == category.id
+                        ? context.primaryColor
+                        : context.primaryColorLight,
                 radius: 30,
                 child: Icon(
                   _categoryIcons[category.type],
