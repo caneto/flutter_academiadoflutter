@@ -40,8 +40,8 @@ class _CuidapetAppBar extends StatelessWidget {
               child: SizedBox(
                 width: 0.9.sw,
                 child: TextFormField(
-                  //onChanged: (value) => _debouncer
-                  //    .run(() => controller.filterSupplierBySearchText(value)),
+                  onChanged: (value) => _debouncer
+                      .run(() => controller.filterSupplierBySearchText(value)),
                   decoration: InputDecoration(
                     fillColor: Colors.white,
                     filled: true,
