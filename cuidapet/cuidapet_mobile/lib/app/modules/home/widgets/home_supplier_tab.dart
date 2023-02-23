@@ -100,8 +100,8 @@ class _HomeTabHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-    //  onTap: () =>
-    //      Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
+      onTap: () =>
+          Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Stack(
@@ -226,8 +226,8 @@ class _HomeSupplierCardItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      //onTap: () =>
-      //    Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
+      onTap: () =>
+          Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
       child: Stack(
         children: [
           Card(
