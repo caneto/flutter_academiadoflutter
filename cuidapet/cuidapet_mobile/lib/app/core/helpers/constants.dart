@@ -4,7 +4,7 @@ class Constants {
   // *.Env
   static const envBaseUrlKey = 'base_url';
   static const envRestClientConnectTimeout = 'rest_client_connect_timeout';
-  static const envRestClientReceiveTimeout = 'rest_client_connect_timeout';
+  static const envRestClientReceiveTimeout = 'rest_client_receive_timeout';
 
   // * Local Storage
   static const localStorageAccessTokenKey = '/LOCAL_STORAGE_ACCESS_TOKEN_KEY/';

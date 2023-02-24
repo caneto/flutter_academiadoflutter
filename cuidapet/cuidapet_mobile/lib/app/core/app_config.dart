@@ -4,7 +4,6 @@ import 'package:flutter/widgets.dart';
 
 import '../firebase_options.dart';
 import 'helpers/enviroments.dart';
-//import 'helpers/environments.dart';
 
 class AppConfig {
   const AppConfig();
