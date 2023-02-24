@@ -188,6 +188,11 @@
     <td><b>Home</b> (Construindo AppBar da HomePage, Implementando componente de apresentação do endereço, Criando componente de categorias, Construindo busca das categorias no backend, Conectando tela com serviço (categorias), Criando componentes de Tab (Lista e Grid), Implementando layout da lista de Pet Shops, Buscando petshops no nosso backend, Fazendo o Link entre tela e backend (Modelo), Construindo grid de petshops, Conectando dados a tela de grid, Filtrando estabelecimentos por categoria, Filtro por nome) </td>
      <td><b>Detalhe do Fornecedor</b> (Criando módulo de detalhe de fornecedor, Criando layout da tela de detalhe do fornecedor, Adicionando titulo quando appBar Collapsed, CodeView da implementação)</td>
   </tr>
+  <tr>
+    <td><b>Refactoring atualizando packages</b> (Atualizando dependências e resolvendo problemas, Resolvendo problemas e finalizando os testes)</td>
+    <td><b>Continuando Detalhe de Fornecedor</b> ()</td>
+    <td></td>
+  </tr>
 </table>   
   
 <h2>📝 Licença</h2>
