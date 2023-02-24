@@ -190,7 +190,7 @@
   </tr>
   <tr>
     <td><b>Refactoring atualizando packages</b> (Atualizando dependências e resolvendo problemas, Resolvendo problemas e finalizando os testes)</td>
-    <td><b>Continuando Detalhe de Fornecedor</b> ()</td>
+    <td><b>Continuando Detalhe de Fornecedor</b> (Interpretando os modelos, Preparando camada de dados, Conectando a tela e buscando os dados)</td>
     <td></td>
   </tr>
 </table>   
