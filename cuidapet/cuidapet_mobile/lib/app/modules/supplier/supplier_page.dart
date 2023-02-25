@@ -10,9 +10,10 @@ import 'widgets/supplier_detail.dart';
 import 'widgets/supplier_service_widget.dart';
 
 class SupplierPage extends StatefulWidget {
-  final int id;
+  final int _supplierId;
 
-  const SupplierPage({required this.id, super.key});
+  const SupplierPage({required int supplierId, super.key})
+      : _supplierId = supplierId;
 
   @override
   State<SupplierPage> createState() => _SupplierPageState();
@@ -24,7 +25,7 @@ class _SupplierPageState
   final _sliverCollapsedNotifier = ValueNotifier(false);
 
   @override
-  Map<String, dynamic>? get params => {'id': widget.id};
+  Map<String, dynamic>? get params => {'supplierId': widget._supplierId};
 
   @override
   void initState() {

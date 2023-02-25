@@ -3,6 +3,7 @@ import '../../entities/address_entity.dart';
 import '../../models/supplier_category_model.dart';
 import '../../models/supplier_model.dart';
 import '../../models/supplier_nearby_me_model.dart';
+import '../../models/supplier_service_model.dart';
 import '../../repositories/supplier/supplier_repository.dart';
 
 class SupplierServiceImpl implements SupplierService {
@@ -24,4 +25,8 @@ class SupplierServiceImpl implements SupplierService {
   @override
   Future<SupplierModel> getSupplierById(int id) =>
       _repository.getSupplierById(id);
+
+  @override
+  Future<List<SupplierServiceModel>> getServices(int supplierId) =>
+      _repository.getServices(supplierId);
 }
