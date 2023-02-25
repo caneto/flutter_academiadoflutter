@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:nil/nil.dart';
 
 import '../../core/life_cycle/page_life_cycle_state.dart';
@@ -49,7 +50,6 @@ class _SupplierPageState
 
   @override
   Widget build(BuildContext context) {
-    print(controller.supplierModel);
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => log('Fazer agendamento'),
@@ -58,48 +58,63 @@ class _SupplierPageState
         backgroundColor: context.primaryColor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      body: CustomScrollView(
-        controller: _scrollController,
-        slivers: [
-          SliverAppBar(
-            expandedHeight: 200,
-            pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: ValueListenableBuilder<bool>(
-                valueListenable: _sliverCollapsedNotifier,
-                builder: (_, collapsed, __) => collapsed
-                    ? Text(
-                        'Clínica central ABC',
-                        style: context.textTheme.titleLarge!.copyWith(
-                          color: Colors.white,
-                        ),
-                        textAlign: TextAlign.center,
-                      )
-                    : const Nil(),
+      body: Observer(
+        builder: (_) {
+          final supplier = controller.supplierModel;
+
+          if (supplier == null) {
+            return const Text('Busncado dados do fornecedor');
+          }
+
+          return CustomScrollView(
+            controller: _scrollController,
+            slivers: [
+              SliverAppBar(
+                expandedHeight: 200,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  title: ValueListenableBuilder<bool>(
+                    valueListenable: _sliverCollapsedNotifier,
+                    builder: (_, collapsed, __) => collapsed
+                        ? Text(
+                            supplier.name,
+                            style: context.textTheme.titleLarge!.copyWith(
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                          )
+                        : const Nil(),
+                  ),
+                  stretchModes: const [
+                    StretchMode.zoomBackground,
+                    StretchMode.fadeTitle,
+                  ],
+                  background: Image.network(
+                    supplier.logo,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => const Nil(),
+                  ),
+                ),
               ),
-              stretchModes: const [
-                StretchMode.zoomBackground,
-                StretchMode.fadeTitle,
-              ],
-              background: Image.network(
-                'https://veja.abril.com.br/wp-content/uploads/2017/01/cao-labrador-3-copy.jpg',
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => const Nil(),
+              SliverToBoxAdapter(
+                child: SupplierDetail(
+                  supplier: supplier,
+                ),
               ),
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: SupplierDetail(),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              childCount: 200,
-              (context, index) {
-                return const SupplierServiceWidget();
-              },
-            ),
-          )
-        ],
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  childCount: controller.supplierServices.length,
+                  (context, index) {
+                    final service = controller.supplierServices[index];
+                    return SupplierServiceWidget(
+                      service: service,
+                    );
+                  },
+                ),
+              )
+            ],
+          );
+        },
       ),
     );
   }

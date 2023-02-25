@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/helpers/text_formatter.dart';
 import '../../../core/ui/extensions/theme_extension.dart';
+import '../../../models/supplier_service_model.dart';
 
 class SupplierServiceWidget extends StatelessWidget {
-  const SupplierServiceWidget({Key? key}) : super(key: key);
+  final SupplierServiceModel service;
+
+  const SupplierServiceWidget({required this.service, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +18,8 @@ class SupplierServiceWidget extends StatelessWidget {
         color: context.primaryColor,
         size: 30,
       ),
-      title: const Text('Consulta'),
-      subtitle: const Text(r'R$ 100,00'),
+      title: Text(service.name),
+      subtitle: Text(TextFormatter.formatReal(service.price)),
     );
   }
 }
