@@ -1,12 +1,20 @@
+// ignore_for_file: unnecessary_lambdas
+
 import 'package:flutter/material.dart';
 
 import '../../../core/ui/extensions/theme_extension.dart';
 import '../../../models/supplier_model.dart';
+import '../supplier_controller.dart';
 
 class SupplierDetail extends StatelessWidget {
   final SupplierModel supplier;
+  final SupplierController controller;
 
-  const SupplierDetail({required this.supplier, super.key});
+  const SupplierDetail({
+    required this.supplier,
+    required this.controller,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +44,7 @@ class SupplierDetail extends StatelessWidget {
           ),
         ),
         ListTile(
+          onTap: controller.gotoGeoOrCopyAddressToClipart,
           leading: const Icon(
             Icons.location_city,
             color: Colors.black,
@@ -43,6 +52,7 @@ class SupplierDetail extends StatelessWidget {
           title: Text(supplier.address),
         ),
         ListTile(
+          onTap: controller.goToPhoneOrCopyPhoneToClipart,
           leading: const Icon(
             Icons.local_phone,
             color: Colors.black,
@@ -56,4 +66,5 @@ class SupplierDetail extends StatelessWidget {
       ],
     );
   }
+
 }

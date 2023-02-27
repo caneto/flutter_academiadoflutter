@@ -1,12 +1,16 @@
+import 'package:flutter/services.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../core/life_cycle/controller_life_cycle.dart';
 import '../../core/logger/app_logger.dart';
 import '../../core/ui/widgets/loader.dart';
 import '../../core/ui/widgets/messages.dart';
 import '../../models/supplier_model.dart';
-import '../../models/supplier_service_model.dart';
+import '../../models/supplier_services_model.dart';
 import '../../services/supplier/supplier_service.dart';
+import '../schedules/model/schedule_view_model.dart';
 
 part 'supplier_controller.g.dart';
 
@@ -28,7 +32,7 @@ abstract class SupplierControllerBase with Store, ControllerLifeCycle {
   SupplierModel? _supplierModel;
 
   @readonly
-  var _supplierServices = <SupplierServiceModel>[];
+  var _supplierServices = <SupplierServicesModel>[];
 
   @override
   void onInit([Map<String, dynamic>? params]) {
@@ -47,7 +51,6 @@ abstract class SupplierControllerBase with Store, ControllerLifeCycle {
     }
 
     // _supplierModel = suppliers;
-    
   }
 
   @action
@@ -68,5 +71,51 @@ abstract class SupplierControllerBase with Store, ControllerLifeCycle {
       _log.error('Erro ao buscar dados dos servicos do fornecedor', e, s);
       Messages.alert('Erro ao buscar dados dos servicos do fornecedor');
     }
+  }
+
+  //void addOrRemoveService(SupplierServiceModel supplierServiceModel) {
+  //  if (_servicesSelected.contains(supplierServiceModel)) {
+  //    _servicesSelected.remove(supplierServiceModel);
+  //  } else {
+  //    _servicesSelected.add(supplierServiceModel);
+  //  }
+  //}
+
+  //bool isServiceSelected(SupplierServiceModel serviceModel) =>
+  //    _servicesSelected.contains(serviceModel);
+
+  //int get totalServicesSelected => _servicesSelected.length;    
+
+  Future<void> goToPhoneOrCopyPhoneToClipart() async {
+    final phoneUrl = 'tel:${_supplierModel?.phone}';
+
+    if (await canLaunchUrlString(phoneUrl)) {
+      await launchUrlString(phoneUrl);
+    } else {
+      await Clipboard.setData(ClipboardData(text: _supplierModel?.phone ?? ''));
+      Messages.info('Telefone copiado');
+    }
+  }
+
+  Future<void> gotoGeoOrCopyAddressToClipart() async {
+    final geoUrl = 'geo:${_supplierModel?.lat}, ${_supplierModel?.lng}';
+
+    if (await canLaunchUrlString(geoUrl)) {
+      await launchUrlString(geoUrl);
+    } else {
+      await Clipboard.setData(
+          ClipboardData(text: _supplierModel?.address ?? ''));
+      Messages.info('Telefone copiado');
+    }
+  }
+
+  void goToSchedule() {
+    Modular.to.pushNamed(
+      '/schedules/',
+      arguments: ScheduleViewModel(
+        supplierId: _supplierId,
+        services: _supplierServices.toList(),
+      ),
+    );
   }
 }

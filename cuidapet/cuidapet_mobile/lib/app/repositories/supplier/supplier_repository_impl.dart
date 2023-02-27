@@ -9,7 +9,7 @@ import '../../entities/address_entity.dart';
 import '../../models/supplier_category_model.dart';
 import '../../models/supplier_model.dart';
 import '../../models/supplier_nearby_me_model.dart';
-import '../../models/supplier_service_model.dart';
+import '../../models/supplier_services_model.dart';
 
 class SupplierRepositoryImpl implements SupplierRepository {
   final RestClient _restClient;
@@ -82,17 +82,17 @@ class SupplierRepositoryImpl implements SupplierRepository {
   }
 
   @override
-  Future<List<SupplierServiceModel>> getServices(int supplierId) async {
+  Future<List<SupplierServicesModel>> getServices(int supplierId) async {
     try {
       final response =
           await _restClient.auth().get('/suppliers/$supplierId/services');
 
       return response.data
-              ?.map<SupplierServiceModel>(
-                (jService) => SupplierServiceModel.fromMap(jService),
+              ?.map<SupplierServicesModel>(
+                (jService) => SupplierServicesModel.fromMap(jService),
               )
               .toList() ??
-          <SupplierServiceModel>[];
+          <SupplierServicesModel>[];
     } on RestClientException catch (e, s) {
       const message = 'Error ao buscar serviçõs do fornecedor';
       _log.error(message, e, s);

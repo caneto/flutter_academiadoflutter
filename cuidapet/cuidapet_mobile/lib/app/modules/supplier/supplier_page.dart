@@ -52,7 +52,7 @@ class _SupplierPageState
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => log('Fazer agendamento'),
+        onPressed: controller.goToSchedule,
         label: const Text('Fazer agendamento'),
         icon: const Icon(Icons.schedule),
         backgroundColor: context.primaryColor,
@@ -99,6 +99,7 @@ class _SupplierPageState
               SliverToBoxAdapter(
                 child: SupplierDetail(
                   supplier: supplier,
+                  controller: controller,
                 ),
               ),
               SliverList(

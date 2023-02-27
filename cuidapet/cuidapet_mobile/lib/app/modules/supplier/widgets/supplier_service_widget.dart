@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../core/helpers/text_formatter.dart';
 import '../../../core/ui/extensions/theme_extension.dart';
-import '../../../models/supplier_service_model.dart';
+import '../../../models/supplier_services_model.dart';
 
 class SupplierServiceWidget extends StatelessWidget {
-  final SupplierServiceModel service;
+  final SupplierServicesModel service;
 
   const SupplierServiceWidget({required this.service, super.key});
 
