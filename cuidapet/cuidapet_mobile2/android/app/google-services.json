@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1957387278",
+    "project_id": "cuidapet-64c4c",
+    "storage_bucket": "cuidapet-64c4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1957387278:android:5474094514de7eb44b305f",
+        "android_client_info": {
+          "package_name": "br.com.capsistema.cuidapet_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1957387278-aaes5phlgng85cbbevp3r6g66083jdka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.capsistema.cuidapet_mobile",
+            "certificate_hash": "ae0f2f29475c87650cf92c5a1ac7e5374368401f"
+          }
+        },
+        {
+          "client_id": "1957387278-4n8g8gj0gebi9jlgdd389r7k2vtljsjt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJvgH_ID0p1Nq7lt_fILujGWM2JP5DAJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1957387278-4n8g8gj0gebi9jlgdd389r7k2vtljsjt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
