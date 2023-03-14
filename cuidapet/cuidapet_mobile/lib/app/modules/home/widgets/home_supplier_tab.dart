@@ -103,7 +103,7 @@ class _HomeTabHeader extends StatelessWidget {
       onTap: () =>
           Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
         child: Stack(
           children: [
             Container(
