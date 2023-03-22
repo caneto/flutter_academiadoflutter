@@ -89,7 +89,7 @@ abstract class SupplierControllerBase with Store, ControllerLifeCycle {
   bool isServiceSelected(SupplierServicesModel serviceModel) =>
       _servicesSelected.contains(serviceModel);
 
-  int get totalServicesSelected => _servicesSelected.length;    
+  int get totalServicesSelected => _servicesSelected.length;
 
   Future<void> goToPhoneOrCopyPhoneToClipart() async {
     final phoneUrl = 'tel:${_supplierModel?.phone}';
@@ -109,7 +109,8 @@ abstract class SupplierControllerBase with Store, ControllerLifeCycle {
       await launchUrlString(geoUrl);
     } else {
       await Clipboard.setData(
-          ClipboardData(text: _supplierModel?.address ?? ''));
+        ClipboardData(text: _supplierModel?.address ?? ''),
+      );
       Messages.info('Telefone copiado');
     }
   }
