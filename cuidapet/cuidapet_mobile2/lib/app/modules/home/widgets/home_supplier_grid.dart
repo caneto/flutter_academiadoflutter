@@ -1,48 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../../../core/ui/extensions/theme_extension.dart';
 import '../../../models/supplier_nearby_me_model.dart';
-import '../home_controller.dart';
 
-class HomeSupplierGrid extends StatelessWidget {
-  final HomeController controller;
+class HomeSupplierGridItemWidget extends StatelessWidget {
+ 
+  final SupplierNearbyMeModel supplier;
 
-  const HomeSupplierGrid({
-    required this.controller,
+  const HomeSupplierGridItemWidget({
+    required this.supplier,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        Observer(
-          builder: (_) => SliverGrid(
-            delegate: SliverChildBuilderDelegate(
-              (_, index) => _HomeSupplierCardItemWidget(
-                supplier: controller.suppliersByAddress[index],
-              ),
-              childCount: controller.suppliersByAddress.length,
-            ),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 1.1,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
 
-class _HomeSupplierCardItemWidget extends StatelessWidget {
-  final SupplierNearbyMeModel supplier;
+    var id = supplier.id;
 
-  const _HomeSupplierCardItemWidget({required this.supplier});
-
-  @override
-  Widget build(BuildContext context) {
     return InkWell(
       onTap: () =>
           Navigator.of(context).pushNamed('/supplier/', arguments: supplier.id),
