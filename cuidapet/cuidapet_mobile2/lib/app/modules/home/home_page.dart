@@ -66,28 +66,28 @@ class _HomePageState extends PageLifeCycleState<HomeController, HomePage> {
           HomeCategoriesWidget(controller: controller),
           HomeSupplierTab(controller: controller),
           Expanded(
-          child: Observer(
-            builder: (_) => AnimatedSwitcher(
-              duration: const Duration(milliseconds: 400),
-              child: controller.suppliersPageType == SupplierPageType.list
-                  ? ListView.builder(
-                      itemCount: controller.suppliersByAddress.length,
-                      itemBuilder: (_, index) {
-                        return HomeSupplierListItemWidget(
-                          supplier: controller.suppliersByAddress[index],
-                        );
-                      },
-                    )
-                  : ListView.builder(
-                      itemCount: controller.suppliersByAddress.length,
-                      itemBuilder: (_, index) {
-                        return HomeSupplierGridItemWidget(
-                          supplier: controller.suppliersByAddress[index],
-                        );
-                      },
-                    ),
+            child: Observer(
+              builder: (_) => AnimatedSwitcher(
+                duration: const Duration(milliseconds: 400),
+                child: controller.suppliersPageType == SupplierPageType.list
+                    ? ListView.builder(
+                        itemCount: controller.suppliersByAddress.length,
+                        itemBuilder: (_, index) {
+                          return HomeSupplierListItemWidget(
+                            supplier: controller.suppliersByAddress[index],
+                          );
+                        },
+                      )
+                    : ListView.builder(
+                        itemCount: controller.suppliersByAddress.length,
+                        itemBuilder: (_, index) {
+                          return HomeSupplierGridItemWidget(
+                            supplier: controller.suppliersByAddress[index],
+                          );
+                        },
+                      ),
+              ),
             ),
-          ),
         ),
         ],
       ),
