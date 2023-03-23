@@ -71,24 +71,25 @@ class _HomePageState extends PageLifeCycleState<HomeController, HomePage> {
                 duration: const Duration(milliseconds: 400),
                 child: controller.suppliersPageType == SupplierPageType.list
                     ? ListView.builder(
-                        itemCount: controller.suppliersByAddress.length,
-                        itemBuilder: (_, index) {
-                          return HomeSupplierListItemWidget(
-                            supplier: controller.suppliersByAddress[index],
-                          );
-                        },
-                      )
+                      itemCount: controller.suppliersByAddress.length,
+                      itemBuilder: (_, index) {
+                        return HomeSupplierListItemWidget(
+                          supplier: controller.suppliersByAddress[index],
+                        );
+                      },
+                    )
                     : ListView.builder(
-                        itemCount: controller.suppliersByAddress.length,
-                        itemBuilder: (_, index) {
-                          return HomeSupplierGridItemWidget(
-                            supplier: controller.suppliersByAddress[index],
-                          );
-                        },
-                      ),
+                      shrinkWrap: true,
+                      itemCount: controller.suppliersByAddress.length,
+                      itemBuilder: (_, index) {
+                        return HomeSupplierGridItemWidget(
+                          supplier: controller.suppliersByAddress[index],
+                        );
+                      },
+                    ),
               ),
             ),
-        ),
+          ),
         ],
       ),
     );
