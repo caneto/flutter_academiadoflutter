@@ -71,22 +71,28 @@ class _HomePageState extends PageLifeCycleState<HomeController, HomePage> {
                 duration: const Duration(milliseconds: 400),
                 child: controller.suppliersPageType == SupplierPageType.list
                     ? ListView.builder(
-                      itemCount: controller.suppliersByAddress.length,
-                      itemBuilder: (_, index) {
-                        return HomeSupplierListItemWidget(
-                          supplier: controller.suppliersByAddress[index],
-                        );
-                      },
-                    )
-                    : ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: controller.suppliersByAddress.length,
-                      itemBuilder: (_, index) {
-                        return HomeSupplierGridItemWidget(
-                          supplier: controller.suppliersByAddress[index],
-                        );
-                      },
-                    ),
+                        itemCount: controller.suppliersByAddress.length,
+                        itemBuilder: (_, index) {
+                          return HomeSupplierListItemWidget(
+                            supplier: controller.suppliersByAddress[index],
+                          );
+                        },
+                      )
+                    : GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithMaxCrossAxisExtent(
+                          maxCrossAxisExtent: 240,
+                          childAspectRatio: 6 / 5,
+                          crossAxisSpacing: 5,
+                          mainAxisSpacing: 5,
+                        ),
+                        itemCount: controller.suppliersByAddress.length,
+                        itemBuilder: (_, index) {
+                          return HomeSupplierGridItemWidget(
+                            supplier: controller.suppliersByAddress[index],
+                          );
+                        },
+                      ),
               ),
             ),
           ),

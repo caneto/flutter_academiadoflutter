@@ -39,11 +39,11 @@ class HomeSupplierGridItemWidget extends StatelessWidget {
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       supplier.name,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.justify,
                       style: context.textTheme.titleSmall,
                     ),
                     Text(
