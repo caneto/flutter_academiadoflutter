@@ -1,4 +1,4 @@
-import 'package:cuidapet_api/application/helpers/request_mapping.dart';
+import 'package:cuidapet_api/application/helpers/resquest_mapping.dart';
 
 class SupplierUpdateInputModel extends RequestMapping {
   int supplierId;

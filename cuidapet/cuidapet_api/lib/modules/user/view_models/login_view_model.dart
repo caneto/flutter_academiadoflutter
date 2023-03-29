@@ -1,5 +1,5 @@
 import 'package:cuidapet_api/application/exceptions/request_validation_exception.dart';
-import 'package:cuidapet_api/application/helpers/request_mapping.dart';
+import 'package:cuidapet_api/application/helpers/resquest_mapping.dart';
 
 class LoginViewModel extends RequestMapping {
   late String login;
