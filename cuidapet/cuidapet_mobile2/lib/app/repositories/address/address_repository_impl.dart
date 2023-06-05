@@ -1,11 +1,11 @@
-import 'package:google_place/google_place.dart';
+import 'package:google_places/google_places.dart';
 
+import './address_repository.dart';
 import '../../core/database/sqlite_connection_factory.dart';
 import '../../core/exceptions/failure.dart';
 import '../../core/helpers/enviroments.dart';
 import '../../entities/address_entity.dart';
 import '../../models/place_model.dart';
-import './address_repository.dart';
 
 class AddressRepositoryImpl implements AddressRepository {
  
@@ -26,7 +26,7 @@ class AddressRepositoryImpl implements AddressRepository {
       throw const Failure(message: 'Google API Key not found');
     }
 
-    final googlePlace = GooglePlace(googleApiKey);
+    final googlePlace = GooglePlaces(googleApiKey);
 
     final addressResult =
         await googlePlace.search.getTextSearch(addressPattern);

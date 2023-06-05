@@ -19,12 +19,8 @@ class DioRestClient implements RestClient {
 
   final _defaultOptions = BaseOptions(
     baseUrl: Environments.params(Constants.envBaseUrlKey) ?? '',
-    connectTimeout: int.parse(
-      Environments.params(Constants.envRestClientConnectTimeout) ?? '0',
-    ),
-    receiveTimeout: int.parse(
-      Environments.params(Constants.envRestClientReceiveTimeout) ?? '0',
-    ),
+    connectTimeout: Duration(milliseconds: int.parse(Environments.params(Constants.envRestClientConnectTimeout) ?? '0')),
+    receiveTimeout: Duration(milliseconds: int.parse(Environments.params(Constants.envRestClientReceiveTimeout) ?? '0')),
   );
 
   DioRestClient({
