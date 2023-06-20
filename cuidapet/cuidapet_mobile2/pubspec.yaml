@@ -12,8 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
   
-  asuka: ^2.1.0
+  
   flutter_modular: ^5.0.3
+  asuka: ^2.1.0
   flutter_mobx: ^2.0.6+5
   mobx: ^2.2.0
   dio: ^5.1.2
