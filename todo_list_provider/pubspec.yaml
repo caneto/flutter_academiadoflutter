@@ -43,7 +43,7 @@ dependencies:
   sqflite: ^2.2.6
   path: ^1.8.2
   date_picker_timeline: ^1.2.3
-  intl: ^0.17.0
+  intl: ^0.18.0
   google_fonts: ^4.0.3
   google_sign_in: ^6.0.2
   flutter_signin_button: ^2.0.0

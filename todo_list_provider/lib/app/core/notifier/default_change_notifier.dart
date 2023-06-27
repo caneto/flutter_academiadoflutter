@@ -1,6 +1,3 @@
-
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 
 class DefaultChangeNotifier extends ChangeNotifier {
