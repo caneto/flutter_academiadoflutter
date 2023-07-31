@@ -6,7 +6,7 @@ class TodoListPage extends StatelessWidget {
   final List<SingleChildWidget>? _binding;
   final WidgetBuilder _page;
 
-  TodoListPage(
+  const TodoListPage(
       {Key? key,
       List<SingleChildWidget>? bindings,
       required WidgetBuilder page})

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list_provider/app/core/notifier/default_listener_notifier.dart';
 import 'package:todo_list_provider/app/core/ui/messages.dart';
+import 'package:todo_list_provider/app/core/ui/theme_extensions.dart';
 import 'package:todo_list_provider/app/core/widget/todo_list_field.dart';
 import 'package:todo_list_provider/app/core/widget/todo_list_logo.dart';
 import 'package:validatorless/validatorless.dart';
@@ -30,10 +33,10 @@ class _LoginPageState extends State<LoginPage> {
         .listener(
             context: context,
             everVoidCallback: (notifier, listenerInstance) {
-              if(notifier is LoginController) {
-                if(notifier.hasInfo) {
+              if (notifier is LoginController) {
+                if (notifier.hasInfo) {
                   Messages.of(context).showInfo(notifier.infoMessage!);
-                } 
+                }
               }
             },
             sucessVoidCallback: (notifier, listenerNotifier) {
@@ -96,17 +99,50 @@ class _LoginPageState extends State<LoginPage> {
                               children: [
                                 TextButton(
                                   onPressed: () {
-                                    if(_emailEC.text.isNotEmpty) {
+                                    if (_emailEC.text.isNotEmpty) {
                                       // Recuperar senha
-                                      context.read<LoginController>().forgotPassword(_emailEC.text);
+                                      context
+                                          .read<LoginController>()
+                                          .forgotPassword(_emailEC.text);
                                     } else {
                                       _emailFocus.requestFocus();
-                                      Messages.of(context).showError('Digite um e-mail para recuperar a senha');
+                                      Messages.of(context).showError(
+                                          'Digite um e-mail para recuperar a senha');
                                     }
                                   },
                                   child: const Text('Esqueceu sua senha?'),
                                 ),
-                                ElevatedButton(
+                                AnimatedButton(
+                                  height: 50,
+                                  width: 132,
+                                  text: 'Login',
+                                  isReverse: true,
+                                  selectedTextColor: Colors.blueAccent,
+                                  transitionType: TransitionType.LEFT_TO_RIGHT,
+                                  textStyle: GoogleFonts.nunito(
+                                      fontSize: 22,
+                                      letterSpacing: 5,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w300),
+                                  backgroundColor: context.primaryColor,
+                                  borderColor: context.primaryColorLight,
+                                  borderRadius: 60,
+                                  borderWidth: 1,
+                                  onPress: () {
+                                    final formValid =
+                                        _formKey.currentState?.validate() ??
+                                            false;
+                                    if (formValid) {
+                                      final email = _emailEC.text;
+                                      final password = _passwordEC.text;
+
+                                      context
+                                          .read<LoginController>()
+                                          .login(email, password);
+                                    }
+                                  },
+                                ),
+                                /*ElevatedButton(
                                   onPressed: () {
                                     final formValid =
                                         _formKey.currentState?.validate() ??
@@ -129,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                                     padding: EdgeInsets.all(10.0),
                                     child: Text('Login'),
                                   ),
-                                ),
+                                ),*/
                               ],
                             )
                           ],
