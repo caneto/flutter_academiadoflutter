@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-abstract class ControllerLifeCycle implements Disposable {
+mixin ControllerLifeCycle implements Disposable {
   void onInit([Map<String, dynamic>? params]) {
     return;
   }

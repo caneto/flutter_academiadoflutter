@@ -47,7 +47,7 @@ class SharedPreferencesLocalStorageImpl implements LocalStorage {
       case double:
         await sharedPreferences.setDouble(key, value as double);
         break;
-      case List<String>:
+      case const (List<String>):
         await sharedPreferences.setStringList(key, value as List<String>);
         break;
 

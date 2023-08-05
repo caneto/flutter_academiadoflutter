@@ -19,12 +19,8 @@ class DioRestClient implements RestClient {
 
   final _defaultOptions = BaseOptions(
     baseUrl: Environments.params(Constants.envBaseUrlKey) ?? '',
-    connectTimeout: int.parse(
-      Environments.params(Constants.envRestClientConnectTimeout) ?? '0',
-    ),
-    receiveTimeout: int.parse(
-      Environments.params(Constants.envRestClientReceiveTimeout) ?? '0',
-    ),
+    connectTimeout: Duration(milliseconds: int.parse(Environments.params(Constants.envRestClientConnectTimeout) ?? '0')),
+    receiveTimeout: Duration(milliseconds: int.parse(Environments.params(Constants.envRestClientReceiveTimeout) ?? '0')),
   );
 
   DioRestClient({
@@ -76,7 +72,7 @@ class DioRestClient implements RestClient {
       );
 
       return _dioResponseConverter<T>(response);
-    } on DioError catch (e, s) {
+    } on DioException catch (e, s) {
       _throwRestClientException(e, s);
     }
   }
@@ -95,7 +91,7 @@ class DioRestClient implements RestClient {
       );
 
       return _dioResponseConverter<T>(response);
-    } on DioError catch (e, s) {
+    } on DioException catch (e, s) {
       _throwRestClientException(e, s);
     }
   }
@@ -116,7 +112,7 @@ class DioRestClient implements RestClient {
       );
 
       return _dioResponseConverter<T>(response);
-    } on DioError catch (e, s) {
+    } on DioException catch (e, s) {
       _throwRestClientException(e, s);
     }
   }
@@ -137,7 +133,7 @@ class DioRestClient implements RestClient {
       );
 
       return _dioResponseConverter<T>(response);
-    } on DioError catch (e, s) {
+    } on DioException catch (e, s) {
       _throwRestClientException(e, s);
     }
   }
@@ -158,7 +154,7 @@ class DioRestClient implements RestClient {
       );
 
       return _dioResponseConverter<T>(response);
-    } on DioError catch (e, s) {
+    } on DioException catch (e, s) {
       _throwRestClientException(e, s);
     }
   }
@@ -183,7 +179,7 @@ class DioRestClient implements RestClient {
       );
 
       return _dioResponseConverter(response);
-    } on DioError catch (e, s) {
+    } on DioException catch (e, s) {
       _throwRestClientException(e, s);
     }
   }
@@ -195,7 +191,7 @@ class DioRestClient implements RestClient {
         statusMessage: response.statusMessage,
       );
 
-  Never _throwRestClientException(DioError dioError, StackTrace s) {
+  Never _throwRestClientException(DioException dioError, StackTrace s) {
     final response = dioError.response;
     final responseStatusCode = response?.statusCode;
     final responseStatusMessage = response?.statusMessage;
