@@ -6,7 +6,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.0.6 <4.0.0"
+  sdk: ">=3.1.2 <4.0.0"
 
 dependencies:
   flutter:
@@ -15,16 +15,15 @@ dependencies:
   asuka: ^2.1.0
   flutter_modular: ^5.0.3
   flutter_mobx: ^2.0.6+5
-  mobx: ^2.2.0
-  dio: ^5.1.2
+  mobx: ^2.2.1
+  dio: ^5.3.3
   equatable: ^2.0.5
-  flutter_typeahead: ^4.6.2
+  flutter_typeahead: ^4.8.0
   validatorless: ^1.2.3
   json_annotation: ^4.8.1
-  flutter_screenutil: ^5.8.4
+  flutter_screenutil: ^5.9.0
   sqflite: ^2.3.0
   synchronized: ^3.1.0
-  # Fixado na versão 1.8.2 por conta do flutter_test
   path: ^1.8.3
   nil: ^1.1.1
   
@@ -35,30 +34,30 @@ dependencies:
   logger: ^1.4.0
 
 
-  flutter_secure_storage: ^8.0.0
-  shared_preferences: ^2.2.0
+  flutter_secure_storage: ^8.1.0
+  shared_preferences: ^2.2.2
 
     
   ##Firebase
-  firebase_core: ^2.15.0
-  firebase_analytics: ^10.4.4
-  firebase_auth: ^4.7.2
-  firebase_remote_config: ^4.2.4
-  firebase_messaging: ^14.6.5
-  google_sign_in: ^6.1.4  
-  google_maps_flutter: ^2.4.0
+  firebase_core: ^2.21.0
+  firebase_analytics: ^10.6.3
+  firebase_auth: ^4.12.1
+  firebase_remote_config: ^4.3.3
+  firebase_messaging: ^14.7.3
+  google_sign_in: ^6.1.5  
+  google_maps_flutter: ^2.5.0
   ##google_place: ^0.4.7   ### Package Desativad, ver depois o que substituir
   google_places: 
     git:
       url: https://github.com/caneto/google_place.git 
 
-  geocoding: ^2.0.5
+  geocoding: ^2.1.1
   geolocator: ^9.0.2
 
   #FaceBook
   flutter_facebook_auth: ^5.0.11
 
-  cupertino_icons: ^1.0.5
+  cupertino_icons: ^1.0.6
 
 dependency_overrides:
   http: ">=1.0.0"
@@ -66,10 +65,10 @@ dependency_overrides:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^2.3.3
-  json_serializable: ^6.6.1
-  flutter_lints: ^2.0.1
-  mobx_codegen: ^2.3.0
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
+  flutter_lints: ^2.0.3
+  mobx_codegen: ^2.4.0
 
 
 flutter:
