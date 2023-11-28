@@ -16,7 +16,7 @@ part 'widgets/address_item.dart';
 part 'widgets/address_search_widget/address_search_widget.dart';
 
 class AddressPage extends StatefulWidget {
-  const AddressPage({Key? key}) : super(key: key);
+  const AddressPage({super.key});
 
   @override
   State<AddressPage> createState() => _AddressPageState();
@@ -135,7 +135,7 @@ class _AddressPageState
                           .toList(),
                     );
                   },
-                )
+                ),
               ],
             ),
           ),
