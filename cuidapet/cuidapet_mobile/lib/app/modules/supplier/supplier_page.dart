@@ -117,7 +117,7 @@ class _SupplierPageState
                   child: Text(
                     'Serviços (${controller.totalServicesSelected} selecionado${controller.totalServicesSelected > 1 ? 's' : ''})',
                     style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 15),
+                        fontWeight: FontWeight.bold, fontSize: 15,),
                   ),
                 ),
               ),
@@ -132,7 +132,7 @@ class _SupplierPageState
                     );
                   },
                 ),
-              )
+              ),
             ],
           );
         },
