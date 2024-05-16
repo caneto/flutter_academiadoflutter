@@ -24,42 +24,42 @@ dependencies:
   json_annotation: ^4.8.1
   flutter_screenutil: ^5.8.4
   sqflite: ^2.3.0
-  synchronized: ^3.1.0
-  path: ^1.8.3
+  synchronized: ^3.1.0+1
+  path: ^1.9.0
   nil: ^1.1.1
   
   intl: ^0.18.1
-  url_launcher: ^6.1.12
+  url_launcher: ^6.2.6
 
   flutter_dotenv: ^5.1.0
   logger: ^1.4.0
 
 
-  flutter_secure_storage: ^8.0.0
-  shared_preferences: ^2.2.0
+  flutter_secure_storage: ^9.2.1
+  shared_preferences: ^2.2.3
 
     
   ##Firebase
-  firebase_core: ^2.15.0
-  firebase_analytics: ^10.4.4
-  firebase_auth: ^4.7.2
-  firebase_remote_config: ^4.2.4
-  firebase_messaging: ^14.6.5
-  google_sign_in: ^6.1.4  
-  google_maps_flutter: ^2.4.0
+  firebase_core: ^2.31.0
+  firebase_analytics: ^10.10.5
+  firebase_auth: ^4.19.5
+  firebase_remote_config: ^4.4.5
+  firebase_messaging: ^14.9.2
+  google_sign_in: ^6.2.1  
+  google_maps_flutter: ^2.6.1
   google_places: 
     git:
       url: https://github.com/caneto/google_place.git 
       
   #google_place: ^0.4.7     
 
-  geocoding: ^2.1.0
-  geolocator: ^9.0.2
+  geocoding: ^3.0.0
+  geolocator: ^12.0.0
 
   #FaceBook
-  flutter_facebook_auth: ^5.0.11
+  flutter_facebook_auth: ^6.2.0
 
-  cupertino_icons: ^1.0.5
+  cupertino_icons: ^1.0.8
 
 dependency_overrides:
   http: ">=1.0.0"
@@ -68,7 +68,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.4.6
-  json_serializable: ^6.7.1
+  json_serializable: ^6.8.0
   flutter_lints: ^2.0.2
   mobx_codegen: ^2.3.0
 

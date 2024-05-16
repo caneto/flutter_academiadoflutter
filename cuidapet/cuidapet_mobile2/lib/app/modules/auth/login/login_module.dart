@@ -11,7 +11,7 @@ class LoginModule extends Module {
         service: i(),  // AuthModele
         logger: i(),  // CoreModule
       ),
-    )
+    ),
   ];
 
   @override

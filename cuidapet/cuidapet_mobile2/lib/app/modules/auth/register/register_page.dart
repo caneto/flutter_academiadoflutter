@@ -35,7 +35,7 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                  height: 20,
               ),
-              const _RegisterForm()
+              const _RegisterForm(),
           ],
         ),
       ),

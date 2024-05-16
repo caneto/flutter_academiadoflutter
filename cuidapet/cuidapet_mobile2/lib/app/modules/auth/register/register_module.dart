@@ -11,7 +11,7 @@ class RegisterModule extends Module {
         userService: i(), // AuthModule
         log: i(), // CoreModule
       ),
-    )
+    ),
   ];
 
   @override
